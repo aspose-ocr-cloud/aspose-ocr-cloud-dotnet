@@ -130,10 +130,10 @@ In the upcoming releases, we are set to implement a number of new features and f
 - [ ] Add a feature to select custom regions of image to recognize
 - [ ] Add a feature of document structure processing to take a possibility of any document processing (with images, tables, etc. on page)
 - [ ] Add more output formats: _hocr_ and _pdf_
-- [*] Fix issue of collapsing words
-- [*] Fix issue of duplicate letters
-- [*] Fix issues with punctuation symbols
-- [*] Learn to recognize characters: hyphen-minus (-), dash (–), grave accent (`), underscore (_), slashes (/)(\\)
+- [x] Fix issue of collapsing words
+- [x] Fix issue of duplicate letters
+- [x] Fix issues with punctuation symbols
+- [x] Learn to recognize characters: hyphen-minus (-), dash (–), grave accent (`), underscore (_), slashes (/)(\\)
 
 ## Resources
 
