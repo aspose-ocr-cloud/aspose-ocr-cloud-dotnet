@@ -120,6 +120,9 @@ Advantages of this algorithm:
 - We've improved text recognition module to fix a lot of issues in our [roadmap](#roadmap)
 - We've integrated Tensorflow-Serving technology into our pipeline
 
+**18.09**
+We've included our current groundwork on DSR feature with the following classes: paragraph, table, image, formula, header, caption and list. Also we've prepared text lines recognition module that replaces words splitter and recognition modules. OCR Engine works slightly better and faster due to those improvements.
+
 ## Roadmap
 
 In the upcoming releases, we are set to implement a number of new features and fix issues:
@@ -128,7 +131,7 @@ In the upcoming releases, we are set to implement a number of new features and f
 - [ ] Speed up single page recognition up to  less than 2 seconds
 - [ ] Add a feature of batch files processing
 - [ ] Add a feature to select custom regions of image to recognize
-- [ ] Add a feature of document structure processing to take a possibility of any document processing (with images, tables, etc. on page)
+- [x] Add a feature of document structure processing to take a possibility of any document processing (with images, tables, etc. on page)
 - [ ] Add more output formats: _hocr_ and _pdf_
 - [x] Fix issue of collapsing words
 - [x] Fix issue of duplicate letters
