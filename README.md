@@ -61,9 +61,10 @@ This vesion uses our latest stable developments. It's produces a good result on 
 
 [Try V2 vesion demostration here](http://saltov-gpu-3.dynabic.com:8083/)
 
-### V3 - 18.06
+### V3 - 18.09
 
-This is the last version we just released, but not yet perfect. It's based on the cutting edge neural networks algorithms, distributed computing and scalable cloud architecture. Unfortunately it can't do skew correction and document structure recognition tasks now (until the next release), but provides good results on only-text images, up to 97,7% [1 - ([Levenshtein](https://en.wikipedia.org/wiki/Levenshtein_distance) / Text_Length)]. It's a bit faster than **V2** and will be much faster in future.
+This is the last version we just released, but not yet perfect. It's based on the cutting edge neural networks algorithms, distributed computing and scalable cloud architecture. The key features are: DSR, Skew correction and fast text recognition. It also provides the good results on only-text images, up to 97,7% [1 - ([Levenshtein](https://en.wikipedia.org/wiki/Levenshtein_distance) / Text_Length)]. 
+
 We are very actively engaged in the development of this version, and suggest to look at our [roadmap :arrow_double_down:](#roadmap) and [release notes](#release-notes)
 
 [Try V3 vesion demostration here](http://saltov-gpu-3.dynabic.com:8084/)
@@ -121,6 +122,7 @@ Advantages of this algorithm:
 - We've integrated Tensorflow-Serving technology into our pipeline
 
 **18.09**
+
 We've included our current groundwork on DSR feature with the following classes: paragraph, table, image, formula, header, caption and list. Also we've prepared text lines recognition module that replaces words splitter and recognition modules. OCR Engine works slightly better and faster due to those improvements.
 
 ## Roadmap
