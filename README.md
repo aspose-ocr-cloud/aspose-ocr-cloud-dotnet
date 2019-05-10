@@ -145,6 +145,6 @@ In the upcoming releases, we are set to implement a number of new features and f
 - **Website:** [https://www.aspose.cloud](https://www.aspose.cloud)
 - **Product Home:** [Aspose.OCR Cloud](https://products.aspose.cloud/ocr/)
 - **Documentation:** [Aspose.OCR Cloud Documentation](https://docs.aspose.cloud/display/ocrcloud/Home)
-- **API Reference** [Aspose.OCR Cloud API Reference](https://apireference.aspose.cloud/diagram/)
+- **API Reference** [Aspose.OCR Cloud API Reference](https://apireference.aspose.cloud/ocr/)
 - **Forum:** [Aspose.OCR Cloud Forum](https://forum.aspose.cloud/c/ocr)
 - **Blog:** [Aspose.OCR Cloud Blog](https://blog.aspose.cloud/category/ocr/)
