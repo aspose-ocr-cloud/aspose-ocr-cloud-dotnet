@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net20;net45</TargetFrameworks>
+    <Company>Aspose</Company>
+    <Title>Aspose.OCR Cloud SDK for .NET</Title>
+    <Description>Aspose.OCR Cloud - Easy Optical Character Recognition (OCR) to extract English text from cloud-based raster images using cURL or .NET REST APIs.
+    Enhance your C# and other .NET supported applications to extract text from images hosted on the cloud via OCR.</Description>
+    <RepositoryUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet</RepositoryUrl>
+    <PackageTags>Aspose.OCR OCR optical character recognition scanner ai engine c# machine learning handwriting recognize scanned document searchable PDF text detection </PackageTags>
+    <PackageLicenseUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>© Aspose 2002-2020. All Rights Reserved.</Copyright>
+    <RepositoryType>Git</RepositoryType>
+    <PackageProjectUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Aspose.OCR-Cloud</PackageId>
+    <Product>Aspose.OCR Cloud SDK for .NET</Product>
+    <PackageIconUrl>https://www.aspose.cloud/templates/aspose/App_Themes/V3/images/ocr/272x272/aspose_ocr-for-cloud-min.png</PackageIconUrl>
+    <Version>19.12.0</Version>
+    <Authors>asposecloud</Authors>
+    <AssemblyVersion>19.12.0.0</AssemblyVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net20' OR '$(TargetFramework)'=='net45'">
+    <Reference Include="System.Web" />
+  </ItemGroup>
+
+</Project>
