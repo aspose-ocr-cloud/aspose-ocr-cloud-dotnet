@@ -1,20 +1,31 @@
 <img src="Docs/Resources/heading.png">
 
-# Aspose.OCR for Cloud
+# Aspose.OCR Cloud
 
-[Aspose.OCR for Cloud](https://products.aspose.cloud/ocr/cloud) is a simple SDK used to add text recognition to your app with simply few line of code.
+[Aspose.OCR Cloud](https://products.aspose.cloud/ocr/cloud) is a simple SDK used to add text recognition to your app with merely a few lines of code.
 
-In details, it's a set of SDKs for optical character recognition and documents scanning in our cloud. It supports reading and recognizing text from most commonly used raster image formats. Just pass specific image to the Aspose.OCR for Cloud API and it will return response with recognized text.
+In detail, it's a set of SDKs for optical character recognition and document scanning in our Cloud. It supports reading and recognizing text from most commonly used raster image formats. Just pass a specific image to the Aspose.OCR Cloud API, and it will return a response with recognized text.
 
-It is easy to get started with Aspose.OCR for Cloud and there is nothing to install. Simply create an account at Aspose for Cloud and get your application information, then you are ready to use [SDKs](#sdk-packages)
+It is easy to get started with Aspose.OCR Cloud, and there is nothing to install. Create an account at Aspose Cloud and get your application information, then you are ready to use [SDKs](#asposeocr-cloud-sdks)
 
-<a title="GOTO WEB DEMO" href="http://saltov-gpu-3.dynabic.com:8082/">
+## Release 20.03:
+We are glad to introduce French and German languages support.
+
+<a title="GOTO WEB DEMO" href="http://saltov-gpu-3.dynabic.com:8084/">
   <img src="Docs/Resources/demo_preview.png">
 </a>
 
+## Features:
+- Automatic skew correction
+- Automatic and manual document layout detection
+- Advanced automated image pre-processing
+- Extract and recognize text from images via OCR
+- Supports multiple international languages
+- High speed with no hardware resources
+
 ## How to use the SDK?
 
-Our API is completely independent of your operating system, database system or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone and time-consuming. Therefore, we have provided and support API [SDKs](#sdk-packages) in many development languages in order to make it easier to integrate with us.
+Our API is completely independent of your operating system, database system, or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone, and time-consuming. Therefore, we have provided and support [SDKs](#asposeocr-cloud-sdks) in many development languages to make it easier to integrate with us.
 
 ## Example
 
@@ -36,7 +47,7 @@ static string RecognizeFromContent(Configuration conf)
     using (FileStream fs = File.OpenRead(name))
     {
         OcrApi api = new OcrApi(conf);
-        var request = new PostOcrFromUrlOrContentRequest(fs);
+        var request = new PostOcrFromUrlOrContentRequest(fs, language: LanguageGroup.German);
         OCRResponse response = api.PostOcrFromUrlOrContent(request);
 
         return response.Text;
@@ -47,11 +58,11 @@ _________________________
 
 ## Quickstart
 
-Try out our [demo](http://saltov-gpu-3.dynabic.com:8082/) right now or make your own solution using [SDK](#sdk-packages), follow this steps:
+Make your solution using [SDK](#asposeocr-cloud-sdks), follow these steps:
 
 #### 1. Get API keys if you haven't
 
-Make a personal account on [Aspose for Cloud](https://dashboard.aspose.cloud/#/) and click _Get Keys_. This keys are usefull for all Aspose Cloud products. If you have any trouble, look at this [detailed manual](https://docs.aspose.cloud/display/totalcloud/Create+New+App+and+Get+App+Key+and+SID).
+Make a personal account on [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/) and click _Get Keys_. These keys are useful for all Aspose Cloud products. If you have any trouble, look at this [detailed manual](https://docs.aspose.cloud/display/totalcloud/Create+New+App+and+Get+App+Key+and+SID).
 
 #### 2. Run Demo
   * Checkout the SDK
@@ -60,18 +71,18 @@ Make a personal account on [Aspose for Cloud](https://dashboard.aspose.cloud/#/)
   * Run
 
 <p align="center">
-  <a title="Download ZIP" href="https://github.com/asposecloud/Aspose.OCR-Cloud/archive/master.zip">
+  <a title="Download ZIP" href="https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet/archive/master.zip">
      <img src="Docs/Resources/download.png" />
   </a>
 </p>
 
 _________________________
 
-## SDKs
+## Aspose.OCR Cloud SDKs
 
 ||||||||||
-|-------|----------|-------|-------|-------|---------|---------|----------|-------|
-|[.NET](/SDK_V3/SDK/Aspose.OCR-Cloud-SDK-for-.NET)|Java|PHP|Ruby|Python|Node.js|Android|Objective-C|Perl|
+|--------------|----------|-------|-------|-------|---------|---------|----------|-------|
+|[.NET & Core](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet)|[Java](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-java)|PHP|Ruby|Python|Node.js|[Android](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-android)|Objective-C|Perl|
 
 ## Resources
 
@@ -80,4 +91,5 @@ _________________________
 - **Documentation:** [Aspose.OCR Cloud Documentation](https://docs.aspose.cloud/display/ocrcloud/Home)
 - **Forum:** [Aspose.OCR Cloud Forum](https://forum.aspose.cloud/c/ocr)
 - **Blog:** [Aspose.OCR Cloud Blog](https://blog.aspose.cloud/category/ocr/)
-- **Pricing:** [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
+- **Pricing:** [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing)
+- **Try out Aspose OCR online for free** [Aspose Image to Text](https://products.aspose.app/ocr/scan-image).

@@ -72,8 +72,6 @@ namespace Aspose.Ocr.Cloud.Sdk
             {
                 case AuthType.JWT: requestHandlers.Add(new JwtRequestHandler(this.configuration));
                     break;
-                default:
-                    throw new ApiException(1000, "Authorization method is not supported for OCR API. USE AuthType.JWT");
             }
 
             requestHandlers.Add(new DebugLogRequestHandler(this.configuration));
@@ -103,6 +101,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.name);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "language", request.language);
             
             try 
             {                               
@@ -145,6 +144,7 @@ namespace Aspose.Ocr.Cloud.Sdk
                         .Replace("/?", "?");
             var formParams = new Dictionary<string, object>();
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "url", request.url);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "language", request.language);
             
             if (request.File != null) 
             {
@@ -159,7 +159,6 @@ namespace Aspose.Ocr.Cloud.Sdk
                     null, 
                     null, 
                     formParams);
-
                 if (response != null)
                 {
                     return (OCRResponse)SerializationHelper.Deserialize(response, typeof(OCRResponse));

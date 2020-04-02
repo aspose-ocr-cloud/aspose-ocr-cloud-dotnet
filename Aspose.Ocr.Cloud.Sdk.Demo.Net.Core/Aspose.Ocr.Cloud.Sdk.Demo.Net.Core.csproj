@@ -7,6 +7,13 @@
 
   <ItemGroup>
     <None Remove="10.png" />
+    <None Remove="de_1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="de_1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

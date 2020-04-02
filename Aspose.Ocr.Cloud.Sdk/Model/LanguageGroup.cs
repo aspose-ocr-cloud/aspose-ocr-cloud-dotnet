@@ -1,6 +1,5 @@
-
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="PostOcrFromUrlOrContentRequest.cs">
+// <copyright company="Aspose" file="LanguageGroup.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,48 +22,31 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
+
+namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
-  using Aspose.Ocr.Cloud.Sdk.Model; 
-
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
+  
   /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.PostOcrFromUrlOrContent" /> operation.
+  /// 
   /// </summary>  
-  public class PostOcrFromUrlOrContentRequest  
-  {
+  [JsonConverter(typeof(StringEnumConverter))]
+  public  enum LanguageGroup 
+  {  	
+		/// <summary>
+        /// Set English language for OCR
+        /// </summary>            
+        English = 1,
+		
+		/// <summary>
+        /// Set French language for OCR
+        /// </summary>            
+        French = 2,
+		
         /// <summary>
-        /// Initializes a new instance of the <see cref="PostOcrFromUrlOrContentRequest"/> class.
-        /// </summary>        
-        public PostOcrFromUrlOrContentRequest()
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PostOcrFromUrlOrContentRequest"/> class.
-        /// </summary>
-        /// <param name="file">File to upload</param>
-        /// <param name="url">The image file url.</param>
-        /// <param name="language">Language</param>
-        public PostOcrFromUrlOrContentRequest(System.IO.Stream file, string url = null, LanguageGroup? language = null)             
-        {
-            this.File = file;
-            this.url = url;
-            this.language = language;
-        }
-
-        /// <summary>
-        /// File to upload
-        /// </summary>  
-        public System.IO.Stream File { get; set; }
-
-        /// <summary>
-        /// The image file url.
-        /// </summary>  
-        public string url { get; set; }
-
-        /// <summary>
-        /// Language
-        /// </summary>  
-        public LanguageGroup? language { get; set; }
+        /// Set German language for OCR
+        /// </summary>            
+        German = 2,
   }
 }

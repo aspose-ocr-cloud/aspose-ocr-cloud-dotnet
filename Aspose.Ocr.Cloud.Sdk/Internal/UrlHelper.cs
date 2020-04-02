@@ -64,6 +64,11 @@ namespace Aspose.Ocr.Cloud.Sdk
                 return url;
             }
 
+            if (parameterValue is Enum)
+            {
+                parameterValue = (int) parameterValue;
+            }
+
             var uriBuilder = new UriBuilder(url);
             var query = HttpUtility.ParseQueryString(uriBuilder.Query);
             query.Add(parameterName, parameterValue.ToString());

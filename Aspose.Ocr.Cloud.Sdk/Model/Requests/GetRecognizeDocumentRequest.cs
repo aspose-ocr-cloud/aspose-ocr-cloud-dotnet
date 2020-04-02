@@ -43,11 +43,13 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         /// <param name="name">Name of the file to recognize.</param>
         /// <param name="storage">The image storage.</param>
         /// <param name="folder">The image folder.</param>
-        public GetRecognizeDocumentRequest(string name, string storage = null, string folder = null)             
+        /// <param name="language">Language for OCR Core Aspose.OCR.Core.Transport LanguageGroup</param>
+        public GetRecognizeDocumentRequest(string name, string storage = null, string folder = null, LanguageGroup? language = null)             
         {
             this.name = name;
             this.storage = storage;
             this.folder = folder;
+            this.language = language;
         }
 
         /// <summary>
@@ -64,5 +66,10 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         /// The image folder.
         /// </summary>  
         public string folder { get; set; }
+
+        /// <summary>
+        /// Language for OCR Core Aspose.OCR.Core.Transport LanguageGroup
+        /// </summary>  
+        public LanguageGroup? language { get; set; }
   }
 }

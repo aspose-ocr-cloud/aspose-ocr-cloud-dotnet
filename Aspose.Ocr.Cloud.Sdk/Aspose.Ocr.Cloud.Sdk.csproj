@@ -2,10 +2,18 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net20;net45</TargetFrameworks>
-    <Company>Aspose</Company>
+    <Company>Aspose Pty Ltd</Company>
     <Title>Aspose.OCR Cloud SDK for .NET</Title>
-    <Description>Aspose.OCR Cloud - Easy Optical Character Recognition (OCR) to extract English text from cloud-based raster images using cURL or .NET REST APIs.
-    Enhance your C# and other .NET supported applications to extract text from images hosted on the cloud via OCR.</Description>
+    <Description>Aspose. OCR Cloud is a simple ocr technology, which you can use in your application to convert image to text. 
+Add OCR to your app with simply few line of code. Any language, any platform, no hardware resources.
+
+Automatic skew correction
+Advanced Automative Image Pre-processing
+Automatic and manual document layout detection
+Extract and recognize text from images via OCR
+Supports multiple international languages
+High speed with no hardware resources
+</Description>
     <RepositoryUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet</RepositoryUrl>
     <PackageTags>Aspose.OCR OCR optical character recognition scanner ai engine c# machine learning handwriting recognize scanned document searchable PDF text detection </PackageTags>
     <PackageLicenseUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet/blob/master/LICENSE</PackageLicenseUrl>
@@ -16,13 +24,18 @@
     <PackageId>Aspose.OCR-Cloud</PackageId>
     <Product>Aspose.OCR Cloud SDK for .NET</Product>
     <PackageIconUrl>https://www.aspose.cloud/templates/aspose/App_Themes/V3/images/ocr/272x272/aspose_ocr-for-cloud-min.png</PackageIconUrl>
-    <Version>19.12.0</Version>
+    <Version>20.03.0</Version>
     <Authors>asposecloud</Authors>
-    <AssemblyVersion>19.12.0.0</AssemblyVersion>
+    <AssemblyVersion>20.3.0.0</AssemblyVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
+    <PackageReleaseNotes>We are glad to introduce French and German languages support.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DefineConstants />
   </PropertyGroup>
 
   <ItemGroup>

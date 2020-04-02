@@ -123,16 +123,16 @@ namespace Aspose.Ocr.Cloud.Sdk
                     null);
                 if (response != null)
                 {
-                    return ;
+                    return;
                 }
                     
-                return ;
+                return;
             } 
             catch (ApiException ex) 
             {
                 if (ex.ErrorCode == 404) 
                 {
-                    return ;
+                    return;
                 }
                 
                 throw;                
@@ -171,16 +171,16 @@ namespace Aspose.Ocr.Cloud.Sdk
                     null);
                 if (response != null)
                 {
-                    return ;
+                    return;
                 }
                     
-                return ;
+                return;
             } 
             catch (ApiException ex) 
             {
                 if (ex.ErrorCode == 404) 
                 {
-                    return ;
+                    return;
                 }
                 
                 throw;                
@@ -220,16 +220,16 @@ namespace Aspose.Ocr.Cloud.Sdk
                     null);
                 if (response != null)
                 {
-                    return ;
+                    return;
                 }
                     
-                return ;
+                return;
             } 
             catch (ApiException ex) 
             {
                 if (ex.ErrorCode == 404) 
                 {
-                    return ;
+                    return;
                 }
                 
                 throw;                
@@ -324,16 +324,16 @@ namespace Aspose.Ocr.Cloud.Sdk
                     null);
                 if (response != null)
                 {
-                    return ;
+                    return;
                 }
                     
-                return ;
+                return;
             } 
             catch (ApiException ex) 
             {
                 if (ex.ErrorCode == 404) 
                 {
-                    return ;
+                    return;
                 }
                 
                 throw;                

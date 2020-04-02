@@ -23,8 +23,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System; 
-
 namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
   using System.Text;
