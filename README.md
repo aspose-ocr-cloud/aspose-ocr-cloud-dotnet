@@ -62,7 +62,7 @@ Make your solution using [SDK](#asposeocr-cloud-sdks), follow these steps:
 
 #### 1. Get API keys if you haven't
 
-Make a personal account on [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/) and click _Get Keys_. These keys are useful for all Aspose Cloud products. If you have any trouble, look at this [detailed manual](https://docs.aspose.cloud/display/totalcloud/Create+New+App+and+Get+App+Key+and+SID).
+Make a personal account on [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/) and click _Get Keys_. These keys are useful for all Aspose Cloud products. If you have any trouble, look at this [detailed manual](https://docs.aspose.cloud/total/create-new-app-and-get-app-key-and-sid/).
 
 #### 2. Run Demo
   * Checkout the SDK
@@ -88,7 +88,7 @@ _________________________
 
 - **Website:** [https://www.aspose.cloud](https://www.aspose.cloud)
 - **Product Home:** [Aspose.OCR Cloud](https://products.aspose.cloud/ocr/family)
-- **Documentation:** [Aspose.OCR Cloud Documentation](https://docs.aspose.cloud/display/ocrcloud/Home)
+- **Documentation:** [Aspose.OCR Cloud Documentation](https://docs.aspose.cloud/ocr/)
 - **Forum:** [Aspose.OCR Cloud Forum](https://forum.aspose.cloud/c/ocr)
 - **Blog:** [Aspose.OCR Cloud Blog](https://blog.aspose.cloud/category/ocr/)
 - **Pricing:** [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing)
