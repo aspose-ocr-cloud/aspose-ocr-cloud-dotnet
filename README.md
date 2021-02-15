@@ -41,32 +41,26 @@ We are glad to introduce French and German languages support.
 
 Our API is completely independent of your operating system, database system, or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone, and time-consuming. Therefore, we have provided and support [SDKs](#asposeocr-cloud-sdks) in many development languages to make it easier to integrate with us.
 
-## Example
+## OCR in C# .Net
 
 ```csharp
-static string RecognizeFromUrl(Configuration conf)
-{
-    string imgUri = @"http://typecast.com/images/uploads/fluid-type-single-column.png";
+	// Get your ClientId and ClientSecret from https://dashboard.aspose.cloud (free registration required).
+	var config = new Configuration
+	{
+		AppSid = "MY_CLIENT_ID",
+		AppKey = "MY_CLIENT_SECRET"
+	};
 
-    OcrApi api = new OcrApi(conf);
-    var request = new PostOcrFromUrlOrContentRequest(null, imgUri);
-    OCRResponse response = api.PostOcrFromUrlOrContent(request);
-
-    return response.Text;
-}
-
-static string RecognizeFromContent(Configuration conf)
-{
-    string name = "10.png";
+	var ocrApi = new OcrApi(config);
+	
+	string name = "sample.png";
     using (FileStream fs = File.OpenRead(name))
     {
-        OcrApi api = new OcrApi(conf);
         var request = new PostOcrFromUrlOrContentRequest(fs, language: LanguageGroup.German);
-        OCRResponse response = api.PostOcrFromUrlOrContent(request);
+        OCRResponse response = ocrApi.PostOcrFromUrlOrContent(request);
 
         return response.Text;
     }
-}
 ```
 _________________________
 
