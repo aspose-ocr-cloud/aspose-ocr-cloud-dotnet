@@ -44,12 +44,21 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="file">File to upload</param>
         /// <param name="url">The image file url.</param>
-        /// <param name="language">Language</param>
-        public PostOcrFromUrlOrContentRequest(System.IO.Stream file, string url = null, LanguageGroup? language = null)             
+        /// <param name="language">Prior recognition language selection</param>
+        /// <param name="resultType">Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR</param>
+        /// <param name="dsrMode">An option to switch DSR algorithm</param>
+        public PostOcrFromUrlOrContentRequest(
+            System.IO.Stream file, 
+            string url = null,
+            LanguageEnum? language = null,
+            ResultType? resultType = null,
+            DsrMode? dsrMode = null)
         {
             this.File = file;
             this.url = url;
             this.language = language;
+            this.resultType = resultType;
+            this.dsrMode = dsrMode;
         }
 
         /// <summary>
@@ -63,8 +72,18 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         public string url { get; set; }
 
         /// <summary>
-        /// Language
+        /// Prior recognition language
         /// </summary>  
-        public LanguageGroup? language { get; set; }
-  }
+        public LanguageEnum? language { get; set; }
+
+        /// <summary>
+        /// Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR
+        /// </summary>
+        public ResultType? resultType { get; set; }
+
+        /// <summary>
+        /// An option to switch DSR algorithm
+        /// </summary>
+        public DsrMode? dsrMode { get; set; }
+    }
 }

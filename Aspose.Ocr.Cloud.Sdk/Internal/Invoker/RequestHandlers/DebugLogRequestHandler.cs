@@ -23,13 +23,13 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk.RequestHandlers
-{
-    using System.Diagnostics;
-    using System.IO;
-    using System.Net;
-    using System.Text;
+using System.Diagnostics;
+using System.IO;
+using System.Net;
+using System.Text;
 
+namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker.RequestHandlers
+{
     internal class DebugLogRequestHandler : IRequestHandler
     {
         private readonly Configuration configuration;

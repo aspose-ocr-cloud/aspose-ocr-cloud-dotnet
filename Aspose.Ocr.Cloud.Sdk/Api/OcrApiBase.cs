@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="AuthType.cs">
+// <copyright company="Aspose" file="OcrApiBase.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -25,29 +25,24 @@
 
 namespace Aspose.Ocr.Cloud.Sdk
 {
-    /// <summary>
-    /// Supported types of authentication.
-    /// </summary>
-    public enum AuthType
+    public class OcrApiBase
     {
-        /// <summary>
-        /// OAuth2.0
-        /// </summary>
-        OAuth2 = 0,
+        protected readonly Configuration mConfiguration;
+        protected readonly string mApiRootUrl;
 
-        /// <summary>
-        /// Authentication with signing of url.
-        /// </summary>
-        RequestSignature = 1,
+        public OcrApiBase(Configuration configuration)
+        {
+            this.mConfiguration = configuration;
+            this.mApiRootUrl = configuration.GetApiRootUrl();
+        }
 
-        /// <summary>
-        /// Token for OAuth2 provided by caller
-        /// </summary>
-        ExternalAuth = 2,
+        #region _helpers_
 
-        /// <summary>
-        /// Token for JWT authorization of OCR
-        /// </summary>
-        JWT = 3,
+        protected string BuildUrl(string path)
+        {
+            return $"{mApiRootUrl}/ocr/{path}";
+        }
+
+        #endregion // _helpers_
     }
 }

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="NeedRepeatRequestException.cs">
+// <copyright company="Aspose" file="StatusCode.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,11 +23,28 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk
-{
-    using System;
+using System.Net;
 
-    internal class NeedRepeatRequestException : Exception
+namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker.Exceptions
+{
+    /// <summary>
+    ///     Error code
+    /// </summary>
+    public class StatusCode
     {
+        /// <summary>
+        ///     Code
+        /// </summary>
+        public string Code { set; get; }
+
+        /// <summary>
+        ///     The status code as <see cref="System.Net.HttpStatusCode"/>
+        /// </summary>
+        public HttpStatusCode HttpStatusCode { set; get; }
+
+        /// <summary>
+        ///     Description
+        /// </summary>
+        public string Description { set; get; }
     }
 }

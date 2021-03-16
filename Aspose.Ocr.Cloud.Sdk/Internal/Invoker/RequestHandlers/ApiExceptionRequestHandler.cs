@@ -23,57 +23,72 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using Aspose.Ocr.Cloud.Sdk.Model;
+using System;
+using System.IO;
+using System.Net;
+using Aspose.Ocr.Cloud.Sdk.Internal.Invoker.Exceptions;
 
-namespace Aspose.Ocr.Cloud.Sdk.RequestHandlers
+namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker.RequestHandlers
 {
-    using System;
-    using System.IO;
-    using System.Net;
-
-    internal class ApiExceptionRequestHandler : IRequestHandler
+    /// <summary>
+    ///     Api Exception Request Handler
+    /// </summary>
+    public class ApiExceptionRequestHandler : IRequestHandler
     {
+        private string method;
+
         public string ProcessUrl(string url)
         {
             return url;
         }
 
         public void BeforeSend(WebRequest request, Stream streamToSend)
-        {            
+        {
+            method = request.Method;
         }
 
         public void ProcessResponse(HttpWebResponse response, Stream resultStream)
         {
-            if (response.StatusCode != System.Net.HttpStatusCode.OK)
-            {
-                this.ThrowApiException(response, resultStream);
-            }
+            if (method == "DELETE" && response.StatusCode == HttpStatusCode.NoContent)
+                return;
+
+            if (method == "POST" && response.StatusCode == HttpStatusCode.Created)
+                return;
+
+            if (method == "PUT" && response.StatusCode == HttpStatusCode.Created)
+                return;
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                ThrowApiException(response, resultStream);
         }
 
         private void ThrowApiException(HttpWebResponse webResponse, Stream resultStream)
         {
-            Exception resutException;
             try
             {
                 resultStream.Position = 0;
                 using (var responseReader = new StreamReader(resultStream))
-                {                    
+                {
                     var responseData = responseReader.ReadToEnd();
-                    var errorResponse = (OcrErrorResponse)SerializationHelper.Deserialize(responseData, typeof(OcrErrorResponse));
-                    if (string.IsNullOrEmpty(errorResponse.Status))
+                    var errorResponse = (ApiErrorResponse)JsonSerializationHelper.Deserialize(responseData, typeof(ApiErrorResponse));
+
+                    if (errorResponse == null)
                     {
-                        errorResponse.Message = responseData;
+                        errorResponse = new ApiErrorResponse();
+                        errorResponse.Error = new HttpWebException(responseData, CommonStatusCode.Error.Code, webResponse.StatusCode);
                     }
 
-                    resutException = new ApiException((int)webResponse.StatusCode, errorResponse.Message);
+                    throw errorResponse.Error;
                 }
-            }          
+            }
+            catch (HttpWebException)
+            {
+                throw;
+            }
             catch (Exception)
             {
-                throw new ApiException((int)webResponse.StatusCode, webResponse.StatusDescription);
+                throw new HttpWebException(webResponse.StatusDescription, CommonStatusCode.Error.Code, webResponse.StatusCode);
             }
-
-            throw resutException;
         }
     }
 }

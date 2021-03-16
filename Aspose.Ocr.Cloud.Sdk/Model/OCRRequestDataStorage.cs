@@ -1,5 +1,5 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OCRResponse.cs">
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="OCRRequestDataStorage.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,47 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk.Model 
+namespace Aspose.Ocr.Cloud.Sdk.Model
 {
-    using System.Text;
-
-  /// <summary>
-  /// Represents information about response after OCR.
-  /// </summary>  
-  public class OCRResponse 
-  {                       
+    /// <summary>
+    /// Request Form Data for Aspose storage file info
+    /// </summary>
+    public class OCRRequestDataStorage : OCRRequestData
+    {
         /// <summary>
-        /// Response code (OK / NotFound / Error / e.g.)
+        /// Filename that you have already put in Aspose Storage. *Required
         /// </summary>
-        public System.Net.HttpStatusCode Code { get; set; }
-
+        public string FileName { get; set; }
         /// <summary>
-        /// Recognized Text if you choose ResultType.Text
+        /// Storage name in Aspose Storage. Null for DefaultStorage
         /// </summary>
-        public string Text { get; set; }
-
+        public string Storage { get; set; } = null;
         /// <summary>
-        /// Recognized Text in Searchable PDF if you choose ResultType.PDF
+        /// Folder name in Aspose Storage. *Null for root folder
         /// </summary>
-        public string Pdf { get; set; }
+        public string Folder { get; set; } = null;
 
-        /// <summary>
-        /// Text in the HOCR Structure data
-        /// </summary>
-        public string Hocr { get; set; }
-
-        /// <summary>
-        /// Get the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()  
-        {
-          var sb = new StringBuilder();
-          sb.Append("class OCRResponse {\n");
-          sb.Append("  Text: ").Append(this.Text).Append("\n");
-          sb.Append("  Code: ").Append(this.Code).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
-        }
     }
 }

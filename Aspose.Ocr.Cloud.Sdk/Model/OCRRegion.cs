@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="AuthType.cs">
+// <copyright company="Aspose" file="OCRRect.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,31 +23,65 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk
+using System.Collections.Generic;
+
+namespace Aspose.Ocr.Cloud.Sdk.Model
 {
     /// <summary>
-    /// Supported types of authentication.
+    /// Represents a rectangle: Left-Top (X1-Y1) to Right-Bottom (X2-Y2)
     /// </summary>
-    public enum AuthType
+    public class OCRRect
+    {
+        public OCRRect(int topLeftX, int topLeftY, int bottomRightX, int bBottomRightY)
+        {
+            TopLeftX = topLeftX;
+            TopLeftY = topLeftY;
+            BottomRightX = bottomRightX;
+            BottomRightY = bBottomRightY;
+        }
+        /// <summary>
+        /// X-Coordinate of top left corner
+        /// </summary>
+        public int TopLeftX { get; set; }
+
+        /// <summary>
+        /// Y-Coordinate of top left corner
+        /// </summary>
+        public int TopLeftY { get; set; }
+
+        /// <summary>
+        /// X-Coordinate of bottom right corner
+        /// </summary>
+        public int BottomRightX { get; set; }
+
+        /// <summary>
+        /// Y-Coordinate of bottom right corner
+        /// </summary>
+        public int BottomRightY { get; set; }
+
+        /// <summary>
+        /// Return coordinates as List of integers for internal purpose
+        /// </summary>
+        /// <returns></returns>
+        public List<int> ToIntList()
+        {
+            return new List<int>(){ TopLeftX, TopLeftY, BottomRightX, BottomRightY };
+        }
+    }
+
+    /// <summary>
+    /// Represents information about strict regions to recognize text 
+    /// </summary>
+    public class OCRRegion
     {
         /// <summary>
-        /// OAuth2.0
+        /// Coordinates of a rectangle to recognize
         /// </summary>
-        OAuth2 = 0,
+        public OCRRect Rect { get; set; }
 
         /// <summary>
-        /// Authentication with signing of url.
+        /// The serial number of the region for the formation of the text
         /// </summary>
-        RequestSignature = 1,
-
-        /// <summary>
-        /// Token for OAuth2 provided by caller
-        /// </summary>
-        ExternalAuth = 2,
-
-        /// <summary>
-        /// Token for JWT authorization of OCR
-        /// </summary>
-        JWT = 3,
+        public int Order { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OcrApi.cs">
+// <copyright company="Aspose" file="Configuration.cs">
 //   Copyright (c) 2018 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -34,6 +34,8 @@ namespace Aspose.Ocr.Cloud.Sdk
         /// Aspose Cloud API base URL.
         /// </summary>
         public string ApiBaseUrl { get; set; }
+        
+        public string IdentityServerBaseUrl { get; set; }
 
         /// <summary>
         /// Gets or sets the app key.

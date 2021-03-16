@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="IRequestHandler.cs">
+// <copyright company="Aspose" file="FileInfo.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,17 +23,26 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk
+namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker
 {
-    using System.IO;
-    using System.Net;
-
-    internal interface IRequestHandler
+    /// <summary>
+    ///     FileInfo
+    /// </summary>
+    public struct FileInfo
     {
-        string ProcessUrl(string url);
+        /// <summary>
+        ///     Name
+        /// </summary>
+        public string Name { get; set; }
 
-        void BeforeSend(WebRequest request, Stream streamToSend);
+        /// <summary>
+        ///     MimeType
+        /// </summary>
+        public string MimeType { get; set; }
 
-        void ProcessResponse(HttpWebResponse response, Stream resultStream);
+        /// <summary>
+        ///     FileContent
+        /// </summary>
+        public byte[] FileContent { get; set; }
     }
 }

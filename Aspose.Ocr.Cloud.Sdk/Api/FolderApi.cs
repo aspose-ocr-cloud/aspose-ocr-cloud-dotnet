@@ -23,14 +23,16 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Aspose.Ocr.Cloud.Sdk.Internal.Invoker;
+using Aspose.Ocr.Cloud.Sdk.Internal.Invoker.RequestHandlers;
+
 namespace Aspose.Ocr.Cloud.Sdk
 {
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using Aspose.Ocr.Cloud.Sdk.Model;
     using Aspose.Ocr.Cloud.Sdk.Model.Requests;
-    using Aspose.Ocr.Cloud.Sdk.RequestHandlers;
-    
+
     /// <summary>
     /// Aspose.Ocr for Cloud API.
     /// </summary>
@@ -115,7 +117,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                var response = this.apiInvoker.InvokeApi<string>(
                     resourcePath, 
                     "PUT", 
                     null, 
@@ -163,7 +165,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                var response = this.apiInvoker.InvokeApi<string>(
                     resourcePath, 
                     "PUT", 
                     null, 
@@ -212,7 +214,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                var response = this.apiInvoker.InvokeApi<string>(
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -260,7 +262,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                var response = this.apiInvoker.InvokeApi<string>(
                     resourcePath, 
                     "GET", 
                     null, 
@@ -268,7 +270,7 @@ namespace Aspose.Ocr.Cloud.Sdk
                     null);
                 if (response != null)
                 {
-                    return (FilesList)SerializationHelper.Deserialize(response, typeof(FilesList));
+                    return (FilesList)JsonSerializationHelper.Deserialize(response, typeof(FilesList));
                 }
                     
                 return null;
@@ -316,7 +318,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                var response = this.apiInvoker.InvokeApi<string>(
                     resourcePath, 
                     "PUT", 
                     null, 
@@ -368,7 +370,7 @@ namespace Aspose.Ocr.Cloud.Sdk
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.CopyFolder" /> operation.
+  /// Request model for <see cref="OcrApi.CopyFolder" /> operation.
   /// </summary>  
   public class CopyFolderRequest  
   {
@@ -442,7 +444,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.CreateFolder" /> operation.
+  /// Request model for <see cref="OcrApi.CreateFolder" /> operation.
   /// </summary>  
   public class CreateFolderRequest  
   {
@@ -502,7 +504,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.DeleteFolder" /> operation.
+  /// Request model for <see cref="OcrApi.DeleteFolder" /> operation.
   /// </summary>  
   public class DeleteFolderRequest  
   {
@@ -569,7 +571,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.GetFilesList" /> operation.
+  /// Request model for <see cref="OcrApi.GetFilesList" /> operation.
   /// </summary>  
   public class GetFilesListRequest  
   {
@@ -629,7 +631,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.MoveFolder" /> operation.
+  /// Request model for <see cref="OcrApi.MoveFolder" /> operation.
   /// </summary>  
   public class MoveFolderRequest  
   {

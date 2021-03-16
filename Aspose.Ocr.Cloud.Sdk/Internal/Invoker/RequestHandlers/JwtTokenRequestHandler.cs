@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OAuthRequestHandler.cs">
+// <copyright company="Aspose" file="JwtTokenRequestHandler.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,67 +23,77 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk.RequestHandlers
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using Aspose.Ocr.Cloud.Sdk.Invoker.Exceptions;
+using Newtonsoft.Json;
+
+namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker.RequestHandlers
 {
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Net;
-
-    using Newtonsoft.Json;
-
-    internal class JwtRequestHandler : IRequestHandler
+    /// <summary>
+    ///     Access Token Handler
+    /// </summary>
+    public class JwtTokenRequestHandler : IRequestHandler
     {
-        private readonly Configuration configuration;
+        private readonly string baseApiUrl;
+        private readonly string clientId;
+        private readonly string clientSecret;
         private readonly ApiInvoker apiInvoker;
-
         private string accessToken;
-        private string refreshToken;
 
-        public JwtRequestHandler(Configuration configuration)
+        public JwtTokenRequestHandler(string baseApiUrl, string clientId, string clientSecret)
         {
-            this.configuration = configuration;
+            this.baseApiUrl = baseApiUrl;
+            this.clientId = clientId;
+            this.clientSecret = clientSecret;
 
             var requestHandlers = new List<IRequestHandler>();
-            requestHandlers.Add(new DebugLogRequestHandler(this.configuration));
             requestHandlers.Add(new ApiExceptionRequestHandler());
-            this.apiInvoker = new ApiInvoker(requestHandlers);
+            apiInvoker = new ApiInvoker(requestHandlers);
         }
+
+        public JwtTokenRequestHandler(Configuration configuration) : this(configuration.ApiBaseUrl, configuration.AppSid, configuration.AppKey)
+        { }
 
         public string ProcessUrl(string url)
         {
-           
-            if (string.IsNullOrEmpty(this.accessToken))
+            if (string.IsNullOrEmpty(accessToken))
                 RequestToken();
+
             return url;
         }
 
         public void BeforeSend(WebRequest request, Stream streamToSend)
         {
-            request.Headers.Add("Authorization", "Bearer " + this.accessToken);
+            request.Headers.Add("Authorization", "Bearer " + accessToken);
         }
 
         public void ProcessResponse(HttpWebResponse response, Stream resultStream)
         {
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                RequestToken();
+
+                throw new NeedRepeatRequestException();
+            }
         }
 
         private void RequestToken()
         {
-            var requestUrl = this.configuration.ApiBaseUrl + "/connect/token";
+            var requestUrl = baseApiUrl + "/connect/token";
 
             var postData = "grant_type=client_credentials";
-            postData += "&client_id=" + this.configuration.AppSid;
-            postData += "&client_secret=" + this.configuration.AppKey;
+            postData += "&client_id=" + clientId;
+            postData += "&client_secret=" + clientSecret;
 
-            var responseString = this.apiInvoker.InvokeApi(
+            var result = apiInvoker.InvokeApi<GetAccessTokenResult>(
                 requestUrl,
                 "POST",
                 postData,
                 contentType: "application/x-www-form-urlencoded");
 
-            var result =
-                (GetAccessTokenResult)SerializationHelper.Deserialize(responseString, typeof(GetAccessTokenResult));
-
-            this.accessToken = result.AccessToken;
+            accessToken = result.AccessToken;
         }
 
         private class GetAccessTokenResult

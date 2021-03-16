@@ -1,5 +1,5 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="FileInfo.cs">
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="NeedRepeatRequestException.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,14 +23,14 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk
+using System;
+
+namespace Aspose.Ocr.Cloud.Sdk.Invoker.Exceptions
 {
-    internal struct FileInfo
+    /// <summary>
+    ///     NeedRepeatRequest Exception
+    /// </summary>
+    public class NeedRepeatRequestException : Exception
     {
-        public string Name { get; set; }
-
-        public string MimeType { get; set; }
-
-        public byte[] FileContent { get; set; }
     }
 }

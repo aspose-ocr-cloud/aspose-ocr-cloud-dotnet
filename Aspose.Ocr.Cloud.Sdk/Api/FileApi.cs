@@ -23,14 +23,17 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.IO;
+using Aspose.Ocr.Cloud.Sdk.Internal.Invoker;
+using Aspose.Ocr.Cloud.Sdk.Internal.Invoker.RequestHandlers;
+
 namespace Aspose.Ocr.Cloud.Sdk
 {
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using Aspose.Ocr.Cloud.Sdk.Model;
     using Aspose.Ocr.Cloud.Sdk.Model.Requests;
-    using Aspose.Ocr.Cloud.Sdk.RequestHandlers;
-    
+
     /// <summary>
     /// Aspose.Ocr for Cloud API.
     /// </summary>
@@ -118,7 +121,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                var response = this.apiInvoker.InvokeApi<string>(
                     resourcePath, 
                     "PUT", 
                     null, 
@@ -167,7 +170,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                var response = this.apiInvoker.InvokeApi<string>(
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -196,7 +199,7 @@ namespace Aspose.Ocr.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DownloadFileRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
-        public System.IO.Stream DownloadFile(DownloadFileRequest request)
+        public Stream DownloadFile(DownloadFileRequest request)
         {
             // verify the required parameter 'path' is set
             if (request.path == null) 
@@ -216,7 +219,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                    return this.apiInvoker.InvokeBinaryApi(
+                    return this.apiInvoker.InvokeApi<Stream>(
                         resourcePath, 
                         "GET", 
                         null, 
@@ -267,7 +270,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                var response = this.apiInvoker.InvokeApi<string>(
                     resourcePath, 
                     "PUT", 
                     null, 
@@ -327,7 +330,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                var response = this.apiInvoker.InvokeApi<string>(
                     resourcePath, 
                     "PUT", 
                     null, 
@@ -335,7 +338,7 @@ namespace Aspose.Ocr.Cloud.Sdk
                     formParams);
                 if (response != null)
                 {
-                    return (FilesUploadResult)SerializationHelper.Deserialize(response, typeof(FilesUploadResult));
+                    return (FilesUploadResult)JsonSerializationHelper.Deserialize(response, typeof(FilesUploadResult));
                 }
                     
                 return null;
@@ -379,7 +382,7 @@ namespace Aspose.Ocr.Cloud.Sdk
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.CopyFile" /> operation.
+  /// Request model for <see cref="OcrApi.CopyFile" /> operation.
   /// </summary>  
   public class CopyFileRequest  
   {
@@ -460,7 +463,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.DeleteFile" /> operation.
+  /// Request model for <see cref="OcrApi.DeleteFile" /> operation.
   /// </summary>  
   public class DeleteFileRequest  
   {
@@ -527,7 +530,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.DownloadFile" /> operation.
+  /// Request model for <see cref="OcrApi.DownloadFile" /> operation.
   /// </summary>  
   public class DownloadFileRequest  
   {
@@ -594,7 +597,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.MoveFile" /> operation.
+  /// Request model for <see cref="OcrApi.MoveFile" /> operation.
   /// </summary>  
   public class MoveFileRequest  
   {
@@ -675,7 +678,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.UploadFile" /> operation.
+  /// Request model for <see cref="OcrApi.UploadFile" /> operation.
   /// </summary>  
   public class UploadFileRequest  
   {

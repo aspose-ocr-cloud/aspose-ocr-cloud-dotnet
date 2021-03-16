@@ -23,21 +23,23 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.IO;
+using Aspose.Ocr.Cloud.Sdk.Internal.Invoker;
+using Aspose.Ocr.Cloud.Sdk.Internal.Invoker.RequestHandlers;
+
 namespace Aspose.Ocr.Cloud.Sdk
 {
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using Aspose.Ocr.Cloud.Sdk.Model;
     using Aspose.Ocr.Cloud.Sdk.Model.Requests;
-    using Aspose.Ocr.Cloud.Sdk.RequestHandlers;
-    
+
     /// <summary>
     /// Aspose.Ocr for Cloud API.
     /// </summary>
-    public class OcrApi
+    public class OcrApi: OcrApiBase
     {        
         private readonly ApiInvoker apiInvoker;
-        private readonly Configuration configuration;     
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OcrApi"/> class.
@@ -63,18 +65,16 @@ namespace Aspose.Ocr.Cloud.Sdk
         /// Initializes a new instance of the <see cref="OcrApi"/> class.
         /// </summary>    
         /// <param name="configuration">Configuration settings</param>
-        public OcrApi(Configuration configuration)
+        public OcrApi(Configuration configuration) : base(configuration)
         {
-            this.configuration = configuration;
-            
             var requestHandlers = new List<IRequestHandler>();
-            switch (this.configuration.AuthType)
+            switch (mConfiguration.AuthType)
             {
-                case AuthType.JWT: requestHandlers.Add(new JwtRequestHandler(this.configuration));
+                case AuthType.JWT: requestHandlers.Add(new JwtRequestHandler(mConfiguration));
                     break;
             }
 
-            requestHandlers.Add(new DebugLogRequestHandler(this.configuration));
+            requestHandlers.Add(new DebugLogRequestHandler(mConfiguration));
             requestHandlers.Add(new ApiExceptionRequestHandler());
             this.apiInvoker = new ApiInvoker(requestHandlers);
         }                            
@@ -93,7 +93,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/ocr/{name}/recognize";
+            var resourcePath = this.mConfiguration.GetApiRootUrl() + "/ocr/{name}/recognize";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -102,21 +102,17 @@ namespace Aspose.Ocr.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "language", request.language);
-            
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "resultType", request.resultType);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrMode", request.dsrMode);
+
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                return this.apiInvoker.InvokeApi<OCRResponse>(
                     resourcePath, 
                     "GET", 
                     null, 
                     null, 
                     null);
-                if (response != null)
-                {
-                    return (OCRResponse)SerializationHelper.Deserialize(response, typeof(OCRResponse));
-                }
-                    
-                return null;
             } 
             catch (ApiException ex) 
             {
@@ -137,7 +133,7 @@ namespace Aspose.Ocr.Cloud.Sdk
         public OCRResponse PostOcrFromUrlOrContent(PostOcrFromUrlOrContentRequest request)
         {
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/ocr/recognize";
+            var resourcePath = this.mConfiguration.GetApiRootUrl() + "/ocr/recognize";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -145,7 +141,9 @@ namespace Aspose.Ocr.Cloud.Sdk
             var formParams = new Dictionary<string, object>();
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "url", request.url);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "language", request.language);
-            
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "resultType", request.resultType);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrMode", request.dsrMode);
+
             if (request.File != null) 
             {
                 formParams.Add("file", this.apiInvoker.ToFileInfo(request.File, "File"));
@@ -153,18 +151,12 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                return this.apiInvoker.InvokeApi<OCRResponse>(
                     resourcePath, 
                     "POST", 
                     null, 
                     null, 
                     formParams);
-                if (response != null)
-                {
-                    return (OCRResponse)SerializationHelper.Deserialize(response, typeof(OCRResponse));
-                }
-                    
-                return null;
             } 
             catch (ApiException ex) 
             {
@@ -175,6 +167,46 @@ namespace Aspose.Ocr.Cloud.Sdk
                 
                 throw;                
             }
+        }
+
+        /// <summary>
+        /// Recognize specific regions of image from some url
+        /// </summary>
+        /// <param name="requestData">Regions, language and some options. <see cref="OCRRequestData"></see>/></param>
+        /// <param name="urlToFile">Web url of image file to recognize</param>
+        /// <returns><see cref="OCRResponse"/></returns>
+        public OCRResponse OcrRegionsFromUrl(OCRRequestData requestData, string urlToFile)
+        {
+            var requestUrl = BuildUrl("recognize-regions-url");
+            var formParams = new Dictionary<string, object> { {"url", urlToFile}, {"requestData", requestData} };
+            return this.apiInvoker.InvokeApi<OCRResponse>(requestUrl, "POST", null, null, formParams);
+        }
+
+        /// <summary>
+        /// Recognize specific regions of image from File Stream
+        /// </summary>
+        /// <param name="requestData">Regions, language and some options. <see cref="OCRRequestData"/></param>
+        /// <param name="file">Local file stream</param>
+        /// <returns><see cref="OCRResponse"/></returns>
+        public OCRResponse OcrRegionsFromContent(OCRRequestData requestData, Stream file)
+        {
+            var requestUrl = BuildUrl("recognize-regions-content");
+            var fileInfo = this.apiInvoker.ToFileInfo(file, "File");
+            var formParams = new Dictionary<string, object> { { "file", fileInfo }, { "requestData", requestData } };
+            return this.apiInvoker.InvokeApi<OCRResponse>(requestUrl, "POST", null, null, formParams);
+        }
+
+        /// <summary>
+        /// Recognize specific regions of image located at Aspose Storage.
+        /// Use StorageApi to upload your files. <see cref="StorageApi"/>
+        /// </summary>
+        /// <param name="requestData">Regions, language and file path in Aspose Storage. <see cref="OCRRequestData"/></param>
+        /// <returns><see cref="OCRResponse"/></returns>
+        public OCRResponse OcrRegionsFromStorage(OCRRequestDataStorage requestData)
+        {
+            var requestUrl = BuildUrl("recognize-regions-url");
+            var formParams = new Dictionary<string, object> { { "requestData", requestData } };
+            return this.apiInvoker.InvokeApi<OCRResponse>(requestUrl, "POST", null, null, formParams);
         }
     }
 }

@@ -1,4 +1,4 @@
-// --------------------------------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ApiInvoker.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
@@ -23,62 +23,102 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk
-{
-    using System;
-    using System.Collections.Generic;    
-    using System.IO;
-    using System.Net;
-    using System.Text;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Text;
+using Aspose.Ocr.Cloud.Sdk.Internal.Invoker.Exceptions;
+using Aspose.Ocr.Cloud.Sdk.Invoker.Exceptions;
+using Newtonsoft.Json.Linq;
 
-    internal class ApiInvoker
-    {        
-        private const string AsposeClientHeaderName = "x-aspose-client";
-        private const string AsposeClientVersionHeaderName = "x-aspose-client-version";
+namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker
+{
+    /// <summary>
+    ///     Api Invoker
+    /// </summary>
+    public class ApiInvoker
+    {
         private readonly Dictionary<string, string> defaultHeaderMap = new Dictionary<string, string>();
-        private readonly List<IRequestHandler> requestHandlers; 
-    
+        private readonly List<IRequestHandler> requestHandlers;
+
+        /// <summary>
+        ///     Public constructor
+        /// </summary>
+        /// <param name="requestHandlers"></param>
         public ApiInvoker(List<IRequestHandler> requestHandlers)
         {
-            var sdkVersion = this.GetType().Assembly.GetName().Version;
-            this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
-            this.AddDefaultHeader(AsposeClientVersionHeaderName, string.Format("{0}.{1}", sdkVersion.Major, sdkVersion.Minor));
             this.requestHandlers = requestHandlers;
         }
-        
-        public string InvokeApi(
+
+        /// <summary>
+        ///     Invoke Api
+        /// </summary>
+        public T InvokeApi<T>(
             string path,
             string method,
             string body = null,
             Dictionary<string, string> headerParams = null,
             Dictionary<string, object> formParams = null,
-            string contentType = "application/json")
+            string contentType = "application/json") where T : class
         {
-            return this.InvokeInternal(path, method, false, body, headerParams, formParams, contentType) as string;
+            return InvokeInternal<T>(path, method, body, headerParams, formParams, contentType);
         }
 
-        public Stream InvokeBinaryApi(
+        private T InvokeInternal<T>(
             string path,
             string method,
             string body,
             Dictionary<string, string> headerParams,
             Dictionary<string, object> formParams,
-            string contentType = "application/json")
+            string contentType) where T : class
         {
-            return (Stream)this.InvokeInternal(path, method, true, body, headerParams, formParams, contentType);
-        }                     
-       
+            if (formParams == null)
+                formParams = new Dictionary<string, object>();
+
+            if (headerParams == null)
+                headerParams = new Dictionary<string, string>();
+
+            requestHandlers.ForEach(p => path = p.ProcessUrl(path));
+
+            WebRequest request;
+            try
+            {
+                request = PrepareRequest(path, method, formParams, headerParams, body, contentType);
+                return ReadResponse<T>(request);
+            }
+            catch (NeedRepeatRequestException)
+            {
+                request = PrepareRequest(path, method, formParams, headerParams, body, contentType);
+                return ReadResponse<T>(request);
+            }
+        }
+
+        /// <summary>
+        ///     Convert Stream to FileInfo
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <param name="paramName"></param>
         public FileInfo ToFileInfo(Stream stream, string paramName)
         {
-            // TODO: add contenttype
-            return new FileInfo { Name = paramName, FileContent = StreamHelper.ReadAsBytes(stream) };
-        }                 
+            string contentType = paramName.Equals("File", StringComparison.InvariantCultureIgnoreCase)
+                ? "application/octet-stream"
+                : (paramName.Equals("XML", StringComparison.InvariantCultureIgnoreCase) ? "application/xml" : "application/json");
+
+            return new FileInfo
+            {
+                Name = paramName,
+                MimeType = contentType,
+                FileContent = StreamHelper.ReadAsBytes(stream)
+            };
+        }
+
+        #region private helpers
 
         private static byte[] GetMultipartFormData(Dictionary<string, object> postParameters, string boundary)
         {
-            // TOOD: stream is not disposed
             Stream formDataStream = new MemoryStream();
-            bool needsClrf = false;
+            var needsClrf = false;
 
             if (postParameters.Count > 1)
             {
@@ -87,16 +127,14 @@ namespace Aspose.Ocr.Cloud.Sdk
                     // Thanks to feedback from commenters, add a CRLF to allow multiple parameters to be added.
                     // Skip it on the first parameter, add it to subsequent parameters.
                     if (needsClrf)
-                    {
                         formDataStream.Write(Encoding.UTF8.GetBytes("\r\n"), 0, Encoding.UTF8.GetByteCount("\r\n"));
-                    }
 
                     needsClrf = true;
 
                     if (param.Value is FileInfo)
                     {
-                        var fileInfo = (FileInfo)param.Value;
-                        string postData =
+                        var fileInfo = (FileInfo) param.Value;
+                        var postData =
                             string.Format(
                                 "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n",
                                 boundary,
@@ -109,17 +147,8 @@ namespace Aspose.Ocr.Cloud.Sdk
                     }
                     else
                     {
-                        string stringData;
-                        if (param.Value is string)
-                        {
-                            stringData = (string)param.Value;
-                        }
-                        else
-                        {
-                            stringData = SerializationHelper.Serialize(param.Value);
-                        }
-                        
-                        string postData =
+                        var stringData = JsonSerializationHelper.Serialize(param.Value);
+                        var postData =
                             string.Format(
                                 "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}",
                                 boundary,
@@ -130,40 +159,39 @@ namespace Aspose.Ocr.Cloud.Sdk
                 }
 
                 // Add the end of the request.  Start with a newline
-                string footer = "\r\n--" + boundary + "--\r\n";
+                var footer = "\r\n--" + boundary + "--\r\n";
                 formDataStream.Write(Encoding.UTF8.GetBytes(footer), 0, Encoding.UTF8.GetByteCount(footer));
             }
             else
             {
                 foreach (var param in postParameters)
-                {
                     if (param.Value is FileInfo)
                     {
-                        var fileInfo = (FileInfo)param.Value;
+                        var fileInfo = (FileInfo) param.Value;
 
                         // Write the file data directly to the Stream, rather than serializing it to a string.
                         formDataStream.Write(fileInfo.FileContent, 0, fileInfo.FileContent.Length);
+                    }
+                    else if (param.Value is byte[])
+                    {
+                        // Write the file data directly to the Stream, rather than serializing it to a string.
+                        formDataStream.Write(param.Value as byte[], 0, (param.Value as byte[]).Length);
                     }
                     else
                     {
                         string postData;
                         if (!(param.Value is string))
-                        {
-                            postData = SerializationHelper.Serialize(param.Value);
-                        }
+                            postData = JsonSerializationHelper.Serialize(param.Value);
                         else
-                        {
-                            postData = (string)param.Value;
-                        }
+                            postData = (string) param.Value;
 
                         formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
                     }
-                }
             }
 
             // Dump the Stream into a byte[]
             formDataStream.Position = 0;
-            byte[] formData = new byte[formDataStream.Length];
+            var formData = new byte[formDataStream.Length];
             formDataStream.Read(formData, 0, formData.Length);
             formDataStream.Close();
 
@@ -172,49 +200,15 @@ namespace Aspose.Ocr.Cloud.Sdk
 
         private void AddDefaultHeader(string key, string value)
         {
-            if (!this.defaultHeaderMap.ContainsKey(key))
-            {
-                this.defaultHeaderMap.Add(key, value);
-            }
-        }    
+            if (!defaultHeaderMap.ContainsKey(key))
+                defaultHeaderMap.Add(key, value);
+        }
 
-        private object InvokeInternal(
-            string path,
-            string method,
-            bool binaryResponse,
-            string body,
-            Dictionary<string, string> headerParams,
-            Dictionary<string, object> formParams,
-            string contentType)
+        private HttpWebRequest PrepareRequest(string path, string method, Dictionary<string, object> formParams,
+            Dictionary<string, string> headerParams, string body, string contentType)
         {
-            if (formParams == null)
-            {
-                formParams = new Dictionary<string, object>();
-            }
+            var client = (HttpWebRequest)WebRequest.Create(path);
 
-            if (headerParams == null)
-            {
-                headerParams = new Dictionary<string, string>();
-            }
-           
-            this.requestHandlers.ForEach(p => path = p.ProcessUrl(path));
-
-            WebRequest request;
-            try
-            {
-                request = this.PrepareRequest(path, method, formParams, headerParams, body, contentType);
-                return this.ReadResponse(request, binaryResponse);
-            }
-            catch (NeedRepeatRequestException)
-            {
-                request = this.PrepareRequest(path, method, formParams, headerParams, body, contentType);
-                return this.ReadResponse(request, binaryResponse);               
-            }            
-        }       
-        
-        private WebRequest PrepareRequest(string path, string method, Dictionary<string, object> formParams, Dictionary<string, string> headerParams, string body, string contentType)
-        {
-            var client = WebRequest.Create(path);
             client.Method = method;
 
             byte[] formData = null;
@@ -222,7 +216,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             {
                 if (formParams.Count > 1)
                 {
-                    string formDataBoundary = "Somthing";
+                    string formDataBoundary = Guid.NewGuid().ToString("D");
                     client.ContentType = "multipart/form-data; boundary=" + formDataBoundary;
                     formData = GetMultipartFormData(formParams, formDataBoundary);
                 }
@@ -241,16 +235,15 @@ namespace Aspose.Ocr.Cloud.Sdk
 
             foreach (var headerParamsItem in headerParams)
             {
-                client.Headers.Add(headerParamsItem.Key, headerParamsItem.Value);
+                if (headerParamsItem.Key == "Accept")
+                    client.Accept = headerParamsItem.Value;
+                else
+                    client.Headers.Add(headerParamsItem.Key, headerParamsItem.Value);
             }
 
-            foreach (var defaultHeaderMapItem in this.defaultHeaderMap)
-            {
+            foreach (var defaultHeaderMapItem in defaultHeaderMap)
                 if (!headerParams.ContainsKey(defaultHeaderMapItem.Key))
-                {
                     client.Headers.Add(defaultHeaderMapItem.Key, defaultHeaderMapItem.Value);
-                }
-            }
 
             MemoryStream streamToSend = null;
             try
@@ -265,9 +258,7 @@ namespace Aspose.Ocr.Cloud.Sdk
                         streamToSend = new MemoryStream();
 
                         if (formData != null)
-                        {
                             streamToSend.Write(formData, 0, formData.Length);
-                        }
 
                         if (body != null)
                         {
@@ -275,55 +266,60 @@ namespace Aspose.Ocr.Cloud.Sdk
                             requestWriter.Write(body);
                             requestWriter.Flush();
                         }
-                        
+
                         break;
                     default:
-                        throw new ApiException(500, "unknown method type " + method);
+                        throw new HttpWebException("Unknown method type " + method, CommonStatusCode.InternalError);
                 }
 
-                this.requestHandlers.ForEach(p => p.BeforeSend(client, streamToSend));
+                requestHandlers.ForEach(p => p.BeforeSend(client, streamToSend));
 
                 if (streamToSend != null)
-                {
-                    using (Stream requestStream = client.GetRequestStream())
+                    using (var requestStream = client.GetRequestStream())
                     {
                         StreamHelper.CopyTo(streamToSend, requestStream);
                     }
-                }                
             }
             finally
             {
                 if (streamToSend != null)
-                {
                     streamToSend.Dispose();
-                }
             }
-            
+
             return client;
         }
 
-        private object ReadResponse(WebRequest client, bool binaryResponse)
+       
+        private T ReadResponse<T>(WebRequest client) where T : class
         {
-            var webResponse = (HttpWebResponse)this.GetResponse(client);
+            var webResponse = (HttpWebResponse)GetResponse(client);
             var resultStream = new MemoryStream();
 
-            StreamHelper.CopyTo(webResponse.GetResponseStream(), resultStream);
+            var responseStream = webResponse.GetResponseStream();
+            if (responseStream != null)
+                StreamHelper.CopyTo(responseStream, resultStream);
+
             try
             {
-                this.requestHandlers.ForEach(p => p.ProcessResponse(webResponse, resultStream));
+                requestHandlers.ForEach(p => p.ProcessResponse(webResponse, resultStream));
 
                 resultStream.Position = 0;
-                if (binaryResponse)
-                {
-                    return resultStream;
-                }
 
-                using (var responseReader = new StreamReader(resultStream))
-                {
-                    var responseData = responseReader.ReadToEnd();
-                    resultStream.Dispose();
-                    return responseData;
-                }
+                if (typeof(T) == typeof(HttpWebResponse))
+                    return webResponse as T;
+
+                if (typeof(T) == typeof(Stream))
+                    return resultStream as T;
+
+                var str = Encoding.UTF8.GetString(resultStream.ToArray());
+
+                if (typeof(T) == typeof(string))
+                    return str as T;
+
+                if (typeof(T) == typeof(JObject))
+                    return JObject.Parse(str) as T;
+
+                return JsonSerializationHelper.Deserialize(str, typeof(T)) as T;
             }
             catch (Exception)
             {
@@ -341,12 +337,13 @@ namespace Aspose.Ocr.Cloud.Sdk
             catch (WebException wex)
             {
                 if (wex.Response != null)
-                {
                     return wex.Response;
-                }
 
                 throw;
             }
         }
+
+        #endregion
+
     }
 }

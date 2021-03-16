@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="SerializationHelper.cs">
+// <copyright company="Aspose" file="JsonSerializationHelper.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,54 +23,67 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System;
+using System.IO;
+using System.Xml;
+using Aspose.Ocr.Cloud.Sdk.Internal.Invoker.Exceptions;
+using Newtonsoft.Json;
+
 namespace Aspose.Ocr.Cloud.Sdk
 {
-    using System;
-    using System.IO;
-    using Newtonsoft.Json;
-
-    internal class SerializationHelper
+    /// <summary>
+    ///     Internal serializers to serialize/deserialize data using JsonConvert
+    /// </summary>
+    internal class JsonSerializationHelper
     {
+        /// <summary>
+        ///     Serialize object
+        /// </summary>
+        /// <param name="obj">The object to serialize</param>
         public static string Serialize(object obj)
         {
             try
             {
-                return obj != null
-                           ? JsonConvert.SerializeObject(
-                               obj,
-                               new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })
-                           : null;
+                if (obj == null) return null;
+
+                var settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
+                return JsonConvert.SerializeObject(obj, settings);
             }
-            catch (Exception e)
+            catch (Exception exc)
             {
-                throw new ApiException(500, e.Message);
+                throw new HttpWebException(exc.Message, CommonStatusCode.InternalError);
             }
         }
 
+        /// <summary>
+        ///     Deserializes an object into specified type
+        /// </summary>
+        /// <param name="json">The object serialized</param>
+        /// <param name="type">The type</param>
         public static object Deserialize(string json, Type type)
         {
             try
             {
-                if (json.StartsWith("{") || json.StartsWith("["))
-                {
-                    return JsonConvert.DeserializeObject(json, type);
-                }
+                if (string.IsNullOrEmpty(json)) return null;
 
-                System.Xml.XmlDocument xmlDoc = new System.Xml.XmlDocument();
+                if (json.StartsWith("{") || json.StartsWith("["))
+                    return JsonConvert.DeserializeObject(json, type);
+
+                var xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(json);
                 return JsonConvert.SerializeXmlNode(xmlDoc);
             }
             catch (IOException e)
             {
-                throw new ApiException(500, e.Message);
+                throw new HttpWebException(e.Message, CommonStatusCode.InternalError);
             }
             catch (JsonSerializationException jse)
             {
-                throw new ApiException(500, jse.Message);
+                throw new HttpWebException(jse.Message, CommonStatusCode.InternalError);
             }
-            catch (System.Xml.XmlException xmle)
+            catch (XmlException xmle)
             {
-                throw new ApiException(500, xmle.Message);
+                throw new HttpWebException(xmle.Message, CommonStatusCode.InternalError);
             }
         }
     }

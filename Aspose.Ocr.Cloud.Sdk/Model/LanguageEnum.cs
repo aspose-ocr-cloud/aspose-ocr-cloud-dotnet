@@ -1,5 +1,5 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OAuthRequestHandler.cs">
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="LanguageEnum.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,38 +23,45 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk.RequestHandlers
+namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
-    using System.IO;
-    using System.Net;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
+  
+  /// <summary>
+  /// 
+  /// </summary>  
+  [JsonConverter(typeof(StringEnumConverter))]
+  public  enum LanguageEnum 
+  {  	
+		/// <summary>
+        /// Set English language for OCR
+        /// </summary>            
+        English = 1,
 
-    internal class ExternalAuthorizationRequestHandler : IRequestHandler
-    {
-        private readonly Configuration configuration;
+        /// <summary>
+        /// Set German language for OCR
+        /// </summary>            
+        German = 2,
 
-        public ExternalAuthorizationRequestHandler(Configuration configuration)
-        {
-            this.configuration = configuration;
-        }
+        /// <summary>
+        /// Set French language for OCR
+        /// </summary>            
+        French = 3,
 
-        public string ProcessUrl(string url)
-        {
-            return url;
-        }
+        /// <summary>
+        /// Set Italian language for OCR
+        /// </summary>
+        Italian = 4,
 
-        public void BeforeSend(WebRequest request, Stream streamToSend)
-        {
-            if (this.configuration.AuthType == AuthType.OAuth2 && string.IsNullOrEmpty(this.configuration.JwtToken))
-            {
-                throw new ApiException(401, "Authorization header value required");
-            }
+        /// <summary>
+        /// Set Spanish language for OCR
+        /// </summary>
+        Spanish = 5,
 
-            request.Headers.Add("Authorization", "Bearer " + this.configuration.JwtToken);
-        }
-
-        public void ProcessResponse(HttpWebResponse response, Stream resultStream)
-        {
-        }
-
-    }
+        /// <summary>
+        /// Set Portuguese language for OCR
+        /// </summary>
+        Portuguese = 6
+  }
 }

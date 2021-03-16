@@ -23,14 +23,16 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Aspose.Ocr.Cloud.Sdk.Internal.Invoker;
+using Aspose.Ocr.Cloud.Sdk.Internal.Invoker.RequestHandlers;
+
 namespace Aspose.Ocr.Cloud.Sdk
 {
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using Aspose.Ocr.Cloud.Sdk.Model;
     using Aspose.Ocr.Cloud.Sdk.Model.Requests;
-    using Aspose.Ocr.Cloud.Sdk.RequestHandlers;
-    
+
     /// <summary>
     /// Aspose.Ocr for Cloud API.
     /// </summary>
@@ -101,19 +103,13 @@ namespace Aspose.Ocr.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storageName", request.storageName);
             
             try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
+            {
+                return this.apiInvoker.InvokeApi<DiscUsage>(
                     resourcePath, 
                     "GET", 
                     null, 
                     null, 
                     null);
-                if (response != null)
-                {
-                    return (DiscUsage)SerializationHelper.Deserialize(response, typeof(DiscUsage));
-                }
-                    
-                return null;
             } 
             catch (ApiException ex) 
             {
@@ -150,18 +146,12 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                return this.apiInvoker.InvokeApi<FileVersions>(
                     resourcePath, 
                     "GET", 
                     null, 
                     null, 
                     null);
-                if (response != null)
-                {
-                    return (FileVersions)SerializationHelper.Deserialize(response, typeof(FileVersions));
-                }
-                    
-                return null;
             } 
             catch (ApiException ex) 
             {
@@ -199,18 +189,12 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+               return this.apiInvoker.InvokeApi<ObjectExist>(
                     resourcePath, 
                     "GET", 
                     null, 
                     null, 
                     null);
-                if (response != null)
-                {
-                    return (ObjectExist)SerializationHelper.Deserialize(response, typeof(ObjectExist));
-                }
-                    
-                return null;
             } 
             catch (ApiException ex) 
             {
@@ -246,18 +230,12 @@ namespace Aspose.Ocr.Cloud.Sdk
             
             try 
             {                               
-                var response = this.apiInvoker.InvokeApi(
+                return this.apiInvoker.InvokeApi<StorageExist>(
                     resourcePath, 
                     "GET", 
                     null, 
                     null, 
                     null);
-                if (response != null)
-                {
-                    return (StorageExist)SerializationHelper.Deserialize(response, typeof(StorageExist));
-                }
-                    
-                return null;
             } 
             catch (ApiException ex) 
             {
@@ -298,7 +276,7 @@ namespace Aspose.Ocr.Cloud.Sdk
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.GetDiscUsage" /> operation.
+  /// Request model for <see cref="OcrApi.GetDiscUsage" /> operation.
   /// </summary>  
   public class GetDiscUsageRequest  
   {
@@ -351,7 +329,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.GetFileVersions" /> operation.
+  /// Request model for <see cref="OcrApi.GetFileVersions" /> operation.
   /// </summary>  
   public class GetFileVersionsRequest  
   {
@@ -411,7 +389,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.ObjectExists" /> operation.
+  /// Request model for <see cref="OcrApi.ObjectExists" /> operation.
   /// </summary>  
   public class ObjectExistsRequest  
   {
@@ -478,7 +456,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
 namespace Aspose.Ocr.Cloud.Sdk.Model.Requests 
 {
     /// <summary>
-  /// Request model for <see cref="Aspose.Ocr.Cloud.Sdk.Api.OcrApi.StorageExists" /> operation.
+  /// Request model for <see cref="OcrApi.StorageExists" /> operation.
   /// </summary>  
   public class StorageExistsRequest  
   {

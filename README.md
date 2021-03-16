@@ -8,8 +8,9 @@ In detail, it's a set of SDKs for optical character recognition and document sca
 
 It is easy to get started with Aspose.OCR Cloud, and there is nothing to install. Create an account at Aspose Cloud and get your application information, then you are ready to use [SDKs](#asposeocr-cloud-sdks)
 
-## Release 20.03:
-We are glad to introduce French and German languages support.
+## Release 21.03:
+We introduced an option to select or disable the Document Structure Recognition algorithm.
+
 
 <a title="GOTO WEB DEMO" href="http://saltov-gpu-3.dynabic.com:8084/">
   <img src="Docs/Resources/demo_preview.png">

@@ -23,7 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk.RequestHandlers
+namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker.RequestHandlers
 {
     using System.Collections.Generic;
     using System.IO;
@@ -31,7 +31,7 @@ namespace Aspose.Ocr.Cloud.Sdk.RequestHandlers
 
     using Newtonsoft.Json;
 
-    internal class OAuthRequestHandler : IRequestHandler
+    internal class JwtRequestHandler : IRequestHandler
     {
         private readonly Configuration configuration;
         private readonly ApiInvoker apiInvoker;
@@ -39,7 +39,7 @@ namespace Aspose.Ocr.Cloud.Sdk.RequestHandlers
         private string accessToken;
         private string refreshToken;
 
-        public OAuthRequestHandler(Configuration configuration)
+        public JwtRequestHandler(Configuration configuration)
         {
             this.configuration = configuration;
 
@@ -51,92 +51,42 @@ namespace Aspose.Ocr.Cloud.Sdk.RequestHandlers
 
         public string ProcessUrl(string url)
         {
-            if (this.configuration.AuthType != AuthType.OAuth2)
-            {
-                return url;
-            }
-
+           
             if (string.IsNullOrEmpty(this.accessToken))
-            {
-                this.RequestToken();
-            }
-
+                RequestToken();
             return url;
         }
 
         public void BeforeSend(WebRequest request, Stream streamToSend)
         {
-            if (this.configuration.AuthType != AuthType.OAuth2)
-            {
-                return;
-            }
-
             request.Headers.Add("Authorization", "Bearer " + this.accessToken);
         }
 
         public void ProcessResponse(HttpWebResponse response, Stream resultStream)
         {
-            if (this.configuration.AuthType != AuthType.OAuth2)
-            {
-                return;
-            }
-
-            if (response.StatusCode == HttpStatusCode.Unauthorized)
-            {
-                this.RefreshToken();
-
-                throw new NeedRepeatRequestException();
-            }
-        }
-
-        private void RefreshToken()
-        {
-            var requestUrl = this.configuration.ApiBaseUrl + "/oauth2/token";
-
-            var postData = "grant_type=refresh_token";
-            postData += "&refresh_token=" + this.refreshToken;
-
-            var responseString = this.apiInvoker.InvokeApi(
-                requestUrl,
-                "POST",
-                postData,
-                contentType: "application/x-www-form-urlencoded");
-
-            var result =
-                (GetAccessTokenResult)SerializationHelper.Deserialize(responseString, typeof(GetAccessTokenResult));
-
-            this.accessToken = result.AccessToken;
-            this.refreshToken = result.RefreshToken;
         }
 
         private void RequestToken()
         {
-            var requestUrl = this.configuration.ApiBaseUrl + "/oauth2/token";
+            var requestUrl = this.configuration.IdentityServerBaseUrl + "/connect/token";
 
             var postData = "grant_type=client_credentials";
             postData += "&client_id=" + this.configuration.AppSid;
             postData += "&client_secret=" + this.configuration.AppKey;
 
-            var responseString = this.apiInvoker.InvokeApi(
+            var result = this.apiInvoker.InvokeApi<GetAccessTokenResult>(
                 requestUrl,
                 "POST",
                 postData,
                 contentType: "application/x-www-form-urlencoded");
 
-            var result =
-                (GetAccessTokenResult)SerializationHelper.Deserialize(responseString, typeof(GetAccessTokenResult));
-
             this.accessToken = result.AccessToken;
-            this.refreshToken = result.RefreshToken;
         }
 
         private class GetAccessTokenResult
         {
             [JsonProperty(PropertyName = "access_token")]
             public string AccessToken { get; set; }
-
-            [JsonProperty(PropertyName = "refresh_token")]
-            public string RefreshToken { get; set; }
         }
     }
 }

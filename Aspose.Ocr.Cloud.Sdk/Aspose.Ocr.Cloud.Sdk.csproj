@@ -4,34 +4,46 @@
     <TargetFrameworks>netstandard2.0;net20;net45</TargetFrameworks>
     <Company>Aspose Pty Ltd</Company>
     <Title>Aspose.OCR Cloud SDK for .NET</Title>
-    <Description>Aspose. OCR Cloud is a simple ocr technology, which you can use in your application to convert image to text. 
+    <Description>Aspose. OCR Cloud is a simple ocr technology, which you can use in your application to convert image to text.
 Add OCR to your app with simply few line of code. Any language, any platform, no hardware resources.
 
-Automatic skew correction
-Advanced Automative Image Pre-processing
-Automatic and manual document layout detection
-Extract and recognize text from images via OCR
-Supports multiple international languages
-High speed with no hardware resources
-</Description>
+Automatic skew correction and advanced automative image pre-processing:
+Aspose.OCR Cloud can successfully read poor quality scans and automatically make image pre-processing to correct low resolution, low contrast, noise and skew.
+
+Automated and manual document layout detection:
+Recognize documents with complex layouts in fully automatic mode or with manual corrections.
+In automated mode, you don’t need to worry about text layout editing. Our DSR algorithm provides such functionality. It allows performing the OCR operation quickly on various document scans.
+
+Supported image formats:
+We support all widely used image formats: bmp jpeg jpg jpe jp2 png webp tiff tif exr hdr pic
+
+Recognize Text of Different Languages:
+We are fully support English, French and German languages, but a lot of other works too.
+
+High speed with no hardware resources:
+Don’t worry about hardware, all the computational operations are performed at our powerful servers, that hosts our core, built on cutting edge fast neural networks.</Description>
     <RepositoryUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet</RepositoryUrl>
     <PackageTags>Aspose.OCR OCR optical character recognition scanner ai engine c# machine learning handwriting recognize scanned document searchable PDF text detection </PackageTags>
-    <PackageLicenseUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet/blob/master/LICENSE</PackageLicenseUrl>
-    <Copyright>© Aspose 2002-2020. All Rights Reserved.</Copyright>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <Copyright>© Aspose 2002-2021. All Rights Reserved.</Copyright>
     <RepositoryType>Git</RepositoryType>
     <PackageProjectUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet</PackageProjectUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Aspose.OCR-Cloud</PackageId>
     <Product>Aspose.OCR Cloud SDK for .NET</Product>
-    <PackageIconUrl>https://www.aspose.cloud/templates/aspose/App_Themes/V3/images/ocr/272x272/aspose_ocr-for-cloud-min.png</PackageIconUrl>
-    <Version>20.03.0</Version>
+    <PackageIconUrl></PackageIconUrl>
+    <Version>21.03.1</Version>
     <Authors>asposecloud</Authors>
-    <AssemblyVersion>20.3.0.0</AssemblyVersion>
+    <AssemblyVersion>21.3.1.0</AssemblyVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
-    <PackageReleaseNotes>We are glad to introduce French and German languages support.</PackageReleaseNotes>
+    <PackageReleaseNotes>We introduced an option to select or disable the Document Structure Recognition algorithm.</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <FileVersion>21.3.1.0</FileVersion>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
@@ -44,6 +56,13 @@ High speed with no hardware resources
 
   <ItemGroup Condition="'$(TargetFramework)'=='net20' OR '$(TargetFramework)'=='net45'">
     <Reference Include="System.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="G:\!Work\Publish release\Cloud\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

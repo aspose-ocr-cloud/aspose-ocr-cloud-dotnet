@@ -43,13 +43,23 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         /// <param name="name">Name of the file to recognize.</param>
         /// <param name="storage">The image storage.</param>
         /// <param name="folder">The image folder.</param>
-        /// <param name="language">Language for OCR Core Aspose.OCR.Core.Transport LanguageGroup</param>
-        public GetRecognizeDocumentRequest(string name, string storage = null, string folder = null, LanguageGroup? language = null)             
+        /// <param name="language">Prior recognition language selection</param>
+        /// <param name="resultType">Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR</param>
+        /// <param name="dsrMode">An option to switch DSR algorithm</param>
+        public GetRecognizeDocumentRequest(
+            string name, 
+            string storage = null, 
+            string folder = null, 
+            LanguageEnum? language = null, 
+            ResultType? resultType = null,
+            DsrMode? dsrMode = null)             
         {
             this.name = name;
             this.storage = storage;
             this.folder = folder;
             this.language = language;
+            this.resultType = resultType;
+            this.dsrMode = dsrMode;
         }
 
         /// <summary>
@@ -68,8 +78,18 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         public string folder { get; set; }
 
         /// <summary>
-        /// Language for OCR Core Aspose.OCR.Core.Transport LanguageGroup
+        /// Prior recognition language
         /// </summary>  
-        public LanguageGroup? language { get; set; }
-  }
+        public LanguageEnum? language { get; set; }
+
+        /// <summary>
+        /// Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR
+        /// </summary>
+        public ResultType? resultType { get; set; }
+
+        /// <summary>
+        /// An option to switch DSR algorithm
+        /// </summary>
+        public DsrMode? dsrMode { get; set; }
+    }
 }

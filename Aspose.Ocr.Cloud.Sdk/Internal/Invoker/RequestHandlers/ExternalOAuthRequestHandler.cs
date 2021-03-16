@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="AuthWithSignatureRequestHandler.cs">
+// <copyright company="Aspose" file="OAuthRequestHandler.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,70 +23,38 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk.RequestHandlers
-{
-    using System;
-    using System.IO;
-    using System.Net;
-    using System.Security.Cryptography;
-    using System.Text;
-    using System.Text.RegularExpressions;
-    using System.Web;
+using System.IO;
+using System.Net;
 
-    internal class AuthWithSignatureRequestHandler : IRequestHandler
+namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker.RequestHandlers
+{
+    internal class ExternalAuthorizationRequestHandler : IRequestHandler
     {
         private readonly Configuration configuration;
 
-        public AuthWithSignatureRequestHandler(Configuration configuration)
+        public ExternalAuthorizationRequestHandler(Configuration configuration)
         {
             this.configuration = configuration;
         }
 
         public string ProcessUrl(string url)
         {
-            if (this.configuration.AuthType != AuthType.RequestSignature)
-            {
-                return url;
-            }
-
-            url = UrlHelper.AddQueryParameterToUrl(url, "appSid", this.configuration.AppSid);                      
-            url = this.Sign(url);
-
             return url;
         }
 
         public void BeforeSend(WebRequest request, Stream streamToSend)
         {
+            if (this.configuration.AuthType == AuthType.OAuth2 && string.IsNullOrEmpty(this.configuration.JwtToken))
+            {
+                throw new ApiException(401, "Authorization header value required");
+            }
+
+            request.Headers.Add("Authorization", "Bearer " + this.configuration.JwtToken);
         }
 
         public void ProcessResponse(HttpWebResponse response, Stream resultStream)
         {
         }
 
-        private string Sign(string url)
-        {
-            UriBuilder uriBuilder = new UriBuilder(url);
-            
-            // Remove final slash here as it can be added automatically.
-            uriBuilder.Path = uriBuilder.Path.TrimEnd('/');
-
-            // Compute the hash.
-            byte[] privateKey = Encoding.UTF8.GetBytes(this.configuration.AppKey);
-            HMACSHA1 algorithm = new HMACSHA1(privateKey);
-
-            byte[] sequence = Encoding.ASCII.GetBytes(uriBuilder.Uri.AbsoluteUri);
-            byte[] hash = algorithm.ComputeHash(sequence);
-            string signature = Convert.ToBase64String(hash);
-
-            // Remove invalid symbols.
-            signature = signature.TrimEnd('=');
-            signature = HttpUtility.UrlEncode(signature);
-
-            // Convert codes to upper case as they can be updated automatically.
-            signature = Regex.Replace(signature, "%[0-9a-f]{2}", e => e.Value.ToUpper());
-
-            // Add the signature to query string.
-            return string.Format("{0}&signature={1}", uriBuilder.Uri.AbsoluteUri, signature);
-        }
     }
 }

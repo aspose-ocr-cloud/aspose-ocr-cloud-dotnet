@@ -1,5 +1,5 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="LanguageGroup.cs">
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="IRequestHandler.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,30 +23,35 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Ocr.Cloud.Sdk.Model 
+using System.IO;
+using System.Net;
+
+namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker
 {
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
-  
-  /// <summary>
-  /// 
-  /// </summary>  
-  [JsonConverter(typeof(StringEnumConverter))]
-  public  enum LanguageGroup 
-  {  	
-		/// <summary>
-        /// Set English language for OCR
-        /// </summary>            
-        English = 1,
-		
-		/// <summary>
-        /// Set French language for OCR
-        /// </summary>            
-        French = 2,
-		
+    /// <summary>
+    ///     IRequestHandler
+    /// </summary>
+    public interface IRequestHandler
+    {
         /// <summary>
-        /// Set German language for OCR
-        /// </summary>            
-        German = 2,
-  }
+        ///     ProcessUrl
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        string ProcessUrl(string url);
+
+        /// <summary>
+        ///     BeforeSend
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="streamToSend"></param>
+        void BeforeSend(WebRequest request, Stream streamToSend);
+
+        /// <summary>
+        ///     ProcessResponse
+        /// </summary>
+        /// <param name="response"></param>
+        /// <param name="resultStream"></param>
+        void ProcessResponse(HttpWebResponse response, Stream resultStream);
+    }
 }
