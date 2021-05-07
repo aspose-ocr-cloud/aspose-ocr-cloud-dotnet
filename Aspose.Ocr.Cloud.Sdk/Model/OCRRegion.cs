@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OCRRect.cs">
+// <copyright company="Aspose" file="OCRRegion.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -25,13 +25,20 @@
 
 using System.Collections.Generic;
 
-namespace Aspose.Ocr.Cloud.Sdk.Model
+namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
     /// <summary>
     /// Represents a rectangle: Left-Top (X1-Y1) to Right-Bottom (X2-Y2)
     /// </summary>
     public class OCRRect
     {
+        /// <summary>
+        /// Make a rectangle: Left-Top (X1-Y1) to Right-Bottom (X2-Y2)
+        /// </summary>
+        /// <param name="topLeftX">Left-Top (X1)</param>
+        /// <param name="topLeftY">Left-Top (Y1)</param>
+        /// <param name="bottomRightX">Right-Bottom (X2)</param>
+        /// <param name="bBottomRightY">Right-Bottom (Y2)</param>
         public OCRRect(int topLeftX, int topLeftY, int bottomRightX, int bBottomRightY)
         {
             TopLeftX = topLeftX;

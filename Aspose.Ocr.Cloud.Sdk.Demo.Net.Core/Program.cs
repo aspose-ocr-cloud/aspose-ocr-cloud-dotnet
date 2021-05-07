@@ -34,6 +34,18 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo.Net.Core
             text = RecognizeFromStorageDeFr(conf);
             Console.WriteLine("-------------\n" + text + "\n-------------\n");
 
+            Console.WriteLine("Example #10:\nRecognize Table using local File System");
+            text = RecognizeTableFromContent(conf);
+            Console.WriteLine("-------------\n" + text + "\n-------------\n");
+
+            Console.WriteLine("Example #11:\nRecognize Table using Aspose Storage");
+            text = RecognizeTableFromStorage(conf);
+            Console.WriteLine("-------------\n" + text + "\n-------------\n");
+
+            Console.WriteLine("Example #12:\nRecognize Table using URL");
+            text = RecognizeTableFromUrl(conf);
+            Console.WriteLine("-------------\n" + text + "\n-------------\n");
+
             Console.Write("Completed. Press any key..."); Console.ReadKey();
         }
 
@@ -116,8 +128,55 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo.Net.Core
             };
 
             OcrApi api = new OcrApi(conf);
-            OCRRequestData requestData = new OCRRequestData() { Regions = mImageBook_of_Abraham_FirstPagePngRegions };
+            OCRRegionsRequestData requestData = new OCRRegionsRequestData() { Regions = mImageBook_of_Abraham_FirstPagePngRegions };
             OCRResponse response = api.OcrRegionsFromUrl(requestData, urlToFile);
+
+            return response.Text;
+        }
+
+        static string RecognizeTableFromContent(Configuration conf)
+        {
+            string name = "table.png";
+            using (FileStream fs = File.OpenRead(name))
+            {
+                OcrApi api = new OcrApi(conf);
+                var request = new OCRTableRequestData() { MakeSkewCorrect = true };
+                OCRTableResponse response = api.OcrTableFromContent(request, fs);
+
+                //response.Excel, response.CSV
+                return response.Text;
+            }
+        }
+
+        static string RecognizeTableFromStorage(Configuration conf)
+        {
+            string name = "table.png";
+            using (FileStream fs = File.OpenRead(name))
+            {
+                OcrApi api = new OcrApi(conf);
+                FileApi fileApi = new FileApi(conf /* or AppSid & AppKey*/);
+
+                fileApi.UploadFile(new UploadFileRequest(name, System.IO.File.OpenRead(name)));
+
+                OCRTableRequestDataStorage requestData = new OCRTableRequestDataStorage()
+                {
+                    FileName = name,
+                    MakeSkewCorrect = true
+                };
+                OCRTableResponse response = api.OcrTableFromContent(requestData, fs);
+
+                //response.Excel, response.CSV
+                return response.Text;
+            }
+        }
+
+        static string RecognizeTableFromUrl(Configuration conf)
+        {
+            string urlToFile = @"https://learnche.org/pid/_images/table-car-payments.png";
+
+            OcrApi api = new OcrApi(conf);
+            OCRTableRequestData requestData = new OCRTableRequestData() { MakeSkewCorrect = true };
+            OCRTableResponse response = api.OcrTableFromUrl(requestData, urlToFile);
 
             return response.Text;
         }

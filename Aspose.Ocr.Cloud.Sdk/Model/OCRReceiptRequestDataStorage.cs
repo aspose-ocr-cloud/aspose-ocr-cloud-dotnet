@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OCRRequestDataStorage.cs">
+// <copyright company="Aspose" file="OCRReceiptRequestDataStorage.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -28,7 +28,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
     /// <summary>
     /// Request Form Data for Aspose storage file info
     /// </summary>
-    public class OCRRequestDataStorage : OCRRequestData
+    public class OCRReceiptRequestDataStorage : OCRReceiptRequestData
     {
         /// <summary>
         /// Filename that you have already put in Aspose Storage. *Required

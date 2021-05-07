@@ -23,43 +23,18 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Collections.Generic;
-using System.Diagnostics;
-
-namespace Aspose.Ocr.Cloud.Sdk.Model
+namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
     /// <summary>
     /// Request data to recognize specific regions on image.
     /// </summary>
     public class OCRRequestData
     {
-        private DsrMode dsrMode = DsrMode.NoDsrNoFilter;
-        private List<OCRRegion> regions;
-
         /// <summary>
-        /// Region on image to recognize in specific format. <see cref="OCRRegion"/>
+        /// Recognition language. English by default. <see cref="Model.Language.LanguageEnum"/>
         /// </summary>
-        public List<OCRRegion> Regions
-        {
-            get => regions;
-            set
-            {
-                if (value != null && value.Count > 0 && DsrMode != DsrMode.NoDsrNoFilter)
-                {
-                    // todo make prapper warning
-                    Debug.WriteLine(
-                        "DsrMode auto forced to Disabled (NoDsrNoFilter). Specific recognition regions selection is incompatiable with option of DsrMode.NoDsrNoFilter. Enable DSR with DsrMode property.");
-                    DsrMode = DsrMode.NoDsrNoFilter;
-                }
-
-                regions = value;
-            }
-        }
-
-        /// <summary>
-        /// Recognition language. English by default. <see cref="LanguageEnum"/>
-        /// </summary>
-        public LanguageEnum Language { get; set; } = LanguageEnum.English;
+        public Model.LanguageEnum Language { get; set; } =
+            Model.LanguageEnum.English;
 
         /// <summary>
         /// Option to enable skew correction algorithm. False bt default, because DSR_Step_2 request
@@ -67,24 +42,13 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         public bool MakeSkewCorrect { get; set; } = false;
 
         /// <summary>
-        /// Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR
+        /// An option to switch DSR algorithm
         /// </summary>
-        public DsrMode DsrMode
-        {
-            get => dsrMode;
-            set
-            {
-                if (value != DsrMode.NoDsrNoFilter && Regions != null && Regions.Count > 0)
-                    // todo make prapper warning
-                    Debug.WriteLine(
-                        "Enabling DSR is incompatiable with option of specific recognition regions selection. Set Regions to null or empty.");
-                dsrMode = value;
-            }
-        }
-
+        public Model.DsrMode DsrMode { get; set; }
+        
         /// <summary>
         /// Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR
         /// </summary>
-        public ResultType ResultType { get; set; } = ResultType.Text;
+        public Model.ResultType ResultType { get; set; } = Model.ResultType.Text;
     }
 }

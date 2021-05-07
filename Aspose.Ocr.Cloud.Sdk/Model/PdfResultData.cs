@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OCRRequestDataStorage.cs">
+// <copyright company="Aspose" file="PdfResultPage.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,25 +23,32 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+using Newtonsoft.Json;
+
 namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
-    /// <summary>
-    /// Request Form Data for Aspose storage file info
-    /// </summary>
-    public class OCRRequestDataStorage : OCRRequestData
+    public class PdfResultPage
     {
-        /// <summary>
-        /// Filename that you have already put in Aspose Storage. *Required
-        /// </summary>
-        public string FileName { get; set; }
-        /// <summary>
-        /// Storage name in Aspose Storage. Null for DefaultStorage
-        /// </summary>
-        public string Storage { get; set; } = null;
-        /// <summary>
-        /// Folder name in Aspose Storage. *Null for root folder
-        /// </summary>
-        public string Folder { get; set; } = null;
+        [JsonProperty("Number")]
+        public int Number { get; set; }
+        
+        [JsonProperty("OriginalText")]
+        public string OriginalText { get; set; }
+        
+        [JsonProperty("ImageOcrResults")]
+        public List<PdfSingleImageResult> ImageOcrResults { get; set; }
+    }
 
+    public class PdfSingleImageResult
+    {
+        [JsonProperty("ResultText")]
+        public string ResultText { get; set; }
+
+        [JsonProperty("ResultPdf")]
+        public string ResultPdf { get; set; }
+        
+        [JsonProperty("ResultHocr")]
+        public string ResultHocr { get; set; }
     }
 }

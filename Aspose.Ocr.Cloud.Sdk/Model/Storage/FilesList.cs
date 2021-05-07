@@ -1,5 +1,5 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OCRRequestDataStorage.cs">
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="FilesList.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -25,23 +25,30 @@
 
 namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
-    /// <summary>
-    /// Request Form Data for Aspose storage file info
-    /// </summary>
-    public class OCRRequestDataStorage : OCRRequestData
-    {
-        /// <summary>
-        /// Filename that you have already put in Aspose Storage. *Required
-        /// </summary>
-        public string FileName { get; set; }
-        /// <summary>
-        /// Storage name in Aspose Storage. Null for DefaultStorage
-        /// </summary>
-        public string Storage { get; set; } = null;
-        /// <summary>
-        /// Folder name in Aspose Storage. *Null for root folder
-        /// </summary>
-        public string Folder { get; set; } = null;
+    using System.Collections.Generic;
+    using System.Text;
 
+  /// <summary>
+  /// Files list
+  /// </summary>  
+  public class FilesList 
+  {                       
+        /// <summary>
+        /// Files and folders contained by folder StorageFile.
+        /// </summary>  
+        public List<StorageFile> Value { get; set; }
+		
+        /// <summary>
+        /// Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
+        {
+          var sb = new StringBuilder();
+          sb.Append("class FilesList {\n");
+          sb.Append("  Value: ").Append(this.Value).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
+        }
     }
 }

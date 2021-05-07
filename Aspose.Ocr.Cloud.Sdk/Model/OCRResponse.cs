@@ -1,4 +1,4 @@
-// --------------------------------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="OCRResponse.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
@@ -23,24 +23,20 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Xml.Serialization;
+
 namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
-    using System.Text;
-
-  /// <summary>
-  /// Represents information about response after OCR.
-  /// </summary>  
-  public class OCRResponse 
-  {                       
-        /// <summary>
-        /// Response code (OK / NotFound / Error / e.g.)
-        /// </summary>
-        public System.Net.HttpStatusCode Code { get; set; }
-
+    /// <summary>
+    /// Represents information about response after OCR.
+    /// </summary>
+    [XmlRoot("Response", Namespace = "")]
+    public class OCRResponse
+    {
         /// <summary>
         /// Recognized Text if you choose ResultType.Text
         /// </summary>
-        public string Text { get; set; }
+        public string Text { get;  set; }
 
         /// <summary>
         /// Recognized Text in Searchable PDF if you choose ResultType.PDF
@@ -53,17 +49,8 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         public string Hocr { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Response code (OK / NotFound / Error / e.g.)
         /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()  
-        {
-          var sb = new StringBuilder();
-          sb.Append("class OCRResponse {\n");
-          sb.Append("  Text: ").Append(this.Text).Append("\n");
-          sb.Append("  Code: ").Append(this.Code).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
-        }
+        public System.Net.HttpStatusCode Code { get; set; }
     }
 }

@@ -1,5 +1,5 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OCRRequestDataStorage.cs">
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="Error.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -25,23 +25,47 @@
 
 namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
-    /// <summary>
-    /// Request Form Data for Aspose storage file info
-    /// </summary>
-    public class OCRRequestDataStorage : OCRRequestData
-    {
-        /// <summary>
-        /// Filename that you have already put in Aspose Storage. *Required
-        /// </summary>
-        public string FileName { get; set; }
-        /// <summary>
-        /// Storage name in Aspose Storage. Null for DefaultStorage
-        /// </summary>
-        public string Storage { get; set; } = null;
-        /// <summary>
-        /// Folder name in Aspose Storage. *Null for root folder
-        /// </summary>
-        public string Folder { get; set; } = null;
+    using System.Text;
 
+  /// <summary>
+  /// Error
+  /// </summary>  
+  public class Error 
+  {                       
+        /// <summary>
+        /// Code             
+        /// </summary>  
+        public string Code { get; set; }
+		
+        /// <summary>
+        /// Message             
+        /// </summary>  
+        public string Message { get; set; }
+		
+        /// <summary>
+        /// Description             
+        /// </summary>  
+        public string Description { get; set; }
+		
+        /// <summary>
+        /// Inner Error             
+        /// </summary>  
+        public ErrorDetails InnerError { get; set; }
+		
+        /// <summary>
+        /// Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
+        {
+          var sb = new StringBuilder();
+          sb.Append("class Error {\n");
+          sb.Append("  Code: ").Append(this.Code).Append("\n");
+          sb.Append("  Message: ").Append(this.Message).Append("\n");
+          sb.Append("  Description: ").Append(this.Description).Append("\n");
+          sb.Append("  InnerError: ").Append(this.InnerError).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
+        }
     }
 }

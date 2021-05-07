@@ -1,5 +1,5 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OCRRequestDataStorage.cs">
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="DiscUsage.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -25,23 +25,35 @@
 
 namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
-    /// <summary>
-    /// Request Form Data for Aspose storage file info
-    /// </summary>
-    public class OCRRequestDataStorage : OCRRequestData
-    {
-        /// <summary>
-        /// Filename that you have already put in Aspose Storage. *Required
-        /// </summary>
-        public string FileName { get; set; }
-        /// <summary>
-        /// Storage name in Aspose Storage. Null for DefaultStorage
-        /// </summary>
-        public string Storage { get; set; } = null;
-        /// <summary>
-        /// Folder name in Aspose Storage. *Null for root folder
-        /// </summary>
-        public string Folder { get; set; } = null;
+    using System.Text;
 
+  /// <summary>
+  /// Class for disc space information.
+  /// </summary>  
+  public class DiscUsage 
+  {                       
+        /// <summary>
+        /// Application used disc space.
+        /// </summary>  
+        public long? UsedSize { get; set; }
+		
+        /// <summary>
+        /// Total disc space.
+        /// </summary>  
+        public long? TotalSize { get; set; }
+		
+        /// <summary>
+        /// Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
+        {
+          var sb = new StringBuilder();
+          sb.Append("class DiscUsage {\n");
+          sb.Append("  UsedSize: ").Append(this.UsedSize).Append("\n");
+          sb.Append("  TotalSize: ").Append(this.TotalSize).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
+        }
     }
 }

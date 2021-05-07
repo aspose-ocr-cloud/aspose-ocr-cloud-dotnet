@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OCRRequestDataStorage.cs">
+// <copyright company="Aspose" file="OCRRegionsRequestData.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,25 +23,49 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+using System.Diagnostics;
+
 namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
-    /// <summary>
-    /// Request Form Data for Aspose storage file info
-    /// </summary>
-    public class OCRRequestDataStorage : OCRRequestData
+    public class OCRRegionsRequestData: OCRRequestData
     {
-        /// <summary>
-        /// Filename that you have already put in Aspose Storage. *Required
-        /// </summary>
-        public string FileName { get; set; }
-        /// <summary>
-        /// Storage name in Aspose Storage. Null for DefaultStorage
-        /// </summary>
-        public string Storage { get; set; } = null;
-        /// <summary>
-        /// Folder name in Aspose Storage. *Null for root folder
-        /// </summary>
-        public string Folder { get; set; } = null;
+        private DsrMode dsrMode = Model.DsrMode.NoDsrNoFilter;
+        private List<OCRRegion> regions;
 
+        /// <summary>
+        /// Region on image to recognize in specific format. <see cref="OCRRegion"/>
+        /// </summary>
+        public List<OCRRegion> Regions
+        {
+            get => regions;
+            set
+            {
+                if (value != null && value.Count > 0 && DsrMode != Model.DsrMode.NoDsrNoFilter)
+                {
+                    // todo make prapper warning
+                    Debug.WriteLine(
+                        "DsrMode auto forced to Disabled (NoDsrNoFilter). Specific recognition regions selection is incompatible with option of DsrMode.NoDsrNoFilter. Enable DSR with DsrMode property.");
+                    DsrMode = Model.DsrMode.NoDsrNoFilter;
+                }
+
+                regions = value;
+            }
+        }
+
+        /// <summary>
+        /// An option to switch DSR algorithm
+        /// </summary>
+        public new Model.DsrMode DsrMode
+        {
+            get => dsrMode;
+            set
+            {
+                if (value != Model.DsrMode.NoDsrNoFilter && Regions != null && Regions.Count > 0)
+                    Debug.WriteLine(
+                        "Enabling DSR is incompatible with option of specific recognition regions selection. Set Regions to null or empty.");
+                dsrMode = value;
+            }
+        }
     }
 }

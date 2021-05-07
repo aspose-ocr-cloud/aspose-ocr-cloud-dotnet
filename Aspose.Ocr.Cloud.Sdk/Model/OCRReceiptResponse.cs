@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OCRRequestDataStorage.cs">
+// <copyright company="Aspose" file="OCRReceiptResponse.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -23,25 +23,46 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+using System.Xml.Serialization;
+
 namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
     /// <summary>
-    /// Request Form Data for Aspose storage file info
+    /// Represents information about response after OCR.
     /// </summary>
-    public class OCRRequestDataStorage : OCRRequestData
+    [XmlRoot("Response", Namespace = "")]
+    public class OCRReceiptResponse
     {
         /// <summary>
-        /// Filename that you have already put in Aspose Storage. *Required
+        /// Recognized Text if you choose ResultType.Text
         /// </summary>
-        public string FileName { get; set; }
-        /// <summary>
-        /// Storage name in Aspose Storage. Null for DefaultStorage
-        /// </summary>
-        public string Storage { get; set; } = null;
-        /// <summary>
-        /// Folder name in Aspose Storage. *Null for root folder
-        /// </summary>
-        public string Folder { get; set; } = null;
+        public string Text { get;  set; }
 
+        /// <summary>
+        /// Structured text and regions data
+        /// </summary>
+        public List<TextRegion> StructuredData { get; set; }
+
+        /// <summary>
+        /// Response code (OK / NotFound / Error / e.g.)
+        /// </summary>
+        public System.Net.HttpStatusCode Code { get; set; }
+    }
+
+    /// <summary>
+    /// Regions of receipt structured data
+    /// </summary>
+    public class TextRegion
+    {
+        /// <summary>
+        /// Text in region
+        /// </summary>
+        public string Text { get; set; }
+
+        /// <summary>
+        /// Region coordinates
+        /// </summary>
+        public List<int> Rect { get; set; }
     }
 }

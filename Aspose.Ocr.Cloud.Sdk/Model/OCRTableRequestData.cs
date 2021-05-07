@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OCRRequestDataStorage.cs">
+// <copyright company="Aspose" file="OCRTableRequestData.cs">
 //   Copyright (c) 2019 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
@@ -26,22 +26,13 @@
 namespace Aspose.Ocr.Cloud.Sdk.Model 
 {
     /// <summary>
-    /// Request Form Data for Aspose storage file info
+    /// Request data to recognize specific image of table.
     /// </summary>
-    public class OCRRequestDataStorage : OCRRequestData
+    public class OCRTableRequestData
     {
         /// <summary>
-        /// Filename that you have already put in Aspose Storage. *Required
+        /// Option to enable skew correction algorithm. False by default
         /// </summary>
-        public string FileName { get; set; }
-        /// <summary>
-        /// Storage name in Aspose Storage. Null for DefaultStorage
-        /// </summary>
-        public string Storage { get; set; } = null;
-        /// <summary>
-        /// Folder name in Aspose Storage. *Null for root folder
-        /// </summary>
-        public string Folder { get; set; } = null;
-
+        public bool MakeSkewCorrect { get; set; } = false;
     }
 }

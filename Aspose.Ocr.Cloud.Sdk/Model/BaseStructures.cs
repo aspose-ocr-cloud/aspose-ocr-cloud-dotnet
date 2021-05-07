@@ -64,7 +64,24 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         /// <summary>
         /// Set Portuguese language for OCR
         /// </summary>
-        Portuguese = 6
+        Portuguese  = 6,
+        Polish      = 7,
+        Slovene     = 8,
+        Slovak      = 9,
+        Netherlands = 10,
+        Lithuanian  = 11,
+        Latvian     = 12,
+        Danish      = 13,
+        Norwegian   = 14,
+        Finnish     = 15,
+        Serbian     = 16,
+        Croatian    = 17,
+        Czech       = 18,
+        Swedish     = 19,
+        Estonian    = 20,
+        Romanian    = 21,
+        Chinese     =22
+        
   }
 
   /// <summary>
@@ -102,13 +119,28 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         DsrNoFilter = 1,
 
         /// <summary>
-        /// Use DocumentStructure Recognition algorithm that detects large text areas with additional automated regions filter
+        /// Use DocumentStructure Recognition algorithm that detects large text areas with additional automated regions filter for small images
         /// </summary>
         DsrAndFilter = 2,
 
         /// <summary>
-        /// Disable DSR algorithm, If your images are samall or contains only lines of text without other content like images.
+        /// Disable DSR algorithm, If your images are small or contains only lines of text without other content like images.
         /// </summary>
         NoDsrNoFilter = 3
+  }
+  
+  /// <summary>
+  /// Region filtering threshold. Filtering by the algorithm confidence scale. Higher mode - more aggressive filtering. Default == Medium
+  /// </summary>
+  public enum DsrConfidence
+  {
+        Default = 0,
+        Low = 1,
+        LowMid = 2,
+        Mid = 3,
+        MidHigh = 4,
+        High = 5,
+        Ultra = 6,
+        All = 7
   }
 }

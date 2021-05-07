@@ -72,6 +72,7 @@ namespace Aspose.Ocr.Cloud.Sdk
         public Configuration()
         {
             ApiBaseUrl = "https://api.aspose.cloud";
+            IdentityServerBaseUrl = "https://api.aspose.cloud";
             DebugMode = false;
             ApiVersion = ApiVersion.V3;
             AuthType = AuthType.JWT;

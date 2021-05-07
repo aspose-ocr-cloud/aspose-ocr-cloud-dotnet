@@ -169,6 +169,8 @@ namespace Aspose.Ocr.Cloud.Sdk
             }
         }
 
+        #region OCR Regions
+
         /// <summary>
         /// Recognize specific regions of image from some url
         /// </summary>
@@ -208,5 +210,139 @@ namespace Aspose.Ocr.Cloud.Sdk
             var formParams = new Dictionary<string, object> { { "requestData", requestData } };
             return this.apiInvoker.InvokeApi<OCRResponse>(requestUrl, "POST", null, null, formParams);
         }
+        
+        #endregion
+
+        #region Receipt
+
+        /// <summary>
+        /// Recognize Receipt image from some url
+        /// </summary>
+        /// <param name="requestData">Receipt recognition configuration <see cref="OCRReceiptRequestData"/></param>
+        /// <param name="urlToFile">Web url of image file to recognize</param>
+        /// <returns><see cref="OCRReceiptResponse"/></returns>
+        public OCRReceiptResponse OcrReceiptFromUrl(OCRReceiptRequestData requestData, string urlToFile)
+        {
+            var requestUrl = BuildUrl("recognize-receipt-url");
+            var formParams = new Dictionary<string, object> { {"url", urlToFile}, {"requestData", requestData} };
+            return this.apiInvoker.InvokeApi<OCRReceiptResponse>(requestUrl, "POST", null, null, formParams);
+        }
+        
+        /// <summary>
+        /// Recognize Receipt image from File Stream
+        /// </summary>
+        /// <param name="requestData">Receipt recognition configuration <see cref="OCRReceiptRequestData"/></param>
+        /// <param name="file">Local file stream</param>
+        /// <returns><see cref="OCRReceiptResponse"/></returns>
+        public OCRReceiptResponse OcrReceiptFromContent(OCRReceiptRequestData requestData, Stream file)
+        {
+            var requestUrl = BuildUrl("recognize-receipt-content");
+            var fileInfo = this.apiInvoker.ToFileInfo(file, "File");
+            var formParams = new Dictionary<string, object> { { "file", fileInfo }, { "requestData", requestData } };
+            return this.apiInvoker.InvokeApi<OCRReceiptResponse>(requestUrl, "POST", null, null, formParams);
+        }
+
+        /// <summary>
+        /// Recognize Receipt image located at Aspose Storage.
+        /// Use StorageApi to upload your files. <see cref="StorageApi"/>
+        /// </summary>
+        /// <param name="requestData">Receipt recognition configuration <see cref="OCRReceiptRequestData"/></param>
+        /// <returns><see cref="OCRReceiptResponse"/></returns>
+        public OCRReceiptResponse OcrReceiptFromStorage(OCRReceiptRequestDataStorage requestData)
+        {
+            var requestUrl = BuildUrl("recognize-receipt-storage");
+            var formParams = new Dictionary<string, object> { { "requestData", requestData } };
+            return this.apiInvoker.InvokeApi<OCRReceiptResponse>(requestUrl, "POST", null, null, formParams);
+        }
+
+        #endregion
+        
+        #region Table
+
+        /// <summary>
+        /// Recognize Receipt table image from some url
+        /// </summary>
+        /// <param name="requestData">Receipt recognition configuration <see cref="OCRTableRequestData"/></param>
+        /// <param name="urlToFile">Web url of image file to recognize</param>
+        /// <returns><see cref="OCRTableResponse"/></returns>
+        public OCRTableResponse OcrTableFromUrl(OCRTableRequestData requestData, string urlToFile)
+        {
+            var requestUrl = BuildUrl("recognize-table-url");
+            var formParams = new Dictionary<string, object> { {"url", urlToFile}, {"requestData", requestData} };
+            return this.apiInvoker.InvokeApi<OCRTableResponse>(requestUrl, "POST", null, null, formParams);
+        }
+        
+        /// <summary>
+        /// Recognize Receipt table image from File Stream
+        /// </summary>
+        /// <param name="requestData">Receipt recognition configuration <see cref="OCRTableRequestData"/></param>
+        /// <param name="file">Local file stream</param>
+        /// <returns><see cref="OCRTableResponse"/></returns>
+        public OCRTableResponse OcrTableFromContent(OCRTableRequestData requestData, Stream file)
+        {
+            var requestUrl = BuildUrl("recognize-table-content");
+            var fileInfo = this.apiInvoker.ToFileInfo(file, "File");
+            var formParams = new Dictionary<string, object> { { "file", fileInfo }, { "requestData", requestData } };
+            return this.apiInvoker.InvokeApi<OCRTableResponse>(requestUrl, "POST", null, null, formParams);
+        }
+
+        /// <summary>
+        /// Recognize Receipt table image located at Aspose Storage.
+        /// Use StorageApi to upload your files. <see cref="StorageApi"/>
+        /// </summary>
+        /// <param name="requestData">Receipt recognition configuration <see cref="OCRTableRequestDataStorage"/></param>
+        /// <returns><see cref="OCRTableResponse"/></returns>
+        public OCRTableResponse OcrTableFromStorage(OCRTableRequestDataStorage requestData)
+        {
+            var requestUrl = BuildUrl("recognize-table-storage");
+            var formParams = new Dictionary<string, object> { { "requestData", requestData } };
+            return this.apiInvoker.InvokeApi<OCRTableResponse>(requestUrl, "POST", null, null, formParams);
+        }
+
+        #endregion
+
+        #region PDF
+
+        /// <summary>
+        /// Recognize PDF from some url
+        /// </summary>
+        /// <param name="requestData">PDF recognition configuration <see cref="OCRRequestData"/></param>
+        /// <param name="urlToFile">Web url of PDF file to recognize</param>
+        /// <returns><see cref="OCRPDFResponse"/></returns>
+        public OCRPDFResponse OcrPdfFromUrl(OCRRequestData requestData, string urlToFile)
+        {
+            var requestUrl = BuildUrl("recognize-pdf-url");
+            var formParams = new Dictionary<string, object> { {"url", urlToFile}, {"requestData", requestData} };
+            return this.apiInvoker.InvokeApi<OCRPDFResponse>(requestUrl, "POST", null, null, formParams);
+        }
+        
+        /// <summary>
+        /// Recognize Receipt image from File Stream
+        /// </summary>
+        /// <param name="requestData">PDF recognition configuration <see cref="OCRRequestData"/></param>
+        /// <param name="file">Local file stream</param>
+        /// <returns><see cref="OCRPDFResponse"/></returns>
+        public OCRPDFResponse OcrPdfFromContent(OCRRequestData requestData, Stream file)
+        {
+            var requestUrl = BuildUrl("recognize-pdf-content");
+            var fileInfo = this.apiInvoker.ToFileInfo(file, "File");
+            var formParams = new Dictionary<string, object> { { "file", fileInfo }, { "requestData", requestData } };
+            return this.apiInvoker.InvokeApi<OCRPDFResponse>(requestUrl, "POST", null, null, formParams);
+        }
+
+        /// <summary>
+        /// Recognize Receipt image located at Aspose Storage.
+        /// Use StorageApi to upload your files. <see cref="StorageApi"/>
+        /// </summary>
+        /// <param name="requestData">PDF recognition configuration <see cref="OCRRequestData"/></param>
+        /// <returns><see cref="OCRPDFResponse"/></returns>
+        public OCRPDFResponse OcrPdfFromStorage(OCRRequestDataStorage requestData)
+        {
+            var requestUrl = BuildUrl("recognize-pdf-storage");
+            var formParams = new Dictionary<string, object> { { "requestData", requestData } };
+            return this.apiInvoker.InvokeApi<OCRPDFResponse>(requestUrl, "POST", null, null, formParams);
+        }
+
+        #endregion
     }
 }
