@@ -81,7 +81,6 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         Estonian    = 20,
         Romanian    = 21,
         Chinese     =22
-        
   }
 
   /// <summary>
