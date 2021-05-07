@@ -94,7 +94,7 @@ _________________________
 |[.NET & Core](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet)|[Java](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-java)|PHP|Ruby|Python|Node.js|[Android](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-android)|Objective-C|Perl|
 
 ## Resources
-
+      
 - **Website:** [https://www.aspose.cloud](https://www.aspose.cloud)
 - **Product Home:** [Aspose.OCR Cloud](https://products.aspose.cloud/ocr/family)
 - **Documentation:** [Aspose.OCR Cloud Documentation](https://docs.aspose.cloud/display/ocrcloud/Home)
