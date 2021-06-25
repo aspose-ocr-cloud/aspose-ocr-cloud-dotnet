@@ -10,57 +10,56 @@ Add OCR to your app with simply few line of code. Any language, any platform, no
 Automatic skew correction and advanced automative image pre-processing:
 Aspose.OCR Cloud can successfully read poor quality scans and automatically make image pre-processing to correct low resolution, low contrast, noise and skew.
 
+26 languages supported including Chinese.
 Automated and manual document layout detection:
 Recognize documents with complex layouts in fully automatic mode or with manual corrections.
 In automated mode, you don’t need to worry about text layout editing. Our DSR algorithm provides such functionality. It allows performing the OCR operation quickly on various document scans.
 Receipt recognition.
 Table image recognition.
-22 languages supported including Chinese.
+PDF recognition. Multipage supported.
+Text correction using spell checkong algorithms.
+Various Output formats: Text, Searchable PDF, hOCR.
 
 Supported image formats:
 We support all widely used image formats: bmp jpeg jpg jpe jp2 png webp tiff tif exr hdr pic
 
 Recognize Text of Different Languages:
-We are fully 22 languages including: English, German, French, Italian, Spanish, Portuguese, Polish, Slovene, Slovak, Netherlands, Lithuanian, Latvian, Danish, Norwegian, Finnish, Serbian, Croatian, Czech, Swedish, Estonian, Romanian, Chinese, and a lot of other works too.
+Supports 26 languages including: English, German, French, Italian, Spanish, Portuguese, Polish, Slovene, Slovak, Netherlands, Lithuanian, Latvian, Danish, Norwegian, Finnish, Serbian, Croatian, Czech, Swedish, Estonian, Romanian, Chinese,  Arabic, Hindi, Russian, Ukrainian
 
 High speed with no hardware resources:
-Don’t worry about hardware, all the computational operations are performed at our powerful servers, that hosts our core, built on cutting edge fast neural networks.
-
-A lot of supported languages:
-English, German, French, Italian, Spanish, Portuguese, Polish, Slovene, Slovak , Netherlands, Lithuania, Latvian, Danish , Norwegian, Finnish, Serbian, Croatian, Czech, Swedish, Estonian, Romanian
-
-Text correction using spell checkong algorithms.
-Supports Receipt recognition.
-Supports PDF Recognition.
-Various Output formats: Text, Searchable PDF, hOCR.</Description>
+Don’t worry about hardware, all the computational operations are performed at our powerful servers, that hosts our core, built on cutting edge fast neural networks.</Description>
     <RepositoryUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet</RepositoryUrl>
     <PackageTags>Aspose.OCR OCR optical character recognition scanner ai engine c# machine learning handwriting recognize scanned document searchable PDF text detection PDF OCR Receipt OCR</PackageTags>
-    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageLicenseUrl>https://about.aspose.com/legal/eula</PackageLicenseUrl>
     <Copyright>© Aspose 2002-2021. All Rights Reserved.</Copyright>
     <RepositoryType>Git</RepositoryType>
     <PackageProjectUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet</PackageProjectUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageId>Aspose.OCR-Cloud</PackageId>
     <Product>Aspose.OCR Cloud SDK for .NET</Product>
     <PackageIconUrl></PackageIconUrl>
-    <Version>21.05.0</Version>
+    <Version>21.6.0</Version>
     <Authors>asposecloud</Authors>
-    <AssemblyVersion>21.5.0.0</AssemblyVersion>
+    <AssemblyVersion>21.6.0.0</AssemblyVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
-    <PackageReleaseNotes>Added Chinese language support
-New feature: Tables OCR: API for table image recognition. Supported outputs: Formatted TXT, Excel, CSV</PackageReleaseNotes>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <FileVersion>21.5.0.0</FileVersion>
+    <PackageReleaseNotes>Added Arabic, Hindi, Russian, Ukrainian languages support</PackageReleaseNotes>
+    <FileVersion>21.6.0.0</FileVersion>
     <PackageIcon>icon.png</PackageIcon>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageVersion>21.05.0</PackageVersion>
+    <PackageVersion>21.6.0</PackageVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
     <DefineConstants />
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -72,7 +71,7 @@ New feature: Tables OCR: API for table image recognition. Supported outputs: For
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="G:\!Work\Publish release\Cloud\icon.png">
+    <None Include="icon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

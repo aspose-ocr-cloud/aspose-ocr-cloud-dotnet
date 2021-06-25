@@ -37,7 +37,6 @@ namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker.RequestHandlers
         private readonly ApiInvoker apiInvoker;
 
         private string accessToken;
-        private string refreshToken;
 
         public JwtRequestHandler(Configuration configuration)
         {

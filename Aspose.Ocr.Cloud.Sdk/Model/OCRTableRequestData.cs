@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="OCRTableRequestData.cs">
-//   Copyright (c) 2019 Aspose.Ocr for Cloud
+//   Copyright (c) 2021 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,5 +34,10 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         /// Option to enable skew correction algorithm. False by default
         /// </summary>
         public bool MakeSkewCorrect { get; set; } = false;
+        
+        /// <summary>
+        /// Recognition language. English by default. <see cref="Model.LanguageEnum"/>
+        /// </summary>
+        public Model.LanguageEnum Language { get; set; } = Model.LanguageEnum.English;
     }
 }

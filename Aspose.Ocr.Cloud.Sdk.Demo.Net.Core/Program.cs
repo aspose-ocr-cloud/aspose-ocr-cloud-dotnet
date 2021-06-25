@@ -46,12 +46,16 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo.Net.Core
             text = RecognizeTableFromUrl(conf);
             Console.WriteLine("-------------\n" + text + "\n-------------\n");
 
+            Console.WriteLine("Example #13:\nRecognize specific regions of image located by URL");
+            text = RecognizeRegionsFromUrl(conf);
+            Console.WriteLine("-------------\n" + text + "\n-------------\n");
+
             Console.Write("Completed. Press any key..."); Console.ReadKey();
         }
 
         static string RecognizeFromUrl(Configuration conf)
         {
-            string imgUri = @"http://typecast.com/images/uploads/fluid-type-single-column.png";
+            string imgUri = @"https://upload.wikimedia.org/wikipedia/commons/2/2f/Book_of_Abraham_FirstPage.png";
 
             OcrApi api = new OcrApi(conf);
             var request = new PostOcrFromUrlOrContentRequest(null, imgUri);
@@ -136,7 +140,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo.Net.Core
 
         static string RecognizeTableFromContent(Configuration conf)
         {
-            string name = "table.png";
+            string name = "table.jpeg";
             using (FileStream fs = File.OpenRead(name))
             {
                 OcrApi api = new OcrApi(conf);
@@ -150,7 +154,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo.Net.Core
 
         static string RecognizeTableFromStorage(Configuration conf)
         {
-            string name = "table.png";
+            string name = "table.jpeg";
             using (FileStream fs = File.OpenRead(name))
             {
                 OcrApi api = new OcrApi(conf);

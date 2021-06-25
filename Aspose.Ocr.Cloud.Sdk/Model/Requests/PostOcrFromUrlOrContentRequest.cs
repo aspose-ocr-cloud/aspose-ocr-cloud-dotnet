@@ -80,10 +80,25 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         /// Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR
         /// </summary>
         public ResultType? resultType { get; set; }
+        
+        /// <summary>
+        /// Option to enable skew correction algorithm. False by default, because DSR_Step_2 request
+        /// </summary>
+        public bool skewCorrect { get; set; }
+
+        /// <summary>
+        /// Option to enable spell checking and correction algorithm. False by default
+        /// </summary>
+        public bool spellCheck { get; set; }
 
         /// <summary>
         /// An option to switch DSR algorithm
         /// </summary>
         public DsrMode? dsrMode { get; set; }
+        
+        /// <summary>
+        /// Region filtering threshold. Filtering by the algorithm confidence scale. Higher mode - more aggressive filtering. Default == Medium
+        /// </summary>
+        public DsrConfidence? dsrConfidence { get; set; }
     }
 }

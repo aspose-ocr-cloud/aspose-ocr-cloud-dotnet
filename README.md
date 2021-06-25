@@ -8,13 +8,8 @@ In detail, it's a set of SDKs for optical character recognition and document sca
 
 It is easy to get started with Aspose.OCR Cloud, and there is nothing to install. Create an account at Aspose Cloud and get your application information, then you are ready to use [SDKs](#asposeocr-cloud-sdks)
 
-## Release 21.05:
-We introduced the support of Chinese language and Tables recognition.
-
-
-<a title="GOTO WEB DEMO" href="http://saltov-gpu-3.dynabic.com:8084/">
-  <img src="Docs/Resources/demo_preview.png">
-</a>
+## Release 21.06:
+We introduced the support of Arabic, Hindi, Russian, Ukrainian languages recognition.
 
 ## Features:
 - Automated skew correction
@@ -30,7 +25,7 @@ We introduced the support of Chinese language and Tables recognition.
 - Various Output formats: Text, Searchable PDF, hOCR, Excel for tables.
 
 ## Recognize text of different languages:
-We are fully 22 languages including: English, German, French, Italian, Spanish, Portuguese, Polish, Slovene, Slovak, Netherlands, Lithuanian, Latvian, Danish, Norwegian, Finnish, Serbian, Croatian, Czech, Swedish, Estonian, Romanian, Chinese, and a lot of other works too.
+We are fully 26 languages including: English, German, French, Italian, Spanish, Portuguese, Polish, Slovene, Slovak, Netherlands, Lithuanian, Latvian, Danish, Norwegian, Finnish, Serbian, Croatian, Czech, Swedish, Estonian, Romanian, Chinese, Arabic, Hindi, Russian, Ukrainian and a lot of other works too.
 
 ## How to use the SDK?
 

@@ -103,7 +103,10 @@ namespace Aspose.Ocr.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "language", request.language);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "resultType", request.resultType);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "skewCorrect", request.skewCorrect);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "spellCheck", request.spellCheck);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrMode", request.dsrMode);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrConfidence", request.dsrConfidence);
 
             try 
             {                               
@@ -142,7 +145,10 @@ namespace Aspose.Ocr.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "url", request.url);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "language", request.language);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "resultType", request.resultType);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "skewCorrect", request.skewCorrect);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "spellCheck", request.spellCheck);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrMode", request.dsrMode);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrConfidence", request.dsrConfidence);
 
             if (request.File != null) 
             {

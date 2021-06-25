@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OCRReceiptRequestDataStorage.cs">
-//   Copyright (c) 2019 Aspose.Ocr for Cloud
+// <copyright company="Aspose" file="OCRTableRequestDataStorage.cs">
+//   Copyright (c) 2021 Aspose.Ocr for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy

@@ -80,7 +80,12 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         Swedish     = 19,
         Estonian    = 20,
         Romanian    = 21,
-        Chinese     =22
+        Chinese     = 22,
+        Russian     = 23,
+        Arabic      = 24,
+        Hindi       = 25,
+        Ukraine     = 26
+        
   }
 
   /// <summary>
@@ -125,7 +130,17 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         /// <summary>
         /// Disable DSR algorithm, If your images are small or contains only lines of text without other content like images.
         /// </summary>
-        NoDsrNoFilter = 3
+        NoDsrNoFilter = 3,
+        
+        /// <summary>
+        /// Use alternative text detection algorithm that works good with sparse text, tables, IDs, invoices, complex layouts, small images 
+        /// </summary>
+        TextDetector = 4,
+        
+        /// <summary>
+        /// Combination of DSR and Text Detector 
+        /// </summary>
+        DsrPlusDetector = 5
   }
   
   /// <summary>

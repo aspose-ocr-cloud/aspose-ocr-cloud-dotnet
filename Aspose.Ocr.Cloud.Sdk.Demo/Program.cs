@@ -36,10 +36,16 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo
             text = RecognizeFromStorage(conf);
             Console.WriteLine("-------------\n" + text + "\n-------------\n");
 
-            Console.WriteLine("Example #4:\nRecognize one of 21 supported languages");
+            Console.WriteLine("Example #4.1:\nRecognize one of 21 supported languages");
             text = RecognizeFromStorageDeFr(conf);
             // You may also recognize it from Content or URL
             //text = RecognizeFromContentDeFr(conf);
+            Console.WriteLine("-------------\n" + text + "\n-------------\n" +
+                              "Attention: UTF is not supported in windows console." +
+                              "\n---------------------------------------------------\n");
+
+            Console.WriteLine("Example #4.2:\nRecognize Arabic");
+            text = RecognizeFromContentAr(conf);
             Console.WriteLine("-------------\n" + text + "\n-------------\n" +
                               "Attention: UTF is not supported in windows console." +
                               "\n---------------------------------------------------\n");
@@ -89,7 +95,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo
         {
             string imgUri = @"https://upload.wikimedia.org/wikipedia/commons/2/2f/Book_of_Abraham_FirstPage.png";
             OcrApi api = new OcrApi(conf);
-            var request = new PostOcrFromUrlOrContentRequest(null, imgUri);
+            var request = new PostOcrFromUrlOrContentRequest(null, imgUri, resultType:ResultType.Text);
             OCRResponse response = api.PostOcrFromUrlOrContent(request);
 
             return response.Text;
@@ -130,6 +136,19 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo
             {
                 OcrApi api = new OcrApi(conf);
                 var request = new PostOcrFromUrlOrContentRequest(fs, "", language:LanguageEnum.German);
+                OCRResponse response = api.PostOcrFromUrlOrContent(request);
+
+                return response.Text;
+            }
+        }
+        
+        static string RecognizeFromContentAr(Configuration conf)
+        {
+            string name = "ar2.png";
+            using (FileStream fs = File.OpenRead(name))
+            {
+                OcrApi api = new OcrApi(conf);
+                var request = new PostOcrFromUrlOrContentRequest(fs, "", language:LanguageEnum.Arabic);
                 OCRResponse response = api.PostOcrFromUrlOrContent(request);
 
                 return response.Text;
@@ -183,22 +202,21 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo
 
         static string RecognizeRegionsFromContent(Configuration conf)
         {
-            List<OCRRegion> mImageBook_of_Abraham_FirstPagePngRegions = new List<OCRRegion>()
+            List<OCRRegion> mImage5PngRegions = new List<OCRRegion>()
             {
-                new OCRRegion() {Order = 0, Rect = new OCRRect(209,28,283,39)},
-                new OCRRegion() {Order = 1, Rect = new OCRRect(24,114,359,185)},
-                new OCRRegion() {Order = 2, Rect = new OCRRect(21,201,356,451)},
-                new OCRRegion() {Order = 3, Rect = new OCRRect(21,464,359,558)}
+                new OCRRegion() {Order = 0, Rect = new OCRRect(243,308,2095,964)},
+                new OCRRegion() {Order = 1, Rect = new OCRRect(240,1045,2108,1826)},
+                new OCRRegion() {Order = 2, Rect = new OCRRect(237,1916,2083,3180)}
             };
 
-            string name = "de_1.jpg";
+            string name = "5.png";
             using (FileStream fs = File.OpenRead(name))
             {
                 OcrApi api = new OcrApi(conf);
                 OCRRegionsRequestData requestData = new OCRRegionsRequestData()
                 {
-                    Language = LanguageEnum.German, 
-                    Regions = mImageBook_of_Abraham_FirstPagePngRegions
+                    Language = LanguageEnum.English, 
+                    Regions = mImage5PngRegions
                 };
                 OCRResponse response = api.OcrRegionsFromContent(requestData, fs);
 
@@ -208,15 +226,14 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo
 
         static string RecognizeRegionsFromStorage(Configuration conf)
         {
-            List<OCRRegion> mImageBook_of_Abraham_FirstPagePngRegions = new List<OCRRegion>()
+            List<OCRRegion> mImage5PngRegions = new List<OCRRegion>()
             {
-                new OCRRegion() {Order = 0, Rect = new OCRRect(209,28,283,39)},
-                new OCRRegion() {Order = 1, Rect = new OCRRect(24,114,359,185)},
-                new OCRRegion() {Order = 2, Rect = new OCRRect(21,201,356,451)},
-                new OCRRegion() {Order = 3, Rect = new OCRRect(21,464,359,558)}
+                new OCRRegion() {Order = 0, Rect = new OCRRect(243,308,2095,964)},
+                new OCRRegion() {Order = 1, Rect = new OCRRect(240,1045,2108,1826)},
+                new OCRRegion() {Order = 2, Rect = new OCRRect(237,1916,2083,3180)}
             };
 
-            string name = "de_1.jpg";
+            string name = "5.png";
             using (FileStream fs = File.OpenRead(name))
             {
                 OcrApi api = new OcrApi(conf);
@@ -227,7 +244,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo
                 OCRRegionsRequestDataStorage requestData = new OCRRegionsRequestDataStorage()
                 {
                     Language = LanguageEnum.German,
-                    Regions = mImageBook_of_Abraham_FirstPagePngRegions,
+                    Regions = mImage5PngRegions,
                     FileName = name
                 };
                 OCRResponse response = api.OcrRegionsFromContent(requestData, fs);
@@ -245,7 +262,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo
                 var request = new PostOcrFromUrlOrContentRequest(fs, resultType: ResultType.Pdf, dsrMode: DsrMode.DsrAndFilter);
                 OCRResponse response = api.PostOcrFromUrlOrContent(request);
 
-                return response.Pdf;
+                return response.Pdf.Substring(0, 30) + " ..................";
             }
         }
         
@@ -293,7 +310,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo
         
         static string RecognizeTableFromContent(Configuration conf)
         {
-            string name = "table.png"; 
+            string name = "table.jpeg"; 
             using (FileStream fs = File.OpenRead(name))
             {
                 OcrApi api = new OcrApi(conf);
@@ -307,7 +324,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Demo
 
         static string RecognizeTableFromStorage(Configuration conf)
         {
-            string name = "table.png";
+            string name = "table.jpeg";
             using (FileStream fs = File.OpenRead(name))
             {
                 OcrApi api = new OcrApi(conf);

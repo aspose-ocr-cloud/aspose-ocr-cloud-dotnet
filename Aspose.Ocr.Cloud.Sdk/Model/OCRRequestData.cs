@@ -31,7 +31,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
     public class OCRRequestData
     {
         /// <summary>
-        /// Recognition language. English by default. <see cref="Model.Language.LanguageEnum"/>
+        /// Recognition language. English by default. <see cref="Model.LanguageEnum"/>
         /// </summary>
         public Model.LanguageEnum Language { get; set; } =
             Model.LanguageEnum.English;
@@ -40,11 +40,21 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         /// Option to enable skew correction algorithm. False bt default, because DSR_Step_2 request
         /// </summary>
         public bool MakeSkewCorrect { get; set; } = false;
+        
+        /// <summary>
+        /// Option to enable spell checking and correction algorithm. False by default
+        /// </summary>
+        public bool MakeSpellCheck { get; set; } = false;
 
         /// <summary>
         /// An option to switch DSR algorithm
         /// </summary>
         public Model.DsrMode DsrMode { get; set; }
+        
+        /// <summary>
+        /// Region filtering threshold. Filtering by the algorithm confidence scale. Higher mode - more aggressive filtering. Default == Medium
+        /// </summary>
+        public DsrConfidence DsrConfidence { get; set; } = DsrConfidence.Default;
         
         /// <summary>
         /// Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR
