@@ -1,0 +1,39 @@
+﻿@model ViewModel
+
+<div class="container-fluid asposetools pb5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 pt-5 pb-5">
+                <h1 id="ProductTitle">@Model.Title</h1>
+                <h2 id="ProductTitleSub">@Model.TitleSub</h2>
+
+                <div id="WorkPlaceHolder">
+                    <form id="UploadFile" name="UploadFile" enctype="multipart/form-data">
+                        @if (!Model.UploadAndRedirect)
+                        {
+                            if (Model.SaveAsOptions != null)
+                            {
+            @await Html.PartialAsync("SaveAs") }
+            <div class="convertbtn">
+                <input type="button" class="btn btn-success btn-lg" id="uploadButton" value="@Model.UploadButtonText" />
+            </div>}
+                    </form>
+                </div>
+                @if (!Model.UploadAndRedirect)
+                {
+    @await Html.PartialAsync("Download")}
+                <div id="alertPlaceHolder" class="col-md-12" style="margin-top:10px;">
+                    <p id="alertMessage" class="alert alert-danger hidden">Alert Message</p>
+                    <p id="alertSuccess" class="alert alert-success hidden">Alert Success</p>
+                </div>
+                <div id="loaderPlaceHolder" style="margin-top:10px;">
+                    <div id="loader" class="hidden" role="status" aria-hidden="true">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width:15%">15%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿@model HowToModel
+@* HowTo Section*@
+<div class="col-md-12 tl bg-darkgray howtolist">
+    <div class="container tl dflex">
+        <div class="col-md-4 howtosectiongfx">
+            <img src="https://products.aspose.app/img/howto.png" alt="HowTo">
+        </div>
+        <div class="col-md-8 howtosection">
+            <div>
+                <h2>@Model.Title</h2>
+                <ul>
+                    @foreach (var item in Model.List)
+                    {
+        <li>@item</li>
+}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

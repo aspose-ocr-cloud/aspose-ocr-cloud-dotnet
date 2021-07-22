@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.OCR-Cloud" Version="21.6.0" />
+  </ItemGroup>
+
+</Project>

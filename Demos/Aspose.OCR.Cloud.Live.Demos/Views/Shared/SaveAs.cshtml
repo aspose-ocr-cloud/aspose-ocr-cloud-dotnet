@@ -1,0 +1,13 @@
+﻿@model ViewModel
+
+<div class="saveas">
+    <em>@Model.Resources["SaveAs"]</em>
+    <div class="btn-group">
+        <select id="saveAs" name="saveAs">
+            @foreach (var ext in Model.SaveAsOptions)
+            {
+<option value="@ext.ToUpper()">@ext</option>
+}
+        </select>
+    </div>
+</div>
