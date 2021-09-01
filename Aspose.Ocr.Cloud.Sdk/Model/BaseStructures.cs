@@ -84,7 +84,19 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         Russian     = 23,
         Arabic      = 24,
         Hindi       = 25,
-        Ukraine     = 26
+        Ukrainian   = 26,
+        Bengali     = 27,
+        Tibetan     = 28,
+        Thai        = 29,
+        Urdu        = 30,
+        Turkish     = 31,
+        Korean      = 32,
+        Indonesian  = 33,
+        Hebrew      = 34,
+        Javanese    = 35,
+        Greek       = 36,
+        Japanese    = 37,
+        Persian     = 38
         
   }
 

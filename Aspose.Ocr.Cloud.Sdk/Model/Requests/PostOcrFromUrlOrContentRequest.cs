@@ -52,13 +52,15 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
             string url = null,
             LanguageEnum? language = null,
             ResultType? resultType = null,
-            DsrMode? dsrMode = null)
+            DsrMode? dsrMode = null,
+            bool contrastCorrection = false)
         {
             this.File = file;
             this.url = url;
             this.language = language;
             this.resultType = resultType;
             this.dsrMode = dsrMode;
+            this.contrastCorrection = contrastCorrection;
         }
 
         /// <summary>
@@ -90,6 +92,11 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         /// Option to enable spell checking and correction algorithm. False by default
         /// </summary>
         public bool spellCheck { get; set; }
+
+        /// <summary>
+        /// Option to enable image contrast correction for low contrast photos. False by default
+        /// </summary>
+        public bool contrastCorrection { get; set; }
 
         /// <summary>
         /// An option to switch DSR algorithm

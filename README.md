@@ -1,3 +1,4 @@
+
 <img src="Docs/Resources/heading.png">
 
 # Aspose.OCR Cloud
@@ -17,8 +18,8 @@ It is easy to get started with Aspose.OCR Cloud and there is nothing to install.
 
 
 
-## Release 21.06
-Introduced the support of Arabic, Hindi, Russian, Ukrainian languages recognition.
+## Release 21.09
+Added new recognition languages: Bengali, Tibetan, Thai, Urdu, Turkish, Korean, Indonesian, Hebrew, Javanese, Greek, Japanese, Persian
 
 ## Features
 - Automated skew correction
@@ -34,7 +35,7 @@ Introduced the support of Arabic, Hindi, Russian, Ukrainian languages recognitio
 - Various output formats: Text, Searchable PDF, hOCR, Excel for tables.
 
 ## Recognize text of different languages
-Aspose.OCR Cloud supports 26 languages including English, Chinese, Arabic, Hindi, German, French, Italian, Spanish, Portuguese, Polish, Slovene, Slovak, Netherlands, Lithuanian, Latvian, Danish, Norwegian, Finnish, Serbian, Croatian, Czech, Swedish, Estonian, Romanian, Russian, Ukrainian and a lot of other works too.
+Aspose.OCR Cloud supports 38 languages including English, German, French, Italian, Spanish, Portuguese, Polish, Slovene, Slovak, Netherlands, Lithuanian, Latvian, Danish, Norwegian, Finnish, Serbian, Croatian, Czech, Swedish, Estonian, Romanian, Chinese, Arabic, Hindi, Russian, Ukrainian, Bengali, Tibetan, Thai, Urdu, Turkish, Korean, Indonesian, Hebrew, Javanese, Greek, Japanese, Persian and a lot of other works too.
 
 ## How to use the SDK?
 

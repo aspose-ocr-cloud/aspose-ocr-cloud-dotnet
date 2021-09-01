@@ -107,6 +107,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "spellCheck", request.spellCheck);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrMode", request.dsrMode);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrConfidence", request.dsrConfidence);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "makeContrastCorrection", request.contrastCorrection);
 
             try 
             {                               
@@ -149,6 +150,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "spellCheck", request.spellCheck);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrMode", request.dsrMode);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrConfidence", request.dsrConfidence);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "makeContrastCorrection", request.contrastCorrection);
 
             if (request.File != null) 
             {

@@ -54,6 +54,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
             ResultType? resultType = null,
             bool skewCorrect = true,
             bool spellCheck = false,
+            bool contrastCorrection = false,
             DsrMode? dsrMode = null,
             DsrConfidence? dsrConfidence = null)             
         {
@@ -63,7 +64,8 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
             this.language = language;
             this.resultType = resultType;
             this.skewCorrect = skewCorrect;
-            this.spellCheck = spellCheck; 
+            this.spellCheck = spellCheck;
+            this.contrastCorrection = contrastCorrection;
             this.dsrMode = dsrMode;
             this.dsrConfidence = dsrConfidence;
         }
@@ -102,6 +104,11 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         /// Option to enable spell checking and correction algorithm. False by default
         /// </summary>
         public bool spellCheck { get; set; }
+
+        /// <summary>
+        /// Option to enable image contrast correction for low contrast photos. False by default
+        /// </summary>
+        public bool contrastCorrection { get; set; }
 
         /// <summary>
         /// An option to switch DSR algorithm
