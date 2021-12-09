@@ -45,6 +45,16 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         public List<TextRegion> StructuredData { get; set; }
 
         /// <summary>
+        /// Status from Aspose.OCR.Cloud
+        /// </summary>
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Status message from Aspose.OCR.Cloud
+        /// </summary>
+        public string StatusMessage { get; set; }
+
+        /// <summary>
         /// Response code (OK / NotFound / Error / e.g.)
         /// </summary>
         public System.Net.HttpStatusCode Code { get; set; }

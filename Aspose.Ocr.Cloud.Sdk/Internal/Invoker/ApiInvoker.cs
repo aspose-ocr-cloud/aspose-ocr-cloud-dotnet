@@ -30,6 +30,7 @@ using System.Net;
 using System.Text;
 using Aspose.Ocr.Cloud.Sdk.Internal.Invoker.Exceptions;
 using Aspose.Ocr.Cloud.Sdk.Invoker.Exceptions;
+using Aspose.Ocr.Cloud.Sdk.Model;
 using Newtonsoft.Json.Linq;
 
 namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker
@@ -54,6 +55,30 @@ namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker
         /// <summary>
         ///     Invoke Api
         /// </summary>
+        public T InvokeApiNew<T>(
+            string path,
+            string method,
+            string body = null,
+            Dictionary<string, string> headerParams = null,
+            Dictionary<string, object> formParams = null,
+            string contentType = "application/json") where T : class, IOCRResponse, new()
+        {
+            try
+            {
+                return InvokeInternal<T>(path, method, body, headerParams, formParams, contentType);
+            }
+            catch (TimeoutException)
+            {
+                T ocrRespose = new T();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
+        }
+
+        /// <summary>
+        ///     Invoke Api
+        /// </summary>
         public T InvokeApi<T>(
             string path,
             string method,
@@ -64,6 +89,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker
         {
             return InvokeInternal<T>(path, method, body, headerParams, formParams, contentType);
         }
+
 
         private T InvokeInternal<T>(
             string path,
@@ -133,7 +159,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker
 
                     if (param.Value is FileInfo)
                     {
-                        var fileInfo = (FileInfo) param.Value;
+                        var fileInfo = (FileInfo)param.Value;
                         var postData =
                             string.Format(
                                 "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n",
@@ -167,7 +193,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker
                 foreach (var param in postParameters)
                     if (param.Value is FileInfo)
                     {
-                        var fileInfo = (FileInfo) param.Value;
+                        var fileInfo = (FileInfo)param.Value;
 
                         // Write the file data directly to the Stream, rather than serializing it to a string.
                         formDataStream.Write(fileInfo.FileContent, 0, fileInfo.FileContent.Length);
@@ -183,7 +209,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker
                         if (!(param.Value is string))
                             postData = JsonSerializationHelper.Serialize(param.Value);
                         else
-                            postData = (string) param.Value;
+                            postData = (string)param.Value;
 
                         formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
                     }
@@ -289,7 +315,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker
             return client;
         }
 
-       
+
         private T ReadResponse<T>(WebRequest client) where T : class
         {
             var webResponse = (HttpWebResponse)GetResponse(client);
@@ -339,7 +365,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Internal.Invoker
                 if (wex.Response != null)
                     return wex.Response;
 
-                throw;
+                throw new TimeoutException("");
             }
         }
 

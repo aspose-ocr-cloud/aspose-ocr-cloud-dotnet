@@ -29,6 +29,7 @@ using Aspose.Ocr.Cloud.Sdk.Internal.Invoker.RequestHandlers;
 
 namespace Aspose.Ocr.Cloud.Sdk
 {
+    using System;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using Aspose.Ocr.Cloud.Sdk.Model;
@@ -109,24 +110,25 @@ namespace Aspose.Ocr.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrConfidence", request.dsrConfidence);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "makeContrastCorrection", request.contrastCorrection);
 
-            try 
-            {                               
+
+            try
+            {                  
                 return this.apiInvoker.InvokeApi<OCRResponse>(
                     resourcePath, 
                     "GET", 
                     null, 
                     null, 
                     null);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
             }
+            catch (TimeoutException)
+            {
+                OCRResponse ocrRespose = new OCRResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
+
+
         }
 
         /// <summary>
@@ -168,12 +170,17 @@ namespace Aspose.Ocr.Cloud.Sdk
             } 
             catch (ApiException ex) 
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                OCRResponse ocrRespose = new OCRResponse();
+                ocrRespose.Status = "1";
+                ocrRespose.StatusMessage = "PipelineException";
+                return ocrRespose;
+            }
+            catch (TimeoutException)
+            {
+                OCRResponse ocrRespose = new OCRResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
             }
         }
 
@@ -189,8 +196,18 @@ namespace Aspose.Ocr.Cloud.Sdk
         {
             var requestUrl = BuildUrl("recognize-regions-url");
             var formParams = new Dictionary<string, object> { {"url", urlToFile}, {"requestData", requestData} };
-            return this.apiInvoker.InvokeApi<OCRResponse>(requestUrl, "POST", null, null, formParams);
-        }
+            try 
+            { 
+                return this.apiInvoker.InvokeApi<OCRResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRResponse ocrRespose = new OCRResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
+}
 
         /// <summary>
         /// Recognize specific regions of image from File Stream
@@ -203,8 +220,18 @@ namespace Aspose.Ocr.Cloud.Sdk
             var requestUrl = BuildUrl("recognize-regions-content");
             var fileInfo = this.apiInvoker.ToFileInfo(file, "File");
             var formParams = new Dictionary<string, object> { { "file", fileInfo }, { "requestData", requestData } };
-            return this.apiInvoker.InvokeApi<OCRResponse>(requestUrl, "POST", null, null, formParams);
-        }
+            try 
+            { 
+                return this.apiInvoker.InvokeApi<OCRResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRResponse ocrRespose = new OCRResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
+}
 
         /// <summary>
         /// Recognize specific regions of image located at Aspose Storage.
@@ -216,7 +243,17 @@ namespace Aspose.Ocr.Cloud.Sdk
         {
             var requestUrl = BuildUrl("recognize-regions-url");
             var formParams = new Dictionary<string, object> { { "requestData", requestData } };
-            return this.apiInvoker.InvokeApi<OCRResponse>(requestUrl, "POST", null, null, formParams);
+            try
+            {
+                return this.apiInvoker.InvokeApi<OCRResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRResponse ocrRespose = new OCRResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
         }
         
         #endregion
@@ -233,7 +270,17 @@ namespace Aspose.Ocr.Cloud.Sdk
         {
             var requestUrl = BuildUrl("recognize-receipt-url");
             var formParams = new Dictionary<string, object> { {"url", urlToFile}, {"requestData", requestData} };
-            return this.apiInvoker.InvokeApi<OCRReceiptResponse>(requestUrl, "POST", null, null, formParams);
+            try
+            {
+                return this.apiInvoker.InvokeApi<OCRReceiptResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRReceiptResponse ocrRespose = new OCRReceiptResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
         }
         
         /// <summary>
@@ -247,7 +294,17 @@ namespace Aspose.Ocr.Cloud.Sdk
             var requestUrl = BuildUrl("recognize-receipt-content");
             var fileInfo = this.apiInvoker.ToFileInfo(file, "File");
             var formParams = new Dictionary<string, object> { { "file", fileInfo }, { "requestData", requestData } };
-            return this.apiInvoker.InvokeApi<OCRReceiptResponse>(requestUrl, "POST", null, null, formParams);
+            try
+            {
+                return this.apiInvoker.InvokeApi<OCRReceiptResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRReceiptResponse ocrRespose = new OCRReceiptResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
         }
 
         /// <summary>
@@ -260,7 +317,17 @@ namespace Aspose.Ocr.Cloud.Sdk
         {
             var requestUrl = BuildUrl("recognize-receipt-storage");
             var formParams = new Dictionary<string, object> { { "requestData", requestData } };
-            return this.apiInvoker.InvokeApi<OCRReceiptResponse>(requestUrl, "POST", null, null, formParams);
+            try 
+            { 
+                return this.apiInvoker.InvokeApi<OCRReceiptResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRReceiptResponse ocrRespose = new OCRReceiptResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
         }
 
         #endregion
@@ -277,7 +344,17 @@ namespace Aspose.Ocr.Cloud.Sdk
         {
             var requestUrl = BuildUrl("recognize-table-url");
             var formParams = new Dictionary<string, object> { {"url", urlToFile}, {"requestData", requestData} };
-            return this.apiInvoker.InvokeApi<OCRTableResponse>(requestUrl, "POST", null, null, formParams);
+            try 
+            { 
+                return this.apiInvoker.InvokeApi<OCRTableResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRTableResponse ocrRespose = new OCRTableResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
         }
         
         /// <summary>
@@ -291,8 +368,19 @@ namespace Aspose.Ocr.Cloud.Sdk
             var requestUrl = BuildUrl("recognize-table-content");
             var fileInfo = this.apiInvoker.ToFileInfo(file, "File");
             var formParams = new Dictionary<string, object> { { "file", fileInfo }, { "requestData", requestData } };
-            return this.apiInvoker.InvokeApi<OCRTableResponse>(requestUrl, "POST", null, null, formParams);
-        }
+
+            try 
+            { 
+                return this.apiInvoker.InvokeApi<OCRTableResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRTableResponse ocrRespose = new OCRTableResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
+}
 
         /// <summary>
         /// Recognize Receipt table image located at Aspose Storage.
@@ -304,8 +392,18 @@ namespace Aspose.Ocr.Cloud.Sdk
         {
             var requestUrl = BuildUrl("recognize-table-storage");
             var formParams = new Dictionary<string, object> { { "requestData", requestData } };
-            return this.apiInvoker.InvokeApi<OCRTableResponse>(requestUrl, "POST", null, null, formParams);
-        }
+            try 
+            { 
+                return this.apiInvoker.InvokeApi<OCRTableResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRTableResponse ocrRespose = new OCRTableResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
+}
 
         #endregion
 
@@ -321,9 +419,20 @@ namespace Aspose.Ocr.Cloud.Sdk
         {
             var requestUrl = BuildUrl("recognize-pdf-url");
             var formParams = new Dictionary<string, object> { {"url", urlToFile}, {"requestData", requestData} };
-            return this.apiInvoker.InvokeApi<OCRPDFResponse>(requestUrl, "POST", null, null, formParams);
-        }
-        
+
+            try 
+            { 
+                return this.apiInvoker.InvokeApi<OCRPDFResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRPDFResponse ocrRespose = new OCRPDFResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
+}
+
         /// <summary>
         /// Recognize Receipt image from File Stream
         /// </summary>
@@ -335,7 +444,17 @@ namespace Aspose.Ocr.Cloud.Sdk
             var requestUrl = BuildUrl("recognize-pdf-content");
             var fileInfo = this.apiInvoker.ToFileInfo(file, "File");
             var formParams = new Dictionary<string, object> { { "file", fileInfo }, { "requestData", requestData } };
-            return this.apiInvoker.InvokeApi<OCRPDFResponse>(requestUrl, "POST", null, null, formParams);
+            try
+            { 
+                return this.apiInvoker.InvokeApi<OCRPDFResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRPDFResponse ocrRespose = new OCRPDFResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
         }
 
         /// <summary>
@@ -348,7 +467,17 @@ namespace Aspose.Ocr.Cloud.Sdk
         {
             var requestUrl = BuildUrl("recognize-pdf-storage");
             var formParams = new Dictionary<string, object> { { "requestData", requestData } };
-            return this.apiInvoker.InvokeApi<OCRPDFResponse>(requestUrl, "POST", null, null, formParams);
+            try
+            {
+                return this.apiInvoker.InvokeApi<OCRPDFResponse>(requestUrl, "POST", null, null, formParams);
+            }
+            catch (TimeoutException)
+            {
+                OCRPDFResponse ocrRespose = new OCRPDFResponse();
+                ocrRespose.Status = "2";
+                ocrRespose.StatusMessage = "TimeOutException";
+                return ocrRespose;
+            }
         }
 
         #endregion

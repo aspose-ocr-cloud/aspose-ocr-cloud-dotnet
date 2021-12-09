@@ -31,7 +31,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
     /// Represents information about response after OCR.
     /// </summary>
     [XmlRoot("Response", Namespace = "")]
-    public class OCRTableResponse
+    public class OCRTableResponse : IOCRResponse
     {
         /// <summary>
         /// Recognized Text
@@ -47,6 +47,16 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         /// Text in the CSV Structure data
         /// </summary>
         public string CSV { get; set; }
+
+        /// <summary>
+        /// Status from Aspose.OCR.Cloud
+        /// </summary>
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Status message from Aspose.OCR.Cloud
+        /// </summary>
+        public string StatusMessage { get; set; }
 
         /// <summary>
         /// Response code (OK / NotFound / Error / e.g.)

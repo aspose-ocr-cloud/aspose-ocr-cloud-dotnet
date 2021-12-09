@@ -96,9 +96,15 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         Javanese    = 35,
         Greek       = 36,
         Japanese    = 37,
-        Persian     = 38
-        
-  }
+        Persian     = 38,
+        Latin       = 40,
+        Vietnamese  = 41,
+        Uzbek       = 42,
+        Georgian    = 43,
+        Bulgarian   = 44,
+        Azerbaijani = 45
+
+    }
 
   /// <summary>
   /// Flag option to set one ore some rescognition result types

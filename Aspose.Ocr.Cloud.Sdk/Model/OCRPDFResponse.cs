@@ -30,12 +30,22 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
     /// <summary>
     /// PDF recognition result. 
     /// </summary>
-    public class OCRPDFResponse
+    public class OCRPDFResponse : IOCRResponse
     {
         /// <summary>
         /// Collection of each page recognition results
         /// </summary>
         public List<PdfResultPage> ResultData { get; set; }
+
+        /// <summary>
+        /// Status from Aspose.OCR.Cloud
+        /// </summary>
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Status message from Aspose.OCR.Cloud
+        /// </summary>
+        public string StatusMessage { get; set; }
 
         /// <summary>
         /// Response code (OK / NotFound / Error / e.g.)
