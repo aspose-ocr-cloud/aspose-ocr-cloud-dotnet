@@ -97,6 +97,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         Greek       = 36,
         Japanese    = 37,
         Persian     = 38,
+        Albanian    = 39,
         Latin       = 40,
         Vietnamese  = 41,
         Uzbek       = 42,

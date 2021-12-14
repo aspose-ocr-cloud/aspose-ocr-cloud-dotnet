@@ -39,16 +39,16 @@ Don’t worry about hardware, all the computational operations are performed at 
     <PackageId>Aspose.OCR-Cloud</PackageId>
     <Product>Aspose.OCR Cloud SDK for .NET</Product>
     <PackageIconUrl></PackageIconUrl>
-    <Version>21.12.0</Version>
+    <Version>21.12.1</Version>
     <Authors>asposecloud</Authors>
-    <AssemblyVersion>21.12.0.0</AssemblyVersion>
+    <AssemblyVersion>21.12.1.0</AssemblyVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
     <PackageReleaseNotes>Albanian Latin Vietnamese Uzbek Georgian Bulgarian Azerbaijani OCR languages support, imporved error message handling
 Added support of SVG image format</PackageReleaseNotes>
-    <FileVersion>21.12.0.0</FileVersion>
+    <FileVersion>21.12.1.0</FileVersion>
     <PackageIcon>icon.png</PackageIcon>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageVersion>21.12.0</PackageVersion>
