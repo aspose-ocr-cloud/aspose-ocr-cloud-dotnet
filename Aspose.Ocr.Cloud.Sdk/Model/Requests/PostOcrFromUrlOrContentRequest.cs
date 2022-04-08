@@ -53,6 +53,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
             LanguageEnum? language = null,
             ResultType? resultType = null,
             DsrMode? dsrMode = null,
+            bool imageUpscale = false,
             bool contrastCorrection = false)
         {
             this.File = file;
@@ -61,6 +62,8 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
             this.resultType = resultType;
             this.dsrMode = dsrMode;
             this.contrastCorrection = contrastCorrection;
+            this.imageUpscale = imageUpscale;
+            this.skewCorrect = skewCorrect;
         }
 
         /// <summary>
@@ -107,5 +110,11 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         /// Region filtering threshold. Filtering by the algorithm confidence scale. Higher mode - more aggressive filtering. Default == Medium
         /// </summary>
         public DsrConfidence? dsrConfidence { get; set; }
+
+        /// <summary>
+        /// enable image upscale
+        /// </summary>
+        public bool imageUpscale { get; set; }
+
     }
 }

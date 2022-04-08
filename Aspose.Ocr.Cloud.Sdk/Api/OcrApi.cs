@@ -111,6 +111,7 @@ namespace Aspose.Ocr.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "makeContrastCorrection", request.contrastCorrection);
 
 
+
             try
             {                  
                 return this.apiInvoker.InvokeApi<OCRResponse>(
@@ -153,6 +154,8 @@ namespace Aspose.Ocr.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrMode", request.dsrMode);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dsrConfidence", request.dsrConfidence);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "makeContrastCorrection", request.contrastCorrection);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "makeImageUpscaling", request.imageUpscale);
+
 
             if (request.File != null) 
             {

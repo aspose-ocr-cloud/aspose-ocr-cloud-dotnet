@@ -60,5 +60,14 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         /// Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR
         /// </summary>
         public Model.ResultType ResultType { get; set; } = Model.ResultType.Text;
+
+        /// Option to enable contrastCorrection algorithm. False by default
+        /// </summary>
+        public bool ContrastCorrection { get; set; } = false;
+
+        /// <summary>
+        /// MakeImageUpscaling
+        /// </summary>
+        public bool MakeImageUpscaling { get; set; } = false;
     }
 }

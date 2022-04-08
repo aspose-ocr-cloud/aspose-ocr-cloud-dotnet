@@ -47,14 +47,15 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         /// <param name="resultType">Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR</param>
         /// <param name="dsrMode">An option to switch DSR algorithm</param>
         public GetRecognizeDocumentRequest(
-            string name, 
-            string storage = null, 
-            string folder = null, 
-            LanguageEnum? language = null, 
+            string name,
+            string storage = null,
+            string folder = null,
+            LanguageEnum? language = null,
             ResultType? resultType = null,
             bool skewCorrect = true,
             bool spellCheck = false,
             bool contrastCorrection = false,
+            bool imageUpscale = false,
             DsrMode? dsrMode = null,
             DsrConfidence? dsrConfidence = null)             
         {
@@ -66,6 +67,7 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
             this.skewCorrect = skewCorrect;
             this.spellCheck = spellCheck;
             this.contrastCorrection = contrastCorrection;
+            this.imageUpscale = imageUpscale;
             this.dsrMode = dsrMode;
             this.dsrConfidence = dsrConfidence;
         }
@@ -109,6 +111,11 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
         /// Option to enable image contrast correction for low contrast photos. False by default
         /// </summary>
         public bool contrastCorrection { get; set; }
+
+        /// <summary>
+        /// enable image upscale
+        /// </summary>
+        public bool imageUpscale { get; set; }
 
         /// <summary>
         /// An option to switch DSR algorithm

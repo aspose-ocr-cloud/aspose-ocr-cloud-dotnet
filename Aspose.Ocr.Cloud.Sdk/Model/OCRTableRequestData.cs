@@ -39,5 +39,14 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         /// Recognition language. English by default. <see cref="Model.LanguageEnum"/>
         /// </summary>
         public Model.LanguageEnum Language { get; set; } = Model.LanguageEnum.English;
+
+        /// Option to enable contrastCorrection algorithm. False by default
+        /// </summary>
+        public bool ContrastCorrection { get; set; } = false;
+
+        /// <summary>
+        /// MakeImageUpscaling
+        /// </summary>
+        public bool MakeImageUpscaling { get; set; } = false;
     }
 }

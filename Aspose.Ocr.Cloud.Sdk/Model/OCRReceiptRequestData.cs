@@ -34,5 +34,16 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         /// Option to enable skew correction algorithm. False by default, because DSR_Step_2 request
         /// </summary>
         public bool MakeSkewCorrect { get; set; } = false;
+
+
+        /// Option to enable contrastCorrection algorithm. False by default
+        /// </summary>
+        public bool ContrastCorrection { get; set; } = false;
+
+        /// <summary>
+        /// MakeImageUpscaling
+        /// </summary>
+        public bool MakeImageUpscaling { get; set; } = false;
+
     }
 }

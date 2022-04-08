@@ -103,7 +103,9 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         Uzbek       = 42,
         Georgian    = 43,
         Bulgarian   = 44,
-        Azerbaijani = 45
+        Azerbaijani = 45,
+        HWT_eng = 100
+
 
     }
 
