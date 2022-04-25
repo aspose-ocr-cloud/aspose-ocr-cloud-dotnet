@@ -104,6 +104,9 @@ namespace Aspose.Ocr.Cloud.Sdk.Model
         Georgian    = 43,
         Bulgarian   = 44,
         Azerbaijani = 45,
+        Kazah       = 46,
+        Macedonian  = 47,
+        Belorussian = 48,
         HWT_eng = 100
 
 

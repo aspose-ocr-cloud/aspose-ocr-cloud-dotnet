@@ -54,7 +54,8 @@ namespace Aspose.Ocr.Cloud.Sdk.Model.Requests
             ResultType? resultType = null,
             DsrMode? dsrMode = null,
             bool imageUpscale = false,
-            bool contrastCorrection = false)
+            bool contrastCorrection = false,
+            bool skewCorrect = false)
         {
             this.File = file;
             this.url = url;
