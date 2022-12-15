@@ -1,0 +1,132 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>Aspose.OCR.Cloud.SDK</AssemblyName>
+    <PackageId>Aspose.OCR-Cloud</PackageId>
+    <OutputType>Library</OutputType>
+    <Authors>asposecloud</Authors>
+    <Company>Aspose Pty Ltd</Company>
+    <AssemblyTitle>OpenAPI Library</AssemblyTitle>
+    <Description>Aspose. OCR Cloud is a simple ocr technology, which you can use in your application to convert image to text.
+  Add OCR to your app with simply few line of code. Any language, any platform, no hardware resources.
+
+  Automatic skew correction and advanced automative image pre-processing:
+  Aspose.OCR Cloud can successfully read poor quality scans and automatically make image pre-processing to correct low resolution, low contrast, noise and skew, image upscale resolution.
+
+  45 languages supported including Chinese.
+  Automated and manual document layout detection:
+  Recognize documents with complex layouts in fully automatic mode or with manual corrections.
+  In automated mode, you don’t need to worry about text layout editing. Our DSR algorithm provides such functionality. It allows performing the OCR operation quickly on various document scans.
+  Receipt recognition.
+  Text region detection method
+  Table image recognition.
+  PDF recognition. Multipage supported.
+  Text correction using spell checkong algorithms.
+  Various Output formats: Text, Searchable PDF, hOCR.
+
+  Supported image formats:
+  We support all widely used image formats: bmp jpeg jpg jpe jp2 png webp tiff tif exr hdr pic svg
+
+  Recognize Text of Different Languages:
+  Supports 45 languages including: English, German, French, Italian, Spanish, Portuguese, Polish, Slovene, Slovak, Netherlands, Lithuanian, Latvian, Danish, Norwegian, Finnish, Serbian, Croatian, Czech, Swedish, Estonian, Romanian, Chinese,  Arabic, Hindi, Russian, Ukrainian, Bengali, Tibetan, Thai, Urdu, Turkish, Korean, Indonesian, Hebrew, Javanese, Greek, Japanese, Persian, Albanian, Latin, Vietnamese, Uzbek, Georgian, Bulgarian, Azerbaijani
+
+  Recognize english handwritten text.
+
+
+  High speed with no hardware resources:
+  Don’t worry about hardware, all the computational operations are performed at our powerful servers, that hosts our core, built on cutting edge fast neural networks.</Description>
+    <Copyright>© Aspose 2002-2022. All Rights Reserved.</Copyright>
+    <RootNamespace>Aspose.OCR.Cloud.SDK</RootNamespace>
+    <Version>22.12.0</Version>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aspose.OCR.Cloud.SDK.xml</DocumentationFile>
+    <RepositoryUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>
+		What was changed
+
+		This is the major release of Aspose.OCR Cloud which delivers significant new features, enhancements to existing features, performance improvements, and fixes. The list below contains the most important features that are supported in this release:
+
+		Image to speech conversion
+		Convert almost any picture or photo with readable characters into a natural human voice that can be played in the background or downloaded.
+		Advanced image binarization
+		A specialized neural network for converting images to black and white for better text recognition.
+		Automatic skew correction
+		Detect image skew angle and automatically correct the tilt.
+		Dewrapping
+		Detect perspective distortions and automatically straighten the image.
+		Upscaling
+		Intelligently enhance image resolution without losing the content and quality.
+
+		Public API changes and backwards compatibility
+
+		BACKWARD INCOMPATIBILITY!
+
+		This release is based on a completely new architecture (version 5.0) that is not backward compatible with previous (version 3.0) principles and workflows.
+
+		To maintain compatibility, please continue to use the previous version of the Aspose.OCR Cloud API.
+		Added public APIs:
+
+		See Aspose OCR Cloud 5.0 API Reference for the full list of new endpoints and request parameters.
+		Updated public APIs:
+
+		This is the first release based on the new (version 5.0) architecture. When updates, renames and improvements are introduced, they will be described in future Release Notes. Keep for updates.
+		Removed public APIs:
+
+		This is the first release based on the new (version 5.0) architecture. When some of the methods become deprecated, this will be announced in future Release Notes.
+	</PackageReleaseNotes>
+    <Nullable>annotations</Nullable>
+    <Product>Aspose.OCR Cloud SDK for .Net</Product>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>Aspose.OCR;Aspose.OCR-Cloud;Aspose.Total-Cloud;Cloud;REST;API;JPEG;PNG;GIF;BMP;TIFF;optical;character;recognition;OCR;optical-character-recognition;character-recognition;scanner;AI;engine;C#;CSharp;machine;learning;machine-learning;handwriting;recognize;scanned;scan;document;searchable;PDF;Text;Detection;Receipt;multi-platform;extract-text;text-extraction;HOCR;localization;localized-ocr;English-OCR;French-OCR;German-OCR;Deutsch-OCR;XML;JSON;Extract-Image-Text;Extract-Text;Extract-Localized-Text;Multi-Langual-OCR;Multilingual;WEBP;PBM;PGM;PPM;PXM;PNM;PFM;SR;RAS;TIF;EXR;HDR;PIC;.NET;C#;dotnet;CSharp</PackageTags>
+    <Nullable>annotations</Nullable>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>C:\Users\User\Downloads\Aspose.snk</AssemblyOriginatorKeyFile>
+    <PackageLicenseFile>licenses\LICENSE.TXT</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JsonSubTypes" Version="1.9.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="108.0.2" />
+    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="System.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\docs\README_nuget.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+    <ItemGroup>
+	    <None Include="..\..\licenses\LICENSE.TXT">
+		    <Pack>True</Pack>
+		    <PackagePath>\licenses\</PackagePath>
+	    </None>
+    </ItemGroup>
+    <ItemGroup>
+	    <None Include="..\..\licenses\thirdpartylicenses-Aspose.OCR Cloud SDK for .NET.txt">
+		    <Pack>True</Pack>
+		    <PackagePath>\licenses\</PackagePath>
+	    </None>
+    </ItemGroup>
+</Project>
