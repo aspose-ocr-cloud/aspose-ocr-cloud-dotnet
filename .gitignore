@@ -364,3 +364,5 @@ FodyWeavers.xsd
 # OpenAPI generator files
 .openapi-generator
 .openapi-generator-ignore
+
+!src/Aspose.OCR.Cloud.SDK.Test/bin/Debug/net6.0/samples/*
