@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="samples\dewarping.png" />
+    <None Remove="samples\latin.djvu" />
     <None Remove="samples\lorem_ipsum.jpg" />
     <None Remove="samples\lorem_ipsum.png" />
   </ItemGroup>
@@ -17,13 +18,16 @@
     <Content Include="samples\dewarping.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="samples\latin.djvu">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="samples\lorem_ipsum.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspose.OCR-Cloud" Version="22.12.0" />
+    <PackageReference Include="Aspose.OCR-Cloud" Version="23.5.0" />
   </ItemGroup>
 
 </Project>

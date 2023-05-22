@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Aspose.OCR.Cloud.SDK\Aspose.OCR.Cloud.SDK.csproj" />
   </ItemGroup>
 
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="xcopy /E /Y /I samples $(TargetDir)samples\" />
+  </Target>
+
 </Project>

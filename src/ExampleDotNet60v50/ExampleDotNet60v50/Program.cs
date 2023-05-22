@@ -11,13 +11,14 @@ namespace NET_SDK_Test
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This is Aspose OCR Cloud SDK for .Net 6.0 v22.12.0 example usage project");
+            Console.WriteLine("This is Aspose OCR Cloud SDK for .Net 6.0 v23.5.0 example usage project");
 
-            string clientId = "";
-            string clientSecret = "";
+            string clientId = "YOUR_CLIENT_ID";
+            string clientSecret = "YOUR_CLIENT_SECRET";
             RecognizeImageExample.TryRecognizeImageApi(clientId, clientSecret);
             TextToSpeechExample.TryTextToSpeechApi(clientId, clientSecret);
-            ImageProcessingExample.TryImageProcessingApi(clientId, clientSecret);
+            DewarpImageExample.TryDewarpImageApi(clientId, clientSecret);
+            Djvu2PdfExample.TryDjvu2PdfApi(clientId, clientSecret);
         }
 
     }

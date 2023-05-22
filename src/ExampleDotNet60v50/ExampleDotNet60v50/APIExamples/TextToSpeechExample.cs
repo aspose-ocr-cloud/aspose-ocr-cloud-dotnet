@@ -22,22 +22,23 @@ namespace ExampleDotNet60v50.APIExamples
             {
                 string sampleText = "This is the sample text";
 
-                TextToSpeechApi textToSpeechApi = new TextToSpeechApi(clientId, clientSecret);
+                ConvertTextToSpeechApi textToSpeechApi = new ConvertTextToSpeechApi(clientId, clientSecret);
 
                 Console.WriteLine($"The following action will reduce the number of API calls available to your " +
                     $"account in the current period.\n" +
-                    $"Sending sample text ({sampleText}) to TextToSpeechApi...");
+                    $"Sending sample text ({sampleText}) to ConvertTextToSpeechApi...");
 
                 var settings = new TTSBody(
                         text: sampleText,
-                        language: LanguageTTS.English,
-                        resultType: ResultTypeTTS.Wav);
+                        settings: new TTSSettings(
+                            language: LanguageTTS.English,
+                            resultType: ResultTypeTTS.Wav));
 
-                var taskId = textToSpeechApi.PostTextToSpeech(settings);
+                var taskId = textToSpeechApi.PostConvertTextToSpeech(settings);
                 Console.WriteLine($"File successfully sent. Your credentials accepted. Your task ID is {taskId}");
 
                 Console.WriteLine($"Requesting results for task {taskId} ...");
-                var result = textToSpeechApi.GetTextToSpeechResult(taskId);
+                var result = textToSpeechApi.GetConvertTextToSpeech(taskId);
 
                 byte[] soundFile = result.Results[0].Data;
                 string extension = result.Results[0].Type switch
