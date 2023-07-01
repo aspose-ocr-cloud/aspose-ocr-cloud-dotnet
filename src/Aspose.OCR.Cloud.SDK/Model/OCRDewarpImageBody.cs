@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// Combines Image data and OCR processing settings
+    /// OCRDewarpImageBody
     /// </summary>
     [DataContract(Name = "OCRDewarpImageBody")]
     public partial class OCRDewarpImageBody : IEquatable<OCRDewarpImageBody>, IValidatableObject
@@ -39,7 +39,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OCRDewarpImageBody" /> class.
         /// </summary>
-        /// <param name="image">Gets or Sets Image (required).</param>
+        /// <param name="image">image (required).</param>
         public OCRDewarpImageBody(byte[] image = default(byte[]))
         {
             // to ensure "image" is required (not null)
@@ -53,7 +53,6 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Gets or Sets Image
         /// </summary>
-        /// <value>Gets or Sets Image</value>
         [DataMember(Name = "image", IsRequired = true, EmitDefaultValue = true)]
         public byte[] Image { get; set; }
 

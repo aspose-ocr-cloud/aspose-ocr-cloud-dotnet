@@ -3,16 +3,17 @@
   <PropertyGroup>
     <AssemblyName>Aspose.OCR.Cloud.SDK.Test</AssemblyName>
     <RootNamespace>Aspose.OCR.Cloud.SDK.Test</RootNamespace>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net6.0;net462;netcoreapp3.1</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
     <IsPackable>false</IsPackable>
-    <Nullable>annotations</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
-        <PackageReference Include="NUnit" Version="3.13.2" />
-        <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
-        <PackageReference Include="coverlet.collector" Version="3.1.0" />
+        <PackageReference Include="LevenshteinMinimumEditDistance" Version="1.2.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.2" />
+        <PackageReference Include="NUnit" Version="3.13.3" />
+        <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+        <PackageReference Include="coverlet.collector" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,5 +23,6 @@
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="xcopy /E /Y /I samples $(TargetDir)samples\" />
   </Target>
+
 
 </Project>

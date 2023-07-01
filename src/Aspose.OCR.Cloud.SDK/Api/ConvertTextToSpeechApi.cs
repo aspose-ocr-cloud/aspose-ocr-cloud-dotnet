@@ -52,7 +52,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetConvertTextToSpeech
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TTSResponse</returns>
         TTSResponse GetConvertTextToSpeech(string id, int operationIndex = 0);
@@ -64,7 +64,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TTSResponse</returns>
         ApiResponse<TTSResponse> GetConvertTextToSpeechWithHttpInfo(string id, int operationIndex = 0);
@@ -129,7 +129,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TTSResponse</returns>
@@ -142,7 +142,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TTSResponse)</returns>
@@ -479,7 +479,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetConvertTextToSpeech 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TTSResponse</returns>
         public TTSResponse GetConvertTextToSpeech(string id, int operationIndex = 0)
@@ -492,7 +492,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetConvertTextToSpeech 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TTSResponse</returns>
         public Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> GetConvertTextToSpeechWithHttpInfo(string id, int operationIndex = 0)
@@ -565,7 +565,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetConvertTextToSpeech 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TTSResponse</returns>
@@ -579,7 +579,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetConvertTextToSpeech 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TTSResponse)</returns>

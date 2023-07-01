@@ -69,7 +69,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
         DsrPlusDetector = 6,
 
         /// <summary>
-        /// Enum CraftPoly for value: CraftPoly
+        /// Enum PolygonalTextDetector for value: PolygonalTextDetector
         /// </summary>
         [EnumMember(Value = "PolygonalTextDetector")]
         PolygonalTextDetector = 7

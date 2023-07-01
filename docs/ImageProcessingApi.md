@@ -18,69 +18,13 @@ All URIs are relative to *http://localhost*
 GetResultFile
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class GetResultFileExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ImageProcessingApi(config);
-            var id = "id_example";  // string | Task id to select the result
-
-            try
-            {
-                // GetResultFile
-                Object result = apiInstance.GetResultFile(id);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ImageProcessingApi.GetResultFile: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetResultFileWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // GetResultFile
-    ApiResponse<Object> response = apiInstance.GetResultFileWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ImageProcessingApi.GetResultFileWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Task id to select the result |  |
+| **id** | **string** |  |  |
 
 ### Return type
 
@@ -100,6 +44,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **204** | Rsults expired |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -110,69 +55,13 @@ catch (ApiException e)
 GetResultTask
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class GetResultTaskExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ImageProcessingApi(config);
-            var id = "id_example";  // string | Task id to select the result
-
-            try
-            {
-                // GetResultTask
-                OCRResponse result = apiInstance.GetResultTask(id);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ImageProcessingApi.GetResultTask: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetResultTaskWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // GetResultTask
-    ApiResponse<OCRResponse> response = apiInstance.GetResultTaskWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ImageProcessingApi.GetResultTaskWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Task id to select the result |  |
+| **id** | **string** |  |  |
 
 ### Return type
 
@@ -197,74 +86,18 @@ catch (ApiException e)
 
 <a name="postbinarizationfile"></a>
 # **PostBinarizationFile**
-> string PostBinarizationFile (System.IO.Stream? file = null)
+> string PostBinarizationFile (System.IO.Stream file = null)
 
 PostBinarizationFile
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class PostBinarizationFileExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ImageProcessingApi(config);
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
-
-            try
-            {
-                // PostBinarizationFile
-                string result = apiInstance.PostBinarizationFile(file);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ImageProcessingApi.PostBinarizationFile: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostBinarizationFileWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // PostBinarizationFile
-    ApiResponse<string> response = apiInstance.PostBinarizationFileWithHttpInfo(file);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ImageProcessingApi.PostBinarizationFileWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **file** | **System.IO.Stream?****System.IO.Stream?** |  | [optional]  |
+| **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 
 ### Return type
 
@@ -290,74 +123,18 @@ catch (ApiException e)
 
 <a name="postdewarpingfile"></a>
 # **PostDewarpingFile**
-> string PostDewarpingFile (System.IO.Stream? file = null)
+> string PostDewarpingFile (System.IO.Stream file = null)
 
 PostDewarpingFile
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class PostDewarpingFileExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ImageProcessingApi(config);
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
-
-            try
-            {
-                // PostDewarpingFile
-                string result = apiInstance.PostDewarpingFile(file);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ImageProcessingApi.PostDewarpingFile: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostDewarpingFileWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // PostDewarpingFile
-    ApiResponse<string> response = apiInstance.PostDewarpingFileWithHttpInfo(file);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ImageProcessingApi.PostDewarpingFileWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **file** | **System.IO.Stream?****System.IO.Stream?** |  | [optional]  |
+| **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 
 ### Return type
 
@@ -383,74 +160,18 @@ catch (ApiException e)
 
 <a name="postskewcorrectionfile"></a>
 # **PostSkewCorrectionFile**
-> string PostSkewCorrectionFile (System.IO.Stream? file = null)
+> string PostSkewCorrectionFile (System.IO.Stream file = null)
 
 PostSkewCorrectionFile
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class PostSkewCorrectionFileExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ImageProcessingApi(config);
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
-
-            try
-            {
-                // PostSkewCorrectionFile
-                string result = apiInstance.PostSkewCorrectionFile(file);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ImageProcessingApi.PostSkewCorrectionFile: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostSkewCorrectionFileWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // PostSkewCorrectionFile
-    ApiResponse<string> response = apiInstance.PostSkewCorrectionFileWithHttpInfo(file);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ImageProcessingApi.PostSkewCorrectionFileWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **file** | **System.IO.Stream?****System.IO.Stream?** |  | [optional]  |
+| **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 
 ### Return type
 
@@ -476,74 +197,18 @@ catch (ApiException e)
 
 <a name="postupsamplingfile"></a>
 # **PostUpsamplingFile**
-> string PostUpsamplingFile (System.IO.Stream? file = null)
+> string PostUpsamplingFile (System.IO.Stream file = null)
 
 PostUpsamplingImageFile
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class PostUpsamplingFileExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ImageProcessingApi(config);
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
-
-            try
-            {
-                // PostUpsamplingImageFile
-                string result = apiInstance.PostUpsamplingFile(file);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ImageProcessingApi.PostUpsamplingFile: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostUpsamplingFileWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // PostUpsamplingImageFile
-    ApiResponse<string> response = apiInstance.PostUpsamplingFileWithHttpInfo(file);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ImageProcessingApi.PostUpsamplingFileWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **file** | **System.IO.Stream?****System.IO.Stream?** |  | [optional]  |
+| **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 
 ### Return type
 

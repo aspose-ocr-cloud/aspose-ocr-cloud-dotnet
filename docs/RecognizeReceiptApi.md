@@ -15,59 +15,7 @@ All URIs are relative to *http://localhost*
 CancelRecognizeReceipt
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class CancelRecognizeReceiptExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new RecognizeReceiptApi(config);
-            var id = "id_example";  // string | 
-
-            try
-            {
-                // CancelRecognizeReceipt
-                apiInstance.CancelRecognizeReceipt(id);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling RecognizeReceiptApi.CancelRecognizeReceipt: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the CancelRecognizeReceiptWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // CancelRecognizeReceipt
-    apiInstance.CancelRecognizeReceiptWithHttpInfo(id);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RecognizeReceiptApi.CancelRecognizeReceiptWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
@@ -103,69 +51,13 @@ void (empty response body)
 GetRecognizeReceipt
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class GetRecognizeReceiptExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new RecognizeReceiptApi(config);
-            var id = "id_example";  // string | Task id to select the result
-
-            try
-            {
-                // GetRecognizeReceipt
-                OCRResponse result = apiInstance.GetRecognizeReceipt(id);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling RecognizeReceiptApi.GetRecognizeReceipt: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetRecognizeReceiptWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // GetRecognizeReceipt
-    ApiResponse<OCRResponse> response = apiInstance.GetRecognizeReceiptWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RecognizeReceiptApi.GetRecognizeReceiptWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Task id to select the result |  |
+| **id** | **string** |  |  |
 
 ### Return type
 
@@ -195,63 +87,7 @@ catch (ApiException e)
 PostRecognizeReceipt
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class PostRecognizeReceiptExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new RecognizeReceiptApi(config);
-            var oCRRecognizeReceiptBody = new OCRRecognizeReceiptBody(); // OCRRecognizeReceiptBody | 
-
-            try
-            {
-                // PostRecognizeReceipt
-                string result = apiInstance.PostRecognizeReceipt(oCRRecognizeReceiptBody);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling RecognizeReceiptApi.PostRecognizeReceipt: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostRecognizeReceiptWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // PostRecognizeReceipt
-    ApiResponse<string> response = apiInstance.PostRecognizeReceiptWithHttpInfo(oCRRecognizeReceiptBody);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RecognizeReceiptApi.PostRecognizeReceiptWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 

@@ -1,6 +1,6 @@
 <img src="docs/Resources/heading.png">
 
-# Aspose.OCR Cloud 23.5.0
+# Aspose.OCR Cloud 23.6.0
 
 [![License](https://img.shields.io/github/license/aspose-ocr-cloud/aspose-ocr-cloud-dotnet)](LICENSE)
 [![Nuget](https://img.shields.io/nuget/v/Aspose.OCR-Cloud)](https://www.nuget.org/packages/Aspose.OCR-Cloud/)
@@ -51,7 +51,7 @@ Aspose.OCR Cloud follows industry standards and best practices to keep your data
 ### Running demo
 
 1. Check out the SDK or install it from [NuGet](https://www.nuget.org/packages/Aspose.OCR-Cloud/).
-2. Open [.NET 6.0](/src/ExampleDotNet60v50) demo project.
+2. Open [Examples](/src/Examples) demo solution.
 3. Provide your **Client ID** and **Client Secret** (see _Authorization_ above).
 4. Run the project.
 
@@ -61,121 +61,62 @@ Aspose.OCR Cloud follows industry standards and best practices to keep your data
   </a>
 </p>
 
-## What was changed in version 23.5.0
+## What was changed in version 23.6.0
 
-A summary of recent changes, enhancements and bug fixes in **Aspose.OCR Cloud SDK for .NET 23.5.0** release:
+A summary of recent changes, enhancements and bug fixes in **Aspose.OCR Cloud SDK for .NET 23.6.0** release:
 
 Key | Summary | Category
 --- | ------- | --------
-n/a | Conversion of DjVu files to searchable PDF documents. | New feature
-n/a | Updated image processing APIs:<ul><li>Skew correction;</li><li>Dewarping;</li><li>Upsampling;</li><li>Binarization.</li></ul> | Enhancement
-n/a | Updated text-to-speech conversion API. | Enhancement
+OCR-3454 | Extracting text from photographed signboards, price tags, plates, food labels, and similar images. | New feature
+OCR-2893 | Detecting fonts and styles in scans or photographs. | New feature
 
-REST API changes: https://docs.aspose.cloud/ocr/aspose-ocr-cloud-23-5-0-release-notes/
+REST API changes: https://releases.aspose.cloud/ocr/release-notes/2023/aspose-ocr-cloud-23-6-0-release-notes/
 
 ### Public API changes and backwards compatibility
 
-This section lists all public API changes introduced in **Aspose.OCR Cloud SDK for .NET 23.5.0** that may affect the code of existing applications.
+This section lists all public API changes introduced in **Aspose.OCR Cloud SDK for .NET 23.6.0** that may affect the code of existing applications.
 
 #### Added public APIs:
 
 The following public APIs have been introduced in this release:
 
-##### DjVu to PDF conversion
+##### Label recognition
+
+The following new classes have been added for extracting text from street photos, labels, and similar images:
+
+Class | Description
+----- | -----------
+`RecognizeLabelApi` | Label recognition API.
+`OCRSettingsRecognizeLabel` | Label recognition settings.
+`OCRRecognizeLabelBody` | Label recognition request body.
+
+[Learn more...](https://docs.aspose.cloud/ocr/recognize-label/)
+
+##### Font identification
 
 The following new classes have been added:
 
-- `DjVu2PDFApi` - DjVu to searchable PDF conversion API.
-- `OCRSettingsDjVu2PDF` - DjVu to searchable PDF conversion settings.
-- `OCRDjVu2PDFBody` - DjVu to searchable PDF conversion request body.
+Class | Description
+----- | -----------
+`IdentifyFontApi` | Font identification API.
+`OCRSettingsRecognizeFont` | Font identification settings.
+`OCRRecognizeFontBody` | Font identification request body.
 
-[Learn more...](https://docs.aspose.cloud/ocr/djvu-to-pdf/)
-
-##### Text to speech conversion
-
-The following new classes have been added:
-
-- `ConvertTextToSpeechApi` - TTS conversion API.
-- `TTSSettings` - TTS conversion settings.
-
-[Learn more...](https://docs.aspose.cloud/ocr/text-to-speech/)
-
-##### Image upsampling
-
-The following new classes have been added:
-
-- `UpscaleImageApi` - API for increasing image resolution and enhancing the contrast of text details.
-- `OCRSettingsUpscaleImage` - Image upsampling settings.
-- `OCRUpscaleImageBody` - Image upsampling request body.
-
-[Learn more...](https://docs.aspose.cloud/ocr/upsample-image/)
-
-##### Image dewarping
-
-The following new classes have been added:
-
-- `DewarpImageApi` - API for automatic image straightening and geometric distortion correction.
-- `OCRSettingsDewarpImage` - Geometric distortion correction settings.
-- `OCRDewarpImageBody` - Geometric distortion correction  request body.
-
-[Learn more...](https://docs.aspose.cloud/ocr/dewarp-image/)
-
-##### Image tilt correction
-
-The following new classes have been added:
-
-- `DeskewImageApi` - API for automatic skew angle detection and image straightening.
-- `OCRSettingsDeskewImage` - Skew correction settings.
-- `OCRDeskewImageBody` - Skew correction request body.
-
-[Learn more...](https://docs.aspose.cloud/ocr/deskew-image/)
-
-##### Image binarization
-
-The following new classes have been added:
-
-- `BinarizeImageApi` - API for converting an image to black and white.
-- `OCRSettingsBinarizeImage` - Image binarization settings.
-- `OCRBinarizeImageBody` - Image binarization request body.
-
-[Learn more...](https://docs.aspose.cloud/ocr/binarize-image/)
+[Learn more...](https://docs.aspose.cloud/ocr/recognize-label/)
 
 #### Updated public APIs:
 
-The following public APIs have been updated in this release:
-
-##### `TTSBody` class
-
-**BACKWARD INCOMPATIBILITY!** This is the new implementation of `TTSBody` class. The previous implementation was renamed to `TTSBodyDeprecated`.
-
-Text to speech conversion request body.
+_No changes_
 
 #### Removed public APIs:
 
 _No changes._
 
-#### Deprecated APIs
-
-The following public APIs have been marked as deprecated and will be removed in the next release:
-
-##### `ImageProcessingApi`
-
-Replaced by dedicated APIs for specific image processing tasks:
-
-- `UpscaleImageApi` - API for increasing image resolution and enhancing the contrast of text details.
-- `DewarpImageApi` - API for automatic image straightening and geometric distortion correction.
-- `DeskewImageApi` - API for automatic skew angle detection and image straightening.
-- `BinarizeImageApi` - API for converting an image to black and white.
-
-##### `TextToSpeechApi`
-
-Replaced by the new text to speech conversion API: `ConvertTextToSpeechApi`.
-
 ## Examples
 
-The examples below illustrate the changes introduced in version 23.5.0:
+The examples below illustrate the changes introduced in version 23.6.0:
 
-### Image upsampling
+### Recognize label from street photo
 
 ```csharp
 using Aspose.OCR.Cloud.SDK.Api;
@@ -189,54 +130,26 @@ namespace Example
 		static void Main(string[] args)
 		{
 			/** Authorize your requests to Aspose.OCR Cloud API */
-			UpscaleImageApi api = new UpscaleImageApi("<Client Id>", "<Client Secret>");
-			/** Read source image to array of bytes */
+			RecognizeLabelApi recognizeLabelApi = new RecognizeLabelApi("<client id="">", "<client secret="">");
+			/** Read photographed label to array of bytes */
 			byte[] image = File.ReadAllBytes("source.png");
-			/** Send image for upsampling */
-			OCRUpscaleImageBody source = new OCRUpscaleImageBody(image);
-			string taskID = api.PostUpscaleImage(source);
-			/** Fetch resized image */
-			var result = api.GetUpscaleImage(taskID);
-			/** Save preprocessed image to file */
-			byte[] imageFileData = result.Results[0].Data;
-			File.WriteAllBytes("result.png", imageFileData);
-		}
-	}
-}
-```
-
-### Text to speech conversion
-
-```csharp
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-	internal class Program
-	{
-		static void Main(string[] args)
-		{
-			/** Authorize your requests to Aspose.OCR Cloud API */
-			ConvertTextToSpeechApi api = new ConvertTextToSpeechApi("<Client Id>", "<Client Secret>");
-			/** Send text to TTS */
-			TTSBody source = new TTSBody {
-                        text: "Read this text aloud",
-                        settings: new TTSSettings(
-                            language: LanguageTTS.English,
-                            resultType: ResultTypeTTS.Wav)
+			/** Specify recognition settings */
+			OCRSettingsRecognizeLabel recognitionSettings = new OCRSettingsRecognizeLabel {
+				Language = Language.English,
+				ResultType = ResultType.Text
 			};
-			string taskID = api.PostConvertTextToSpeech(source);
-			/** Save voice to file */
-			TTSResponse result = api.GetConvertTextToSpeech(taskID);
-			byte[] voice = result.Results[0].Data;
-			File.WriteAllBytes("voice.wav", voice);
+			/** Send photographed label for recognition */
+			OCRRecognizeLabelBody source = new OCRRecognizeLabelBody(image, recognitionSettings);
+			string taskID = recognizeLabelApi.PostRecognizeLabel(source);
+			/** Fetch recognition result */
+			OCRResponse result = recognizeLabelApi.GetRecognizeLabel(taskID);
+			Console.WriteLine(Encoding.UTF8.GetString(result.Results[0].Data));
 		}
 	}
 }
 ```
 
-### DjVu to PDF conversion
+### Identify font in image
 
 ```csharp
 using Aspose.OCR.Cloud.SDK.Api;
@@ -250,23 +163,23 @@ namespace Example
 		static void Main(string[] args)
 		{
 			/** Authorize your requests to Aspose.OCR Cloud API */
-			DjVu2PDFApi api = new DjVu2PDFApi("<Client Id>", "<Client Secret>");
-			/** Read source DjVu file to array of bytes */
-			byte[] image = File.ReadAllBytes("source.djvu");
-			/** Specify conversion settings */
-			OCRSettingsDjVu2PDF conversionSettings = new OCRSettingsDjVu2PDF();
-			/** Send DjVu for conversion */
-			OCRDjVu2PDFBody source = new OCRDjVu2PDFBody(image, conversionSettings);
-			string taskID = api.PostDjVu2PDF(source);
-			/** Save searchable PDF */
-			OCRResponse result = api.GetDjVu2PDF(taskID);
-			byte[] imageFileData = result.Results[0].Data;
-			File.WriteAllBytes("result.pdf", imageFileData);
+			IdentifyFontApi fontIdentificationApi = new IdentifyFontApi("<client id="">", "<client secret="">");
+			/** Read the image to array of bytes */
+			byte[] image = File.ReadAllBytes("source.png");
+			/** Specify recognition settings */
+			OCRSettingsRecognizeFont recognitionSettings = new OCRSettingsRecognizeFont {
+				ResultType = ResultType.Text
+			};
+			/** Send image for font detection */
+			OCRRecognizeFontBody source = new OCRRecognizeFontBody(image, recognitionSettings);
+			string taskID = fontIdentificationApi.PostIdentifyFont(source);
+			/** Fetch recognition result */
+			OCRResponse result = fontIdentificationApi.GetIdentifyFont(taskID);
+			Console.WriteLine(Encoding.UTF8.GetString(result.Results[0].Data));
 		}
 	}
 }
 ```
-
 ## Other Aspose.OCR Cloud SDKs
 
 - [Aspose.OCR Cloud for Java](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-java)  

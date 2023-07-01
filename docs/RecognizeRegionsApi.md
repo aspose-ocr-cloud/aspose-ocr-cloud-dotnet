@@ -15,59 +15,7 @@ All URIs are relative to *http://localhost*
 CancelRecognizeRegions
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class CancelRecognizeRegionsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new RecognizeRegionsApi(config);
-            var id = "id_example";  // string | 
-
-            try
-            {
-                // CancelRecognizeRegions
-                apiInstance.CancelRecognizeRegions(id);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling RecognizeRegionsApi.CancelRecognizeRegions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the CancelRecognizeRegionsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // CancelRecognizeRegions
-    apiInstance.CancelRecognizeRegionsWithHttpInfo(id);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RecognizeRegionsApi.CancelRecognizeRegionsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
@@ -103,69 +51,13 @@ void (empty response body)
 GetRecognizeRegions
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class GetRecognizeRegionsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new RecognizeRegionsApi(config);
-            var id = "id_example";  // string | Task id to select the result
-
-            try
-            {
-                // GetRecognizeRegions
-                OCRResponse result = apiInstance.GetRecognizeRegions(id);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling RecognizeRegionsApi.GetRecognizeRegions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetRecognizeRegionsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // GetRecognizeRegions
-    ApiResponse<OCRResponse> response = apiInstance.GetRecognizeRegionsWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RecognizeRegionsApi.GetRecognizeRegionsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Task id to select the result |  |
+| **id** | **string** |  |  |
 
 ### Return type
 
@@ -195,63 +87,7 @@ catch (ApiException e)
 PostRecognizeRegions
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class PostRecognizeRegionsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new RecognizeRegionsApi(config);
-            var oCRRecognizeRegionsBody = new OCRRecognizeRegionsBody(); // OCRRecognizeRegionsBody | 
-
-            try
-            {
-                // PostRecognizeRegions
-                string result = apiInstance.PostRecognizeRegions(oCRRecognizeRegionsBody);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling RecognizeRegionsApi.PostRecognizeRegions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostRecognizeRegionsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // PostRecognizeRegions
-    ApiResponse<string> response = apiInstance.PostRecognizeRegionsWithHttpInfo(oCRRecognizeRegionsBody);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RecognizeRegionsApi.PostRecognizeRegionsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 

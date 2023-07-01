@@ -1,5 +1,4 @@
 # Aspose.OCR.Cloud.SDK.Model.TTSTaskStatus
-Task status
 
 ## Properties
 

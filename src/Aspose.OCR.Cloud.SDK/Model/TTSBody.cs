@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// Represents input text data with settings
+    /// TTSBody
     /// </summary>
     [DataContract(Name = "TTSBody")]
     public partial class TTSBody : IEquatable<TTSBody>, IValidatableObject
@@ -39,7 +39,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TTSBody" /> class.
         /// </summary>
-        /// <param name="text">Gets or Sets text (required).</param>
+        /// <param name="text">text (required).</param>
         /// <param name="settings">settings (required).</param>
         public TTSBody(string text = default(string), TTSSettings settings = default(TTSSettings))
         {
@@ -58,9 +58,8 @@ namespace Aspose.OCR.Cloud.SDK.Model
         }
 
         /// <summary>
-        /// Gets or Sets text
+        /// Gets or Sets Text
         /// </summary>
-        /// <value>Gets or Sets text</value>
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 

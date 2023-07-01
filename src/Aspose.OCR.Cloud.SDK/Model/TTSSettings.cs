@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// TTS setting
+    /// TTSSettings
     /// </summary>
     [DataContract(Name = "TTSSettings")]
     public partial class TTSSettings : IEquatable<TTSSettings>, IValidatableObject

@@ -1,17 +1,17 @@
 # Aspose.OCR.Cloud.SDK.Model.OCRSettingsDetectRegions
-OCR Process setting for Image recognition
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MakeSkewCorrect** | **bool** | Option to enable skew correction algorithm. True by default | [optional] [default to true]
-**MakeContrastCorrection** | **bool** | Option to enable image contrast correction algorithm. True by default | [optional] [default to true]
-**MakeUpsampling** | **bool** | Option to enable image up-sampling algorithm to improve quality. True by default | [optional] [default to false]
+**MakeSkewCorrect** | **bool** |  | [optional] [default to true]
+**MakeContrastCorrection** | **bool** |  | [optional] [default to true]
+**MakeUpsampling** | **bool** |  | [optional] [default to false]
 **DsrConfidence** | **DsrConfidence** |  | [optional] 
 **Language** | **Language** |  | [optional] 
+**Rotate** | **int** |  | [optional] 
 **MakeSpellCheck** | **bool** | Option to enable spell checking and correction algorithm. False by default | [optional] [default to false]
-**MakeBinarization** | **bool** | Option to enable image binarization algorithm. False by default | [optional] [default to true]
+**MakeBinarization** | **bool** |  | [optional] [default to true]
 **DsrMode** | **DsrMode** |  | [optional] 
 **ResultType** | **ResultType** |  | [optional] 
 **ResultTypeTable** | **ResultTypeTable** |  | [optional] 

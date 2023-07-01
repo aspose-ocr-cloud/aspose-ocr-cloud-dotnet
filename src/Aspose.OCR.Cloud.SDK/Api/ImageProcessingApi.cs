@@ -32,7 +32,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultFile
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         [Obsolete]
@@ -45,7 +45,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         [Obsolete]
@@ -54,7 +54,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultTask
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
         [Obsolete]
@@ -67,7 +67,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
         [Obsolete]
@@ -80,7 +80,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         [Obsolete]
-        string PostBinarizationFile(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
+        string PostBinarizationFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0);
 
         /// <summary>
         /// PostBinarizationFile
@@ -93,7 +93,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         [Obsolete]
-        ApiResponse<string> PostBinarizationFileWithHttpInfo(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
+        ApiResponse<string> PostBinarizationFileWithHttpInfo(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0);
         /// <summary>
         /// PostDewarpingFile
         /// </summary>
@@ -102,7 +102,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         [Obsolete]
-        string PostDewarpingFile(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
+        string PostDewarpingFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0);
 
         /// <summary>
         /// PostDewarpingFile
@@ -115,7 +115,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         [Obsolete]
-        ApiResponse<string> PostDewarpingFileWithHttpInfo(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
+        ApiResponse<string> PostDewarpingFileWithHttpInfo(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0);
         /// <summary>
         /// PostSkewCorrectionFile
         /// </summary>
@@ -124,7 +124,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         [Obsolete]
-        string PostSkewCorrectionFile(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
+        string PostSkewCorrectionFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0);
 
         /// <summary>
         /// PostSkewCorrectionFile
@@ -137,7 +137,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         [Obsolete]
-        ApiResponse<string> PostSkewCorrectionFileWithHttpInfo(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
+        ApiResponse<string> PostSkewCorrectionFileWithHttpInfo(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0);
         /// <summary>
         /// PostUpsamplingImageFile
         /// </summary>
@@ -146,7 +146,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         [Obsolete]
-        string PostUpsamplingFile(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
+        string PostUpsamplingFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0);
 
         /// <summary>
         /// PostUpsamplingImageFile
@@ -159,7 +159,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         [Obsolete]
-        ApiResponse<string> PostUpsamplingFileWithHttpInfo(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
+        ApiResponse<string> PostUpsamplingFileWithHttpInfo(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -176,7 +176,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
@@ -190,7 +190,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -203,7 +203,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
@@ -217,7 +217,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>
@@ -235,7 +235,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<string> PostBinarizationFileAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> PostBinarizationFileAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// PostBinarizationFile
@@ -249,7 +249,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<string>> PostBinarizationFileWithHttpInfoAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> PostBinarizationFileWithHttpInfoAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// PostDewarpingFile
         /// </summary>
@@ -262,7 +262,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<string> PostDewarpingFileAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> PostDewarpingFileAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// PostDewarpingFile
@@ -276,7 +276,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<string>> PostDewarpingFileWithHttpInfoAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> PostDewarpingFileWithHttpInfoAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// PostSkewCorrectionFile
         /// </summary>
@@ -289,7 +289,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<string> PostSkewCorrectionFileAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> PostSkewCorrectionFileAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// PostSkewCorrectionFile
@@ -303,7 +303,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<string>> PostSkewCorrectionFileWithHttpInfoAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> PostSkewCorrectionFileWithHttpInfoAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// PostUpsamplingImageFile
         /// </summary>
@@ -316,7 +316,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<string> PostUpsamplingFileAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> PostUpsamplingFileAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// PostUpsamplingImageFile
@@ -330,7 +330,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<string>> PostUpsamplingFileWithHttpInfoAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> PostUpsamplingFileWithHttpInfoAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -465,7 +465,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         [Obsolete]
@@ -479,7 +479,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         [Obsolete]
@@ -553,7 +553,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
@@ -568,7 +568,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -646,7 +646,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultTask 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
         [Obsolete]
@@ -660,7 +660,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultTask 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
         [Obsolete]
@@ -734,7 +734,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultTask 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
@@ -749,7 +749,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultTask 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>
@@ -831,7 +831,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         [Obsolete]
-        public string PostBinarizationFile(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
+        public string PostBinarizationFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
             Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostBinarizationFileWithHttpInfo(file);
             return localVarResponse.Data;
@@ -845,7 +845,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         [Obsolete]
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostBinarizationFileWithHttpInfo(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostBinarizationFileWithHttpInfo(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
 
@@ -918,7 +918,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<string> PostBinarizationFileAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> PostBinarizationFileAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostBinarizationFileWithHttpInfoAsync(file, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -933,7 +933,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostBinarizationFileWithHttpInfoAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostBinarizationFileWithHttpInfoAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
@@ -1008,7 +1008,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         [Obsolete]
-        public string PostDewarpingFile(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
+        public string PostDewarpingFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
             Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostDewarpingFileWithHttpInfo(file);
             return localVarResponse.Data;
@@ -1022,7 +1022,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         [Obsolete]
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostDewarpingFileWithHttpInfo(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostDewarpingFileWithHttpInfo(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
 
@@ -1095,7 +1095,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<string> PostDewarpingFileAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> PostDewarpingFileAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostDewarpingFileWithHttpInfoAsync(file, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1110,7 +1110,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostDewarpingFileWithHttpInfoAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostDewarpingFileWithHttpInfoAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
@@ -1185,7 +1185,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         [Obsolete]
-        public string PostSkewCorrectionFile(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
+        public string PostSkewCorrectionFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
             Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostSkewCorrectionFileWithHttpInfo(file);
             return localVarResponse.Data;
@@ -1199,7 +1199,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         [Obsolete]
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostSkewCorrectionFileWithHttpInfo(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostSkewCorrectionFileWithHttpInfo(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
 
@@ -1272,7 +1272,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<string> PostSkewCorrectionFileAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> PostSkewCorrectionFileAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostSkewCorrectionFileWithHttpInfoAsync(file, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1287,7 +1287,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostSkewCorrectionFileWithHttpInfoAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostSkewCorrectionFileWithHttpInfoAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
@@ -1362,7 +1362,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         [Obsolete]
-        public string PostUpsamplingFile(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
+        public string PostUpsamplingFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
             Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostUpsamplingFileWithHttpInfo(file);
             return localVarResponse.Data;
@@ -1376,7 +1376,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         [Obsolete]
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostUpsamplingFileWithHttpInfo(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostUpsamplingFileWithHttpInfo(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
 
@@ -1449,7 +1449,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<string> PostUpsamplingFileAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> PostUpsamplingFileAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostUpsamplingFileWithHttpInfoAsync(file, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1464,7 +1464,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostUpsamplingFileWithHttpInfoAsync(System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostUpsamplingFileWithHttpInfoAsync(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();

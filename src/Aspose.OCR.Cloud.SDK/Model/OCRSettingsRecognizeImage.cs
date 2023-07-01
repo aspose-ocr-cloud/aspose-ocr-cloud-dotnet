@@ -66,16 +66,16 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// </summary>
         /// <param name="language">language.</param>
         /// <param name="makeSkewCorrect">Option to enable skew correction algorithm. True by default (default to true).</param>
-        /// <param name="makeBinarization">Option to enable binarization algorithm. False by default (default to false).</param>
+        /// <param name="makeBinarization">makeBinarization (default to false).</param>
         /// <param name="makeSpellCheck">Option to enable spell checking and correction algorithm. False by default (default to false).</param>
         /// <param name="makeContrastCorrection">Option to enable image contrast correction algorithm. True by default (default to true).</param>
         /// <param name="makeUpsampling">Option to enable image up-sampling algorithm to improve quality. True by default (default to false).</param>
         /// <param name="dsrMode">dsrMode.</param>
         /// <param name="dsrConfidence">dsrConfidence.</param>
         /// <param name="resultType">resultType.</param>
-        /// <param name="rotate">Rotate image&gt;.</param>
+        /// <param name="rotate">rotate.</param>
         /// <param name="resultTypeTable">resultTypeTable.</param>
-        /// <param name="regions">Region on image to recognize in specific format. Aspose.Ocr.Cloud.Public.OCRRegion.</param>
+        /// <param name="regions">regions.</param>
         public OCRSettingsRecognizeImage(Language? language = default(Language?), bool makeSkewCorrect = true, bool makeBinarization = false, bool makeSpellCheck = false, bool makeContrastCorrection = true, bool makeUpsampling = false, DsrMode? dsrMode = default(DsrMode?), DsrConfidence? dsrConfidence = default(DsrConfidence?), ResultType? resultType = default(ResultType?), int rotate = default(int), ResultTypeTable? resultTypeTable = default(ResultTypeTable?), List<OCRRegion> regions = default(List<OCRRegion>))
         {
             this.Language = language;
@@ -100,9 +100,8 @@ namespace Aspose.OCR.Cloud.SDK.Model
         public bool MakeSkewCorrect { get; set; }
 
         /// <summary>
-        /// Option to enable binarization algorithm. False by default
+        /// Gets or Sets MakeBinarization
         /// </summary>
-        /// <value>Option to enable binarization algorithm. False by default</value>
         [DataMember(Name = "makeBinarization", EmitDefaultValue = true)]
         public bool MakeBinarization { get; set; }
 
@@ -128,16 +127,14 @@ namespace Aspose.OCR.Cloud.SDK.Model
         public bool MakeUpsampling { get; set; }
 
         /// <summary>
-        /// Rotate image&gt;
+        /// Gets or Sets Rotate
         /// </summary>
-        /// <value>Rotate image&gt;</value>
         [DataMember(Name = "Rotate", EmitDefaultValue = false)]
         public int Rotate { get; set; }
 
         /// <summary>
-        /// Region on image to recognize in specific format. Aspose.Ocr.Cloud.Public.OCRRegion
+        /// Gets or Sets Regions
         /// </summary>
-        /// <value>Region on image to recognize in specific format. Aspose.Ocr.Cloud.Public.OCRRegion</value>
         [DataMember(Name = "regions", EmitDefaultValue = true)]
         public List<OCRRegion> Regions { get; set; }
 

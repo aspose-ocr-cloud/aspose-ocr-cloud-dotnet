@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExampleDotNet60v50.APIExamples
+namespace ExampleDotNetStandard20v50.APIExamples
 {
     public static class TextToSpeechExample
     {
@@ -22,11 +22,7 @@ namespace ExampleDotNet60v50.APIExamples
             {
                 string sampleText = "This is the sample text";
 
-                ConvertTextToSpeechApi textToSpeechApi = new ConvertTextToSpeechApi(clientId, clientSecret);
-
-                Console.WriteLine($"The following action will reduce the number of API calls available to your " +
-                    $"account in the current period.\n" +
-                    $"Sending sample text ({sampleText}) to ConvertTextToSpeechApi...");
+                ConvertTextToSpeechApi apiInstance = new ConvertTextToSpeechApi(clientId, clientSecret);
 
                 var settings = new TTSBody(
                         text: sampleText,
@@ -34,11 +30,11 @@ namespace ExampleDotNet60v50.APIExamples
                             language: LanguageTTS.English,
                             resultType: ResultTypeTTS.Wav));
 
-                var taskId = textToSpeechApi.PostConvertTextToSpeech(settings);
+                var taskId = apiInstance.PostConvertTextToSpeech(settings);
                 Console.WriteLine($"File successfully sent. Your credentials accepted. Your task ID is {taskId}");
 
                 Console.WriteLine($"Requesting results for task {taskId} ...");
-                var result = textToSpeechApi.GetConvertTextToSpeech(taskId);
+                var result = apiInstance.GetConvertTextToSpeech(taskId);
 
                 byte[] soundFile = result.Results[0].Data;
                 string extension = result.Results[0].Type switch

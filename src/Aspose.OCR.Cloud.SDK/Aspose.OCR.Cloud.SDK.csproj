@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <AssemblyName>Aspose.OCR.Cloud.SDK</AssemblyName>
     <PackageId>Aspose.OCR-Cloud</PackageId>
     <OutputType>Library</OutputType>
@@ -39,29 +40,28 @@
   Don’t worry about hardware, all the computational operations are performed at our powerful servers, that hosts our core, built on cutting edge fast neural networks.</Description>
     <Copyright>© Aspose 2002-2023. All Rights Reserved.</Copyright>
     <RootNamespace>Aspose.OCR.Cloud.SDK</RootNamespace>
-    <Version>23.5.0</Version>
+    <Version>23.6.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aspose.OCR.Cloud.SDK.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>
-
+    <PackageReleaseNotes>		
 	  </PackageReleaseNotes>
     <Nullable>annotations</Nullable>
     <Product>Aspose.OCR Cloud SDK for .Net</Product>
     <PackageProjectUrl>https://products.aspose.cloud/ocr/net/</PackageProjectUrl>
-    <PackageIcon>icon.png</PackageIcon>
+    <PackageIcon>icon_aspose_ocr-for-net.png</PackageIcon>
     <PackageTags>Aspose.OCR;Aspose.OCR-Cloud;Aspose.Total-Cloud;Cloud;REST;API;JPEG;PNG;GIF;BMP;TIFF;optical;character;recognition;OCR;optical-character-recognition;character-recognition;scanner;AI;engine;C#;CSharp;machine;learning;machine-learning;handwriting;recognize;scanned;scan;document;searchable;PDF;Text;Detection;Receipt;multi-platform;extract-text;text-extraction;HOCR;localization;localized-ocr;English-OCR;French-OCR;German-OCR;Deutsch-OCR;XML;JSON;Extract-Image-Text;Extract-Text;Extract-Localized-Text;Multi-Langual-OCR;Multilingual;WEBP;PBM;PGM;PPM;PXM;PNM;PFM;SR;RAS;TIF;EXR;HDR;PIC;.NET;C#;dotnet;CSharp</PackageTags>
     <Nullable>annotations</Nullable>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <PackageLicenseFile>LICENSE.TXT</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="1.9.0" />
-    <PackageReference Include="LevenshteinMinimumEditDistance" Version="1.2.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="RestSharp" Version="108.0.2" />
+    <PackageReference Include="JsonSubTypes" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RestSharp" Version="108.0.3" />
     <PackageReference Include="Polly" Version="7.2.3" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
@@ -78,20 +78,24 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-      <ItemGroup>
-	    <None Include="..\..\licenses\LICENSE.TXT">
-		    <Pack>True</Pack>
-		    <PackagePath>\</PackagePath>
-	    </None>
-    </ItemGroup>
-    <ItemGroup>
-	    <None Include="..\..\licenses\thirdpartylicenses-Aspose.OCR Cloud SDK for .NET.txt">
-		    <Pack>True</Pack>
-		    <PackagePath>\</PackagePath>
-	    </None>
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\licenses\LICENSE.TXT">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\licenses\thirdpartylicenses-Aspose.OCR Cloud SDK for .NET.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\resources\icon_aspose_ocr-for-net.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

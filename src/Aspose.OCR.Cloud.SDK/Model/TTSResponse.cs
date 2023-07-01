@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// Response with Recognition result for specific task ID
+    /// TTSResponse
     /// </summary>
     [DataContract(Name = "TTSResponse")]
     public partial class TTSResponse : IEquatable<TTSResponse>, IValidatableObject
@@ -46,7 +46,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TTSResponse" /> class.
         /// </summary>
-        /// <param name="id">The specific Task ID that result was made for.</param>
+        /// <param name="id">id.</param>
         /// <param name="responseStatusCode">responseStatusCode.</param>
         /// <param name="taskStatus">taskStatus.</param>
         /// <param name="error">error.</param>
@@ -59,16 +59,14 @@ namespace Aspose.OCR.Cloud.SDK.Model
         }
 
         /// <summary>
-        /// The specific Task ID that result was made for
+        /// Gets or Sets Id
         /// </summary>
-        /// <value>The specific Task ID that result was made for</value>
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// List of results - Especially Text or PDF files
+        /// Gets or Sets Results
         /// </summary>
-        /// <value>List of results - Especially Text or PDF files</value>
         [DataMember(Name = "results", EmitDefaultValue = true)]
         public List<TTSResult> Results { get; private set; }
 
@@ -83,7 +81,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Gets or Sets Error
         /// </summary>
-        [DataMember(Name = "error", EmitDefaultValue = false)]
+        [DataMember(Name = "error", EmitDefaultValue = true)]
         public TTSError Error { get; set; }
 
         /// <summary>

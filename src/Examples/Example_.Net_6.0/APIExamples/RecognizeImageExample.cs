@@ -24,10 +24,6 @@ namespace ExampleDotNet60v50.APIExamples
 
                 RecognizeImageApi recognizeImageApi = new RecognizeImageApi(clientId, clientSecret);
 
-                Console.WriteLine($"The following action will reduce the number of API calls available to your " +
-                    $"account in the current period.\n" +
-                    $"Sending sample file ({imageFileName}) to RecognizeImageApi...");
-
                 byte[] imageData = File.ReadAllBytes(imageFileName);
 
                 var settings = new OCRSettingsRecognizeImage(

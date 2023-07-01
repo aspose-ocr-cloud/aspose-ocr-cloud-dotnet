@@ -1,5 +1,4 @@
 # Aspose.OCR.Cloud.SDK.Model.ResultTypeTTS
-Text-to-speech output types
 
 ## Properties
 

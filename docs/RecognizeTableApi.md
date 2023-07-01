@@ -15,59 +15,7 @@ All URIs are relative to *http://localhost*
 CancelRecognizeTable
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class CancelRecognizeTableExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new RecognizeTableApi(config);
-            var id = "id_example";  // string | 
-
-            try
-            {
-                // CancelRecognizeTable
-                apiInstance.CancelRecognizeTable(id);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling RecognizeTableApi.CancelRecognizeTable: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the CancelRecognizeTableWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // CancelRecognizeTable
-    apiInstance.CancelRecognizeTableWithHttpInfo(id);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RecognizeTableApi.CancelRecognizeTableWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
@@ -103,69 +51,13 @@ void (empty response body)
 GetRecognizeTable
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class GetRecognizeTableExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new RecognizeTableApi(config);
-            var id = "id_example";  // string | Task id to select the result
-
-            try
-            {
-                // GetRecognizeTable
-                OCRResponse result = apiInstance.GetRecognizeTable(id);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling RecognizeTableApi.GetRecognizeTable: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetRecognizeTableWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // GetRecognizeTable
-    ApiResponse<OCRResponse> response = apiInstance.GetRecognizeTableWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RecognizeTableApi.GetRecognizeTableWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Task id to select the result |  |
+| **id** | **string** |  |  |
 
 ### Return type
 
@@ -195,63 +87,7 @@ catch (ApiException e)
 PostRecognizeTable
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Client;
-using Aspose.OCR.Cloud.SDK.Model;
-
-namespace Example
-{
-    public class PostRecognizeTableExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure OAuth2 access token for authorization: JWT
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new RecognizeTableApi(config);
-            var oCRRecognizeTableBody = new OCRRecognizeTableBody(); // OCRRecognizeTableBody | 
-
-            try
-            {
-                // PostRecognizeTable
-                string result = apiInstance.PostRecognizeTable(oCRRecognizeTableBody);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling RecognizeTableApi.PostRecognizeTable: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostRecognizeTableWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // PostRecognizeTable
-    ApiResponse<string> response = apiInstance.PostRecognizeTableWithHttpInfo(oCRRecognizeTableBody);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RecognizeTableApi.PostRecognizeTableWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
+Please refer example project
 
 ### Parameters
 

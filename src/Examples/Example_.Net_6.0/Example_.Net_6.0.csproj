@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Example_.Net_6._0</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.OCR-Cloud" Version="23.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="samples\dewarping.png" />
+    <None Remove="samples\lorem_ipsum.png" />
+    <None Remove="samples\binarization_latin.png" />
+    <None Remove="samples\skew_correction.png" />
+    <None Remove="samples\street_sign_01.jpg" />
+    <None Remove="samples\font_courier.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="samples\dewarping.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="samples\lorem_ipsum.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	<Content Include="samples\binarization_latin.png">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
+	<Content Include="samples\skew_correction.png">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
+	<Content Include="samples\street_sign_01.jpg">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
+	<Content Include="samples\font_courier.png">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
+  </ItemGroup>
+</Project>

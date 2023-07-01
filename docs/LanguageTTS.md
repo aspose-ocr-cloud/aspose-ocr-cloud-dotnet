@@ -1,5 +1,4 @@
 # Aspose.OCR.Cloud.SDK.Model.LanguageTTS
-Text-to-speech target language
 
 ## Properties
 

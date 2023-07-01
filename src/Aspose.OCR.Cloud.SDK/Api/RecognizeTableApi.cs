@@ -52,7 +52,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetRecognizeTable
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
         OCRResponse GetRecognizeTable(string id, int operationIndex = 0);
@@ -64,7 +64,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
         ApiResponse<OCRResponse> GetRecognizeTableWithHttpInfo(string id, int operationIndex = 0);
@@ -129,7 +129,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
@@ -142,7 +142,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>
@@ -479,7 +479,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetRecognizeTable 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
         public OCRResponse GetRecognizeTable(string id, int operationIndex = 0)
@@ -492,7 +492,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetRecognizeTable 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
         public Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> GetRecognizeTableWithHttpInfo(string id, int operationIndex = 0)
@@ -565,7 +565,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetRecognizeTable 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
@@ -579,7 +579,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetRecognizeTable 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Task id to select the result</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>

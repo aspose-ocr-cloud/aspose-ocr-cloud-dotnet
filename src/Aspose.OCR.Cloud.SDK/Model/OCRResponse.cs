@@ -83,7 +83,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Gets or Sets Error
         /// </summary>
-        [DataMember(Name = "error", EmitDefaultValue = false)]
+        [DataMember(Name = "error", EmitDefaultValue = true)]
         public OCRError Error { get; set; }
 
         /// <summary>

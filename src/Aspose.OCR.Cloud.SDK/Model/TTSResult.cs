@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// Represents information about response after TTS.
+    /// TTSResult
     /// </summary>
     [DataContract(Name = "TTSResult")]
     public partial class TTSResult : IEquatable<TTSResult>, IValidatableObject
@@ -34,8 +34,8 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TTSResult" /> class.
         /// </summary>
-        /// <param name="type">File data type (extension).</param>
-        /// <param name="data">File binary data.</param>
+        /// <param name="type">type.</param>
+        /// <param name="data">data.</param>
         public TTSResult(string type = default(string), byte[] data = default(byte[]))
         {
             this.Type = type;
@@ -43,16 +43,14 @@ namespace Aspose.OCR.Cloud.SDK.Model
         }
 
         /// <summary>
-        /// File data type (extension)
+        /// Gets or Sets Type
         /// </summary>
-        /// <value>File data type (extension)</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// File binary data
+        /// Gets or Sets Data
         /// </summary>
-        /// <value>File binary data</value>
         [DataMember(Name = "data", EmitDefaultValue = true)]
         public byte[] Data { get; set; }
 
