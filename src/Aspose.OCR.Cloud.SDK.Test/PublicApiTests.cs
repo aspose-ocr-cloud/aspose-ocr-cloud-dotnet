@@ -34,8 +34,11 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
     [TestFixture]
     public class PublicApiTests
     {
-        public const string clientId = "Your client_id";
-        public const string clientSecret = "Your client_secret";
+        public readonly Stopwatch timer = new Stopwatch();
+
+
+		public const string clientId = "Your client_id";
+		public const string clientSecret = "Your client_secret";
 
 
         [SetUp]
@@ -48,12 +51,17 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
         [Test]
         public void PublicBinarizeImageApiTest()
         {
+            timer.Start();
             var apiInstance = new BinarizeImageApi(clientId, clientSecret);
+            Console.WriteLine($"Api created at {timer.Elapsed}");
 
             var requestBody = new OCRBinarizeImageBody(
                     image: File.ReadAllBytes("samples/binarization.jpeg"));
+            Console.WriteLine($"Request body created at {timer.Elapsed}");
             string taskId = apiInstance.PostBinarizeImage(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
             var response = apiInstance.GetBinarizeImage(taskId);
+            Console.WriteLine($"Get performed at {timer.Elapsed}");
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
             File.WriteAllBytes($"results/{taskId}.png", response.Results[0].Data);
@@ -67,7 +75,11 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
 
             var requestBody = new OCRDeskewImageBody(
                     image: File.ReadAllBytes("samples/latin_skew.png"));
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostDeskewImage(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
+            //Thread.Sleep(10000);
             var response = apiInstance.GetDeskewImage(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
@@ -82,7 +94,11 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
 
             var requestBody = new OCRDewarpImageBody(
                     image: File.ReadAllBytes("samples/dewarping.png"));
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostDewarpImage(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
+            //Thread.Sleep(10000);
             var response = apiInstance.GetDewarpImage(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
@@ -97,7 +113,11 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
 
             var requestBody = new OCRUpscaleImageBody(
                     image: File.ReadAllBytes("samples/upsampling.png"));
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostUpscaleImage(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
+            //Thread.Sleep(10000);
             var response = apiInstance.GetUpscaleImage(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
@@ -106,79 +126,21 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
 
 
         [Test]
-        public void PublicImageProcessingApiTest()
+        public void PublicConvertTextToSpeechTrialApiTest()
         {
-            var apiInstance = new ImageProcessingApi(clientId, clientSecret);
-
-            string taskId = "";
-
-            using (Stream stream = File.OpenRead("samples/binarization.jpeg"))
-            {
-                taskId = apiInstance.PostBinarizationFile(stream);
-            }
-            Thread.Sleep(10000);
-            var responseBinarization = apiInstance.GetResultTask(taskId);
-            Assert.IsNotNull(responseBinarization);
-            Assert.That(responseBinarization.ResponseStatusCode == ResponseStatusCode.Ok);
-            File.WriteAllBytes($"results/{taskId}.png", responseBinarization.Results[0].Data);
-
-            using (Stream stream = File.OpenRead("samples/latin_skew.png"))
-            {
-                taskId = apiInstance.PostBinarizationFile(stream);
-            }
-            var responseSkewCorrection = apiInstance.GetResultTask(taskId);
-            Assert.IsNotNull(responseSkewCorrection);
-            Assert.That(responseSkewCorrection.ResponseStatusCode == ResponseStatusCode.Ok);
-            File.WriteAllBytes($"results/{taskId}.png", responseSkewCorrection.Results[0].Data);
-
-            using (Stream stream = File.OpenRead("samples/dewarping.png"))
-            {
-                taskId = apiInstance.PostBinarizationFile(stream);
-            }
-            var responseDewarping = apiInstance.GetResultTask(taskId);
-            Assert.IsNotNull(responseDewarping);
-            Assert.That(responseDewarping.ResponseStatusCode == ResponseStatusCode.Ok);
-            File.WriteAllBytes($"results/{taskId}.png", responseDewarping.Results[0].Data);
-
-            using (Stream stream = File.OpenRead("samples/upsampling.png"))
-            {
-                taskId = apiInstance.PostBinarizationFile(stream);
-            }
-            var responseUpsampling = apiInstance.GetResultTask(taskId);
-            Assert.IsNotNull(responseUpsampling);
-            Assert.That(responseUpsampling.ResponseStatusCode == ResponseStatusCode.Ok);
-            File.WriteAllBytes($"results/{taskId}.png", responseUpsampling.Results[0].Data);
-        }
-
-
-        [Test]
-        public void PublicTextToSpeechApiTest()
-        {
-            var apiInstance = new TextToSpeechApi(clientId, clientSecret);
-
-            var requestBody = new TTSBodyDeprecated(
-                    text: "Text to speech test",
-                    language: LanguageTTS.English,
-                    resultType: ResultTypeTTS.Wav);
-            string taskId = apiInstance.PostTextToSpeech(requestBody);
-            var response = apiInstance.GetTextToSpeechResult(taskId);
-            Assert.IsNotNull(response);
-            Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
-            File.WriteAllBytes($"results/{taskId}.wav", response.Results[0].Data);
-        }
-
-        [Test]
-        public void PublicConvertTextToSpeechApiTest()
-        {
-            var apiInstance = new ConvertTextToSpeechApi(clientId, clientSecret);
+            var apiInstance = new ConvertTextToSpeechTrialApi();
 
             var requestBody = new TTSBody(
                     text: "Text to speech test",
                     settings: new TTSSettings(
                     language: LanguageTTS.English,
                     resultType: ResultTypeTTS.Wav));
-            string taskId = apiInstance.PostConvertTextToSpeech(requestBody);
-            var response = apiInstance.GetConvertTextToSpeech(taskId);
+            timer.Reset();
+            timer.Start();
+            string taskId = apiInstance.PostConvertTextToSpeechTrial(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
+            //Thread.Sleep(10000);
+            var response = apiInstance.GetConvertTextToSpeechTrial(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
             File.WriteAllBytes($"results/{taskId}.wav", response.Results[0].Data);
@@ -191,14 +153,18 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
             var apiInstance = new DetectRegionsApi(clientId, clientSecret);
 
             var requestBody = new OCRDetectRegionsBody(
-                    image: File.ReadAllBytes("samples/greek.png"),
+                    image: File.ReadAllBytes("samples/greek.PNG"),
                     settings: new OCRSettingsDetectRegions(
                         makeSkewCorrect: false,
                         makeContrastCorrection: false,
                         dsrMode: DsrMode.Regions,
                         makeBinarization: false,
                         resultType: ResultType.Text));
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostDetectRegions(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
+            //Thread.Sleep(10000);
             var response = apiInstance.GetDetectRegions(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
@@ -220,7 +186,10 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
                         DsrMode = DsrMode.NoDsrNoFilter,
                         ResultType = ResultType.Pdf,
                     });
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostDjVu2PDF(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
             var response = apiInstance.GetDjVu2PDF(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
@@ -241,7 +210,10 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
                         makeSkewCorrect: true,
                         dsrMode: DsrMode.NoDsrNoFilter
                         ));
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostRecognizeImage(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
             var response = apiInstance.GetRecognizeImage(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
@@ -254,8 +226,6 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
         {
             var apiInstance = new RecognizePdfApi(clientId, clientSecret);
 
-            //var apiInstance = new RecognizePdfApi(config);
-
             var requestBody = new OCRRecognizePdfBody(
                     image: File.ReadAllBytes("samples/latin.pdf"),
                     settings: new OCRSettingsRecognizePdf(
@@ -264,7 +234,11 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
                         makeBinarization: true,
                         makeSkewCorrect: false,
                         makeContrastCorrection:false));
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostRecognizePdf(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
+            //Thread.Sleep(10000);
             var response = apiInstance.GetRecognizePdf(taskId);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
             File.WriteAllText($"results/{taskId}.txt", Encoding.UTF8.GetString(response.Results[0].Data));
@@ -283,7 +257,11 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
                     dsrMode: DsrMode.DsrNoFilter,
                     resultType: ResultType.Text
                 ));
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostRecognizeReceipt(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
+            Thread.Sleep(40000);
             var response = apiInstance.GetRecognizeReceipt(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
@@ -296,8 +274,9 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
         public void PublicRecognizeRegionsApiTest()
         {
             var apiInstance = new RecognizeRegionsApi(clientId, clientSecret);
+
             var requestBody = new OCRRecognizeRegionsBody(
-                    image: File.ReadAllBytes("samples/greek.png"),
+                    image: File.ReadAllBytes("samples/greek.PNG"),
                     settings: new OCRSettingsRecognizeRegions(
                         language: Language.Greek,
                         makeSkewCorrect: false,
@@ -308,8 +287,12 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
                         {
                             new OCRRegion(new OCRRect(117, 81, 611, 98)), // only 1 region
                         }));
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostRecognizeRegions(requestBody);
+            //Thread.Sleep(5000);
             var response = apiInstance.GetRecognizeRegions(taskId);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
             File.WriteAllText($"results/{taskId}.txt", Encoding.UTF8.GetString(response.Results[0].Data));
@@ -329,7 +312,11 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
                         resultTypeTable: ResultTypeTable.Text,
                         makeBinarization: false
                     ));
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostRecognizeTable(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
+            //Thread.Sleep(5000);
             var response = apiInstance.GetRecognizeTable(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
@@ -349,7 +336,10 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
                         resultType: ResultType.Text,
                         makeBinarization: false
                     ));
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostRecognizeLabel(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
             var response = apiInstance.GetRecognizeLabel(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
@@ -368,11 +358,52 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
                         resultType: ResultType.Text,
                         makeBinarization: false
                     ));
+            timer.Reset();
+            timer.Start();
             string taskId = apiInstance.PostIdentifyFont(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
             var response = apiInstance.GetIdentifyFont(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
             File.WriteAllText($"results/{taskId}.txt", Encoding.UTF8.GetString(response.Results[0].Data));
         }
+
+
+        [Test]
+        public void PublicRecognizeAndParseInvoiceApiTest()
+        {
+            var apiInstance = new RecognizeAndParseInvoiceApi(clientId, clientSecret);
+
+            var requestBody = new OCRRecognizeAndParseInvoiceBody(
+                    image: File.ReadAllBytes("samples/font_courier.PNG"),
+                    settings: new OCRSettingsRecognizeAndParseInvoice(
+                        resultType: ResultType.Text,
+                        makeBinarization: false
+                    ));
+            timer.Reset();
+            timer.Start();
+            string taskId = apiInstance.PostRecognizeAndParseInvoice(requestBody);
+            Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
+            var response = apiInstance.GetRecognizeAndParseInvoice(taskId);
+            Assert.IsNotNull(response);
+            Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
+            File.WriteAllText($"results/{taskId}.json", Encoding.UTF8.GetString(response.Results[0].Data));
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

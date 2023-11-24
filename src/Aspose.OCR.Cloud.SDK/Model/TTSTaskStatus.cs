@@ -26,8 +26,9 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// Defines TTSTaskStatus
+    /// TTS Task status
     /// </summary>
+    /// <value>TTS Task status</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum TTSTaskStatus
     {

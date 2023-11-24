@@ -26,10 +26,10 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// OCR Process setting for Skew correction
+    /// OCR Process setting for Image recognition
     /// </summary>
-    [DataContract(Name = "OCRSettingsDeskewImage")]
-    public partial class OCRSettingsDeskewImage : IEquatable<OCRSettingsDeskewImage>, IValidatableObject
+    [DataContract(Name = "OCRSettingsRecognizeAndParseInvoice")]
+    public partial class OCRSettingsRecognizeAndParseInvoice : IEquatable<OCRSettingsRecognizeAndParseInvoice>, IValidatableObject
     {
 
         /// <summary>
@@ -62,32 +62,30 @@ namespace Aspose.OCR.Cloud.SDK.Model
         [DataMember(Name = "resultTypeTable", EmitDefaultValue = false)]
         public ResultTypeTable? ResultTypeTable { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="OCRSettingsDeskewImage" /> class.
+        /// Initializes a new instance of the <see cref="OCRSettingsRecognizeAndParseInvoice" /> class.
         /// </summary>
-        /// <param name="pipeline">pipeline.</param>
+        /// <param name="makeSkewCorrect">Option to enable skew correction algorithm. True by default (default to false).</param>
+        /// <param name="makeBinarization">Option to enable binarization algorithm. False by default (default to false).</param>
+        /// <param name="makeUpsampling">Option to enable image up-sampling algorithm to improve quality. True by default (default to false).</param>
         /// <param name="resultType">resultType.</param>
         /// <param name="language">language.</param>
         /// <param name="rotate">Rotate image&gt;.</param>
-        /// <param name="makeSkewCorrect">Option to enable skew correction algorithm. True by default (default to true).</param>
         /// <param name="makeSpellCheck">Option to enable spell checking and correction algorithm. False by default (default to false).</param>
-        /// <param name="makeContrastCorrection">Option to enable image contrast correction algorithm. True by default (default to true).</param>
-        /// <param name="makeBinarization">Option to enable image binarization algorithm. False by default (default to true).</param>
-        /// <param name="makeUpsampling">Option to enable image up-sampling algorithm to improve quality. True by default (default to false).</param>
+        /// <param name="makeContrastCorrection">Option to enable image contrast correction algorithm. True by default (default to false).</param>
         /// <param name="dsrMode">dsrMode.</param>
         /// <param name="dsrConfidence">dsrConfidence.</param>
         /// <param name="resultTypeTable">resultTypeTable.</param>
         /// <param name="regions">Region on image to recognize in specific format. Aspose.Ocr.Cloud.Public.OCRRegion.</param>
-        public OCRSettingsDeskewImage(Pipeline pipeline = default(Pipeline), ResultType? resultType = default(ResultType?), Language? language = default(Language?), int rotate = default(int), bool makeSkewCorrect = true, bool makeSpellCheck = false, bool makeContrastCorrection = true, bool makeBinarization = true, bool makeUpsampling = false, DsrMode? dsrMode = default(DsrMode?), DsrConfidence? dsrConfidence = default(DsrConfidence?), ResultTypeTable? resultTypeTable = default(ResultTypeTable?), List<OCRRegion> regions = default(List<OCRRegion>))
+        public OCRSettingsRecognizeAndParseInvoice(bool makeSkewCorrect = false, bool makeBinarization = false, bool makeUpsampling = false, ResultType? resultType = default(ResultType?), Language? language = default(Language?), int rotate = default(int), bool makeSpellCheck = false, bool makeContrastCorrection = false, DsrMode? dsrMode = default(DsrMode?), DsrConfidence? dsrConfidence = default(DsrConfidence?), ResultTypeTable? resultTypeTable = default(ResultTypeTable?), List<OCRRegion> regions = default(List<OCRRegion>))
         {
-            this.Pipeline = pipeline;
+            this.MakeSkewCorrect = makeSkewCorrect;
+            this.MakeBinarization = makeBinarization;
+            this.MakeUpsampling = makeUpsampling;
             this.ResultType = resultType;
             this.Language = language;
             this.Rotate = rotate;
-            this.MakeSkewCorrect = makeSkewCorrect;
             this.MakeSpellCheck = makeSpellCheck;
             this.MakeContrastCorrection = makeContrastCorrection;
-            this.MakeBinarization = makeBinarization;
-            this.MakeUpsampling = makeUpsampling;
             this.DsrMode = dsrMode;
             this.DsrConfidence = dsrConfidence;
             this.ResultTypeTable = resultTypeTable;
@@ -95,10 +93,25 @@ namespace Aspose.OCR.Cloud.SDK.Model
         }
 
         /// <summary>
-        /// Gets or Sets Pipeline
+        /// Option to enable skew correction algorithm. True by default
         /// </summary>
-        [DataMember(Name = "pipeline", EmitDefaultValue = false)]
-        public Pipeline Pipeline { get; set; }
+        /// <value>Option to enable skew correction algorithm. True by default</value>
+        [DataMember(Name = "makeSkewCorrect", EmitDefaultValue = true)]
+        public bool MakeSkewCorrect { get; set; }
+
+        /// <summary>
+        /// Option to enable binarization algorithm. False by default
+        /// </summary>
+        /// <value>Option to enable binarization algorithm. False by default</value>
+        [DataMember(Name = "makeBinarization", EmitDefaultValue = true)]
+        public bool MakeBinarization { get; set; }
+
+        /// <summary>
+        /// Option to enable image up-sampling algorithm to improve quality. True by default
+        /// </summary>
+        /// <value>Option to enable image up-sampling algorithm to improve quality. True by default</value>
+        [DataMember(Name = "makeUpsampling", EmitDefaultValue = true)]
+        public bool MakeUpsampling { get; set; }
 
         /// <summary>
         /// Rotate image&gt;
@@ -106,13 +119,6 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <value>Rotate image&gt;</value>
         [DataMember(Name = "Rotate", EmitDefaultValue = false)]
         public int Rotate { get; set; }
-
-        /// <summary>
-        /// Option to enable skew correction algorithm. True by default
-        /// </summary>
-        /// <value>Option to enable skew correction algorithm. True by default</value>
-        [DataMember(Name = "makeSkewCorrect", EmitDefaultValue = true)]
-        public bool MakeSkewCorrect { get; set; }
 
         /// <summary>
         /// Option to enable spell checking and correction algorithm. False by default
@@ -126,21 +132,8 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// </summary>
         /// <value>Option to enable image contrast correction algorithm. True by default</value>
         [DataMember(Name = "makeContrastCorrection", EmitDefaultValue = true)]
+        [Obsolete]
         public bool MakeContrastCorrection { get; set; }
-
-        /// <summary>
-        /// Option to enable image binarization algorithm. False by default
-        /// </summary>
-        /// <value>Option to enable image binarization algorithm. False by default</value>
-        [DataMember(Name = "makeBinarization", EmitDefaultValue = true)]
-        public bool MakeBinarization { get; set; }
-
-        /// <summary>
-        /// Option to enable image up-sampling algorithm to improve quality. True by default
-        /// </summary>
-        /// <value>Option to enable image up-sampling algorithm to improve quality. True by default</value>
-        [DataMember(Name = "makeUpsampling", EmitDefaultValue = true)]
-        public bool MakeUpsampling { get; set; }
 
         /// <summary>
         /// Region on image to recognize in specific format. Aspose.Ocr.Cloud.Public.OCRRegion
@@ -156,16 +149,15 @@ namespace Aspose.OCR.Cloud.SDK.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OCRSettingsDeskewImage {\n");
-            sb.Append("  Pipeline: ").Append(Pipeline).Append("\n");
+            sb.Append("class OCRSettingsRecognizeAndParseInvoice {\n");
+            sb.Append("  MakeSkewCorrect: ").Append(MakeSkewCorrect).Append("\n");
+            sb.Append("  MakeBinarization: ").Append(MakeBinarization).Append("\n");
+            sb.Append("  MakeUpsampling: ").Append(MakeUpsampling).Append("\n");
             sb.Append("  ResultType: ").Append(ResultType).Append("\n");
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  Rotate: ").Append(Rotate).Append("\n");
-            sb.Append("  MakeSkewCorrect: ").Append(MakeSkewCorrect).Append("\n");
             sb.Append("  MakeSpellCheck: ").Append(MakeSpellCheck).Append("\n");
             sb.Append("  MakeContrastCorrection: ").Append(MakeContrastCorrection).Append("\n");
-            sb.Append("  MakeBinarization: ").Append(MakeBinarization).Append("\n");
-            sb.Append("  MakeUpsampling: ").Append(MakeUpsampling).Append("\n");
             sb.Append("  DsrMode: ").Append(DsrMode).Append("\n");
             sb.Append("  DsrConfidence: ").Append(DsrConfidence).Append("\n");
             sb.Append("  ResultTypeTable: ").Append(ResultTypeTable).Append("\n");
@@ -190,15 +182,15 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OCRSettingsDeskewImage);
+            return this.Equals(input as OCRSettingsRecognizeAndParseInvoice);
         }
 
         /// <summary>
-        /// Returns true if OCRSettingsDeskewImage instances are equal
+        /// Returns true if OCRSettingsRecognizeAndParseInvoice instances are equal
         /// </summary>
-        /// <param name="input">Instance of OCRSettingsDeskewImage to be compared</param>
+        /// <param name="input">Instance of OCRSettingsRecognizeAndParseInvoice to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OCRSettingsDeskewImage input)
+        public bool Equals(OCRSettingsRecognizeAndParseInvoice input)
         {
             if (input == null)
             {
@@ -206,9 +198,16 @@ namespace Aspose.OCR.Cloud.SDK.Model
             }
             return 
                 (
-                    this.Pipeline == input.Pipeline ||
-                    (this.Pipeline != null &&
-                    this.Pipeline.Equals(input.Pipeline))
+                    this.MakeSkewCorrect == input.MakeSkewCorrect ||
+                    this.MakeSkewCorrect.Equals(input.MakeSkewCorrect)
+                ) && 
+                (
+                    this.MakeBinarization == input.MakeBinarization ||
+                    this.MakeBinarization.Equals(input.MakeBinarization)
+                ) && 
+                (
+                    this.MakeUpsampling == input.MakeUpsampling ||
+                    this.MakeUpsampling.Equals(input.MakeUpsampling)
                 ) && 
                 (
                     this.ResultType == input.ResultType ||
@@ -223,24 +222,12 @@ namespace Aspose.OCR.Cloud.SDK.Model
                     this.Rotate.Equals(input.Rotate)
                 ) && 
                 (
-                    this.MakeSkewCorrect == input.MakeSkewCorrect ||
-                    this.MakeSkewCorrect.Equals(input.MakeSkewCorrect)
-                ) && 
-                (
                     this.MakeSpellCheck == input.MakeSpellCheck ||
                     this.MakeSpellCheck.Equals(input.MakeSpellCheck)
                 ) && 
                 (
                     this.MakeContrastCorrection == input.MakeContrastCorrection ||
                     this.MakeContrastCorrection.Equals(input.MakeContrastCorrection)
-                ) && 
-                (
-                    this.MakeBinarization == input.MakeBinarization ||
-                    this.MakeBinarization.Equals(input.MakeBinarization)
-                ) && 
-                (
-                    this.MakeUpsampling == input.MakeUpsampling ||
-                    this.MakeUpsampling.Equals(input.MakeUpsampling)
                 ) && 
                 (
                     this.DsrMode == input.DsrMode ||
@@ -271,18 +258,14 @@ namespace Aspose.OCR.Cloud.SDK.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Pipeline != null)
-                {
-                    hashCode = (hashCode * 59) + this.Pipeline.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.MakeSkewCorrect.GetHashCode();
+                hashCode = (hashCode * 59) + this.MakeBinarization.GetHashCode();
+                hashCode = (hashCode * 59) + this.MakeUpsampling.GetHashCode();
                 hashCode = (hashCode * 59) + this.ResultType.GetHashCode();
                 hashCode = (hashCode * 59) + this.Language.GetHashCode();
                 hashCode = (hashCode * 59) + this.Rotate.GetHashCode();
-                hashCode = (hashCode * 59) + this.MakeSkewCorrect.GetHashCode();
                 hashCode = (hashCode * 59) + this.MakeSpellCheck.GetHashCode();
                 hashCode = (hashCode * 59) + this.MakeContrastCorrection.GetHashCode();
-                hashCode = (hashCode * 59) + this.MakeBinarization.GetHashCode();
-                hashCode = (hashCode * 59) + this.MakeUpsampling.GetHashCode();
                 hashCode = (hashCode * 59) + this.DsrMode.GetHashCode();
                 hashCode = (hashCode * 59) + this.DsrConfidence.GetHashCode();
                 hashCode = (hashCode * 59) + this.ResultTypeTable.GetHashCode();

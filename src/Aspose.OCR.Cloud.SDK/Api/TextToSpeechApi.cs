@@ -32,7 +32,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetTextToSpeechResult
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TTSResponse</returns>
         [Obsolete]
@@ -45,7 +45,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TTSResponse</returns>
         [Obsolete]
@@ -54,7 +54,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetTextToSpeechResultFile
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         [Obsolete]
@@ -67,7 +67,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         [Obsolete]
@@ -110,7 +110,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TTSResponse</returns>
@@ -124,7 +124,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TTSResponse)</returns>
@@ -137,7 +137,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
@@ -151,7 +151,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -216,7 +216,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
             this.Configuration = Aspose.OCR.Cloud.SDK.Client.Configuration.MergeConfigurations(
                 Aspose.OCR.Cloud.SDK.Client.GlobalConfiguration.Instance,
                 new Aspose.OCR.Cloud.SDK.Client.Configuration {
-                    BasePath = "https://api.aspose.cloud/v5.0/ocr",
+                    BasePath = "https://api.aspose.cloud",
                     OAuthClientId = client_id,
                     OAuthClientSecret = client_secret,
                     OAuthTokenUrl = @"https://api.aspose.cloud/connect/token",
@@ -238,7 +238,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         public TextToSpeechApi(Aspose.OCR.Cloud.SDK.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");            
-            if (configuration.BasePath == null) configuration.BasePath = "https://api.aspose.cloud/v5.0/ocr";
+            if (configuration.BasePath == null) configuration.BasePath = "https://api.aspose.cloud";
             
             if (String.IsNullOrEmpty(configuration.OAuthClientId)) throw new ArgumentNullException("client id");
             if (String.IsNullOrEmpty(configuration.OAuthClientSecret)) throw new ArgumentNullException("client secret");
@@ -318,13 +318,13 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetTextToSpeechResult 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TTSResponse</returns>
         [Obsolete]
         public TTSResponse GetTextToSpeechResult(string id, int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> localVarResponse = GetTextToSpeechResultWithHttpInfo(id);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> localVarResponse = GetTextToSpeechResultWithHttpInfo(id, operationIndex);
             return localVarResponse.Data;
         }
 
@@ -332,7 +332,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetTextToSpeechResult 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TTSResponse</returns>
         [Obsolete]
@@ -388,8 +388,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = this.Client.Get<TTSResponse>(GetAdjustedPath("./v5/TextToSpeech/GetTextToSpeechResult"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TTSResponse>(GetAdjustedPath("./v5.0/ocr/TextToSpeech/GetTextToSpeechResult"), localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetTextToSpeechResult", localVarResponse);
@@ -406,7 +408,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetTextToSpeechResult 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TTSResponse</returns>
@@ -421,7 +423,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetTextToSpeechResult 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TTSResponse)</returns>
@@ -479,8 +481,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TTSResponse>(GetAdjustedPath("./v5/TextToSpeech/GetTextToSpeechResult"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TTSResponse>(GetAdjustedPath("./v5.0/ocr/TextToSpeech/GetTextToSpeechResult"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -499,13 +502,13 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetTextToSpeechResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         [Obsolete]
         public Object GetTextToSpeechResultFile(string id, int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> localVarResponse = GetTextToSpeechResultFileWithHttpInfo(id);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> localVarResponse = GetTextToSpeechResultFileWithHttpInfo(id, operationIndex);
             return localVarResponse.Data;
         }
 
@@ -513,7 +516,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetTextToSpeechResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         [Obsolete]
@@ -569,8 +572,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>(GetAdjustedPath("./v5/TextToSpeech/GetTextToSpeechResultFile"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Object>(GetAdjustedPath("./v5.0/ocr/TextToSpeech/GetTextToSpeechResultFile"), localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetTextToSpeechResultFile", localVarResponse);
@@ -587,7 +592,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetTextToSpeechResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
@@ -602,7 +607,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetTextToSpeechResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -660,8 +665,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>(GetAdjustedPath("./v5/TextToSpeech/GetTextToSpeechResultFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>(GetAdjustedPath("./v5.0/ocr/TextToSpeech/GetTextToSpeechResultFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -686,7 +692,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         [Obsolete]
         public string PostTextToSpeech(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostTextToSpeechWithHttpInfo(tTSBodyDeprecated);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostTextToSpeechWithHttpInfo(tTSBodyDeprecated, operationIndex);
             return localVarResponse.Data;
         }
 
@@ -751,8 +757,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5/TextToSpeech/PostTextToSpeech"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5.0/ocr/TextToSpeech/PostTextToSpeech"), localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PostTextToSpeech", localVarResponse);
@@ -843,8 +851,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5/TextToSpeech/PostTextToSpeech"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/TextToSpeech/PostTextToSpeech"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -859,7 +868,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         
-    
+
         /// <summary>
         /// Returns adjusted path in case if base path contains version identifier 
         /// </summary>
@@ -867,16 +876,16 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <returns></returns>
         string GetAdjustedPath(string srcPath)
         {
-            if (Regex.IsMatch(this.Configuration.BasePath,
-                @"^*(\/v\d{1,5}.?\d{0,3}\/)"))
+            if (this.Configuration.BasePath != "https://api.aspose.cloud")
             {
-                return Regex.Replace(srcPath, @"(\/v\d{1,5}.?\d{0,3}\/)", @"/");
+                return Regex.Replace(srcPath, @"/ocr", @"");
             }
             else
             {
                 return srcPath;
             }
         }
+
     }
 
     

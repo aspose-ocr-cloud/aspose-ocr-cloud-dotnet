@@ -1,6 +1,6 @@
 <img src="docs/Resources/heading.png">
 
-# Aspose.OCR Cloud 23.6.0
+# Aspose.OCR Cloud .NET SDK 23.11.0
 
 [![License](https://img.shields.io/github/license/aspose-ocr-cloud/aspose-ocr-cloud-dotnet)](LICENSE)
 [![Nuget](https://img.shields.io/nuget/v/Aspose.OCR-Cloud)](https://www.nuget.org/packages/Aspose.OCR-Cloud/)
@@ -61,48 +61,63 @@ Aspose.OCR Cloud follows industry standards and best practices to keep your data
   </a>
 </p>
 
-## What was changed in version 23.6.0
+## What was changed in version 23.11.0
 
-A summary of recent changes, enhancements and bug fixes in **Aspose.OCR Cloud SDK for .NET 23.6.0** release:
+A summary of recent changes, enhancements and bug fixes in **Aspose.OCR Cloud SDK for .NET 23.11.0** release:
 
 Key | Summary | Category
 --- | ------- | --------
-OCR-3454 | Extracting text from photographed signboards, price tags, plates, food labels, and similar images. | New feature
-OCR-2893 | Detecting fonts and styles in scans or photographs. | New feature
+OCR&#8209;3560 | Added an API for extracting structured information from scanned invoices. | New feature
+OCR&#8209;3722 | Added a free API for evaluating text-to-speech conversion that works without [authorization](/ocr/authorization/).<br />Some restrictions apply. See below for details. | New feature
+OCR&#8209;3171 | Added an API for getting [task status](/ocr/recognition-workflow/#3-fetch-the-recognition-result) without downloading a full recognition result. | Enhancement
 
-REST API changes: https://releases.aspose.cloud/ocr/release-notes/2023/aspose-ocr-cloud-23-6-0-release-notes/
+REST API changes: https://releases.aspose.cloud/ocr/release-notes/2023/aspose-ocr-cloud-23-11-0-release-notes/
 
 ### Public API changes and backwards compatibility
 
-This section lists all public API changes introduced in **Aspose.OCR Cloud SDK for .NET 23.6.0** that may affect the code of existing applications.
+This section lists all public API changes introduced in **Aspose.OCR Cloud SDK for .NET 23.11.0** that may affect the code of existing applications.
 
 #### Added public APIs:
 
 The following public APIs have been introduced in this release:
 
-##### Label recognition
+##### Extracting structured information from invoice
 
-The following new classes have been added for extracting text from street photos, labels, and similar images:
+The following new classes have been added for extracting structured information in JSON format from scanned or photographed invoices:
 
 Class | Description
 ----- | -----------
-`RecognizeLabelApi` | Label recognition API.
-`OCRSettingsRecognizeLabel` | Label recognition settings.
-`OCRRecognizeLabelBody` | Label recognition request body.
+`RecognizeAndParseInvoiceApi` | Invoice processing API.
+`OCRSettingsRecognizeAndParseInvoice` | Invoice processing settings.
+`OCRRecognizeAndParseInvoiceBody` | Invoice processing request body.
 
-[Learn more...](https://docs.aspose.cloud/ocr/recognize-label/)
+[Learn more...](https://docs.aspose.cloud/ocr/recognize-parse-invoice/)
 
-##### Font identification
+##### Text-to-speech evaluation
 
 The following new classes have been added:
 
 Class | Description
 ----- | -----------
-`IdentifyFontApi` | Font identification API.
-`OCRSettingsRecognizeFont` | Font identification settings.
-`OCRRecognizeFontBody` | Font identification request body.
+`ConvertTextToSpeechTrialApi` | Evaluation text-to-speech conversion API (without authorization).
 
-[Learn more...](https://docs.aspose.cloud/ocr/recognize-label/)
+The evaluation mode has some limitations:
+
+- **10** requests per day from a single IP address.
+- The text size must not exceed **500** characters, including spaces and punctuation.
+- The phrase _"Please authenticate to the API to remove this message"_ is inserted at a random position within the generated audio.
+
+[Learn more...](https://docs.aspose.cloud/ocr/text-to-speech/)
+
+##### Quickly fetch processing status
+
+The following new classes have been added:
+
+Class | Description
+----- | -----------
+`UtilitiesApi` | Universal API for various management and monitoring purposes.
+
+[Learn more...](https://docs.aspose.cloud/ocr/subscription/)
 
 #### Updated public APIs:
 
@@ -114,72 +129,137 @@ _No changes._
 
 ## Examples
 
-The examples below illustrate the changes introduced in version 23.6.0:
+The examples below illustrate the changes introduced in version 23.11.0:
 
-### Recognize label from street photo
-
-```csharp
-using Aspose.OCR.Cloud.SDK.Api;
-using Aspose.OCR.Cloud.SDK.Model;
-using System.Text;
-
-namespace Example
-{
-	internal class Program
-	{
-		static void Main(string[] args)
-		{
-			/** Authorize your requests to Aspose.OCR Cloud API */
-			RecognizeLabelApi recognizeLabelApi = new RecognizeLabelApi("<client id="">", "<client secret="">");
-			/** Read photographed label to array of bytes */
-			byte[] image = File.ReadAllBytes("source.png");
-			/** Specify recognition settings */
-			OCRSettingsRecognizeLabel recognitionSettings = new OCRSettingsRecognizeLabel {
-				Language = Language.English,
-				ResultType = ResultType.Text
-			};
-			/** Send photographed label for recognition */
-			OCRRecognizeLabelBody source = new OCRRecognizeLabelBody(image, recognitionSettings);
-			string taskID = recognizeLabelApi.PostRecognizeLabel(source);
-			/** Fetch recognition result */
-			OCRResponse result = recognizeLabelApi.GetRecognizeLabel(taskID);
-			Console.WriteLine(Encoding.UTF8.GetString(result.Results[0].Data));
-		}
-	}
-}
-```
-
-### Identify font in image
+### Extract structured data from the invoice
 
 ```csharp
 using Aspose.OCR.Cloud.SDK.Api;
 using Aspose.OCR.Cloud.SDK.Model;
 using System.Text;
 
-namespace Example
+namespace ExampleDotNet60v50.APIExamples
 {
-	internal class Program
+	public static class RecognizeAndParseInvoiceExample
 	{
-		static void Main(string[] args)
-		{
-			/** Authorize your requests to Aspose.OCR Cloud API */
-			IdentifyFontApi fontIdentificationApi = new IdentifyFontApi("<client id="">", "<client secret="">");
-			/** Read the image to array of bytes */
-			byte[] image = File.ReadAllBytes("source.png");
-			/** Specify recognition settings */
-			OCRSettingsRecognizeFont recognitionSettings = new OCRSettingsRecognizeFont {
-				ResultType = ResultType.Text
-			};
-			/** Send image for font detection */
-			OCRRecognizeFontBody source = new OCRRecognizeFontBody(image, recognitionSettings);
-			string taskID = fontIdentificationApi.PostIdentifyFont(source);
-			/** Fetch recognition result */
-			OCRResponse result = fontIdentificationApi.GetIdentifyFont(taskID);
-			Console.WriteLine(Encoding.UTF8.GetString(result.Results[0].Data));
-		}
+    	public static void Run(string clientId, string clientSecret)
+    	{
+        	try
+        	{
+            	string imageFileName = "samples/invoice_english_01.jpg";
+
+            	Console.WriteLine($"Sending sample invoice ({imageFileName}) for processing...\n");
+
+            	RecognizeAndParseInvoiceApi apiInstance = new RecognizeAndParseInvoiceApi(clientId, clientSecret);
+            	var requestBody = new OCRRecognizeAndParseInvoiceBody(
+                    	image: File.ReadAllBytes(imageFileName),
+                    	settings: new OCRSettingsRecognizeAndParseInvoice(resultType: ResultType.Text));
+            	string taskId = apiInstance.PostRecognizeAndParseInvoice(requestBody);
+            	Console.WriteLine($"File successfully sent. Your credentials accepted. Your task ID is {taskId}\nTaking a while before request result...");
+            	Thread.Sleep(10000);
+            	var response = apiInstance.GetRecognizeAndParseInvoice(taskId);
+            	Console.WriteLine($"Respose received with status {response.TaskStatus.Value} \n\n" +
+                	$" Your results:\n\n");
+            	response.Results.ForEach(res => Console.WriteLine(Encoding.UTF8.GetString(res.Data)));
+        	}
+        	catch (Exception ex)
+        	{
+            	Console.WriteLine(ex.ToString());
+        	}
+    	}
 	}
 }
 ```
+
+### Convert text to speech in free (evaluation) mode
+
+```csharp
+using Aspose.OCR.Cloud.SDK.Api;
+using Aspose.OCR.Cloud.SDK.Model;
+
+namespace ExampleDotNet60v50.APIExamples
+{
+	public static class TextToSpeechTrialExample
+	{
+    	public static void TryConvertTextToSpeechTrialApi()
+    	{
+        	try
+        	{
+            	string sampleText = "This is the sample text";
+
+            	ConvertTextToSpeechTrialApi apiInstance = new ConvertTextToSpeechTrialApi();
+
+            	var settings = new TTSBody(
+                    	text: sampleText,
+                    	settings: new TTSSettings(
+                        	language: LanguageTTS.English,
+                        	resultType: ResultTypeTTS.Wav));
+
+            	var taskId = apiInstance.PostConvertTextToSpeechTrial(settings);
+            	Console.WriteLine($"Text sent for TTS. Your credentials accepted. Your task ID is {taskId}");
+
+            	Console.WriteLine($"Requesting results for task {taskId} ...");
+            	var result = apiInstance.GetConvertTextToSpeechTrial(taskId);
+
+            	byte[] soundFile = result.Results[0].Data;
+            	string extension = result.Results[0].Type switch
+            	{
+                	"WavFile" => "wav",
+                	_ => "wav"
+            	};
+
+            	Console.WriteLine($"Respose received with status {result.TaskStatus.Value} \n\n" +
+                	$" Your results will be saved to results\\{result.Id}.{extension}:\n\n");
+            	Directory.CreateDirectory("results");
+            	File.WriteAllBytes($"results/{result.Id}.{extension}", soundFile);
+
+            	Console.WriteLine("\nPress any key to continue");
+            	Console.ReadKey();
+        	}
+        	catch (Exception ex)
+        	{
+            	Console.WriteLine(ex.ToString());
+            	Console.WriteLine("\nPress any key to continue");
+            	Console.ReadKey();
+        	}
+    	}
+	}
+}
+```
+
+### Fetch the status of the request
+
+```csharp
+namespace ExampleDotNet60v50.APIExamples
+{
+	public static class UtilitiesApiExample
+	{
+    	public static void TryUtilitiesApi(string clientId, string clientSecret)
+    	{
+        	try
+        	{
+            	string taskId = "00000000-0000-0000-0000-000000000000";
+
+            	UtilitiesApi utilitieseApi = new UtilitiesApi();
+
+            	Console.WriteLine($"Requesting task status for task {taskId} ...");
+            	var result = utilitieseApi.GetTaskStatus(taskId);
+            	Console.WriteLine($"Respose received with status {result.TaskStatus.Value} \n\n ");
+
+            	Console.WriteLine("\nPress any key to continue");
+            	Console.ReadKey();
+        	}
+        	catch (Exception ex)
+        	{
+            	Console.WriteLine(ex.ToString());
+            	Console.WriteLine("\nPress any key to continue");
+            	Console.ReadKey();
+        	}
+    	}
+	}
+}
+```
+
 ## Other Aspose.OCR Cloud SDKs
 
 - [Aspose.OCR Cloud for Java](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-java)  

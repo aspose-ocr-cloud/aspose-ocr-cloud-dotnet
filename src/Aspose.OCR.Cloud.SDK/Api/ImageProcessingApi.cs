@@ -32,7 +32,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultFile
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         [Obsolete]
@@ -45,7 +45,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         [Obsolete]
@@ -54,7 +54,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultTask
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
         [Obsolete]
@@ -67,7 +67,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
         [Obsolete]
@@ -176,7 +176,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
@@ -190,7 +190,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -203,7 +203,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
@@ -217,7 +217,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>
@@ -363,7 +363,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
             this.Configuration = Aspose.OCR.Cloud.SDK.Client.Configuration.MergeConfigurations(
                 Aspose.OCR.Cloud.SDK.Client.GlobalConfiguration.Instance,
                 new Aspose.OCR.Cloud.SDK.Client.Configuration {
-                    BasePath = "https://api.aspose.cloud/v5.0/ocr",
+                    BasePath = "https://api.aspose.cloud",
                     OAuthClientId = client_id,
                     OAuthClientSecret = client_secret,
                     OAuthTokenUrl = @"https://api.aspose.cloud/connect/token",
@@ -385,7 +385,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         public ImageProcessingApi(Aspose.OCR.Cloud.SDK.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");            
-            if (configuration.BasePath == null) configuration.BasePath = "https://api.aspose.cloud/v5.0/ocr";
+            if (configuration.BasePath == null) configuration.BasePath = "https://api.aspose.cloud";
             
             if (String.IsNullOrEmpty(configuration.OAuthClientId)) throw new ArgumentNullException("client id");
             if (String.IsNullOrEmpty(configuration.OAuthClientSecret)) throw new ArgumentNullException("client secret");
@@ -465,13 +465,13 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         [Obsolete]
         public Object GetResultFile(string id, int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> localVarResponse = GetResultFileWithHttpInfo(id);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> localVarResponse = GetResultFileWithHttpInfo(id, operationIndex);
             return localVarResponse.Data;
         }
 
@@ -479,7 +479,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         [Obsolete]
@@ -535,8 +535,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>(GetAdjustedPath("./v5/ImageProcessing/GetResultFile"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Object>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/GetResultFile"), localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetResultFile", localVarResponse);
@@ -553,7 +555,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
@@ -568,7 +570,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultFile 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -626,8 +628,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>(GetAdjustedPath("./v5/ImageProcessing/GetResultFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/GetResultFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -646,13 +649,13 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultTask 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
         [Obsolete]
         public OCRResponse GetResultTask(string id, int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = GetResultTaskWithHttpInfo(id);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = GetResultTaskWithHttpInfo(id, operationIndex);
             return localVarResponse.Data;
         }
 
@@ -660,7 +663,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultTask 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
         [Obsolete]
@@ -716,8 +719,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = this.Client.Get<OCRResponse>(GetAdjustedPath("./v5/ImageProcessing/GetResultTask"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<OCRResponse>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/GetResultTask"), localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetResultTask", localVarResponse);
@@ -734,7 +739,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultTask 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
@@ -749,7 +754,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// GetResultTask 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>
@@ -807,8 +812,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<OCRResponse>(GetAdjustedPath("./v5/ImageProcessing/GetResultTask"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OCRResponse>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/GetResultTask"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -833,7 +839,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         [Obsolete]
         public string PostBinarizationFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostBinarizationFileWithHttpInfo(file);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostBinarizationFileWithHttpInfo(file, operationIndex);
             return localVarResponse.Data;
         }
 
@@ -895,8 +901,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5/ImageProcessing/PostBinarizationFile"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/PostBinarizationFile"), localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PostBinarizationFile", localVarResponse);
@@ -984,8 +992,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5/ImageProcessing/PostBinarizationFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/PostBinarizationFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1010,7 +1019,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         [Obsolete]
         public string PostDewarpingFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostDewarpingFileWithHttpInfo(file);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostDewarpingFileWithHttpInfo(file, operationIndex);
             return localVarResponse.Data;
         }
 
@@ -1072,8 +1081,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5/ImageProcessing/PostDewarpingFile"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/PostDewarpingFile"), localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PostDewarpingFile", localVarResponse);
@@ -1161,8 +1172,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5/ImageProcessing/PostDewarpingFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/PostDewarpingFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1187,7 +1199,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         [Obsolete]
         public string PostSkewCorrectionFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostSkewCorrectionFileWithHttpInfo(file);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostSkewCorrectionFileWithHttpInfo(file, operationIndex);
             return localVarResponse.Data;
         }
 
@@ -1249,8 +1261,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5/ImageProcessing/PostSkewCorrectionFile"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/PostSkewCorrectionFile"), localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PostSkewCorrectionFile", localVarResponse);
@@ -1338,8 +1352,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5/ImageProcessing/PostSkewCorrectionFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/PostSkewCorrectionFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1364,7 +1379,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         [Obsolete]
         public string PostUpsamplingFile(System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostUpsamplingFileWithHttpInfo(file);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostUpsamplingFileWithHttpInfo(file, operationIndex);
             return localVarResponse.Data;
         }
 
@@ -1426,8 +1441,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5/ImageProcessing/PostUpsamplingImageFile"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/PostUpsamplingImageFile"), localVarRequestOptions, this.Configuration);
+
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PostUpsamplingFile", localVarResponse);
@@ -1515,8 +1532,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
+
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5/ImageProcessing/PostUpsamplingImageFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/ImageProcessing/PostUpsamplingImageFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1531,7 +1549,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         
-    
+
         /// <summary>
         /// Returns adjusted path in case if base path contains version identifier 
         /// </summary>
@@ -1539,16 +1557,16 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <returns></returns>
         string GetAdjustedPath(string srcPath)
         {
-            if (Regex.IsMatch(this.Configuration.BasePath,
-                @"^*(\/v\d{1,5}.?\d{0,3}\/)"))
+            if (this.Configuration.BasePath != "https://api.aspose.cloud")
             {
-                return Regex.Replace(srcPath, @"(\/v\d{1,5}.?\d{0,3}\/)", @"/");
+                return Regex.Replace(srcPath, @"/ocr", @"");
             }
             else
             {
                 return srcPath;
             }
         }
+
     }
 
     

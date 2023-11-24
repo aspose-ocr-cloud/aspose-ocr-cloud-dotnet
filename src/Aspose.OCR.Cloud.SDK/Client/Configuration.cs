@@ -33,7 +33,7 @@ namespace Aspose.OCR.Cloud.SDK.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.0.0";
+        public const string Version = "23.11.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -99,6 +99,7 @@ namespace Aspose.OCR.Cloud.SDK.Client
         /// <value>The operation servers</value>
         private IReadOnlyDictionary<string, List<IReadOnlyDictionary<string, object>>> _operationServers;
 
+
         #endregion Private Members
 
         #region Constructors
@@ -110,7 +111,7 @@ namespace Aspose.OCR.Cloud.SDK.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/1.0.0/csharp");
+            UserAgent = WebUtility.UrlEncode("Aspose.OCR Cloud SDK for .Net 23.11.0");
             BasePath = "http://localhost";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -542,7 +543,7 @@ namespace Aspose.OCR.Cloud.SDK.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 5.0\n";
-            report += "    SDK Package Version: 1.0.0\n";
+            report += "    SDK Package Version: 23.11.0\n";
 
             return report;
         }

@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspose.OCR-Cloud" Version="23.6.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="samples\dewarping.png" />
     <None Remove="samples\lorem_ipsum.png" />
     <None Remove="samples\binarization_latin.png" />
@@ -40,5 +36,15 @@
 	<Content Include="samples\font_courier.png">
 		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.OCR-Cloud" Version="23.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="samples\invoice_english_01.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

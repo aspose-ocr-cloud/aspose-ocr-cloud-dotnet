@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// OCRDjVu2PDFBody
+    /// Combines Image data and OCR Recognition settings
     /// </summary>
     [DataContract(Name = "OCRDjVu2PDFBody")]
     public partial class OCRDjVu2PDFBody : IEquatable<OCRDjVu2PDFBody>, IValidatableObject
@@ -39,7 +39,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OCRDjVu2PDFBody" /> class.
         /// </summary>
-        /// <param name="image">image (required).</param>
+        /// <param name="image">Gets or Sets Image (required).</param>
         /// <param name="settings">settings (required).</param>
         public OCRDjVu2PDFBody(byte[] image = default(byte[]), OCRSettingsDjVu2PDF settings = default(OCRSettingsDjVu2PDF))
         {
@@ -60,6 +60,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Gets or Sets Image
         /// </summary>
+        /// <value>Gets or Sets Image</value>
         [DataMember(Name = "image", IsRequired = true, EmitDefaultValue = true)]
         public byte[] Image { get; set; }
 

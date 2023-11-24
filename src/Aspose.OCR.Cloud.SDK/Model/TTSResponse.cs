@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// TTSResponse
+    /// Response with Recognition result for specific task ID
     /// </summary>
     [DataContract(Name = "TTSResponse")]
     public partial class TTSResponse : IEquatable<TTSResponse>, IValidatableObject
@@ -46,7 +46,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TTSResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">The specific Task ID that result was made for.</param>
         /// <param name="responseStatusCode">responseStatusCode.</param>
         /// <param name="taskStatus">taskStatus.</param>
         /// <param name="error">error.</param>
@@ -59,14 +59,16 @@ namespace Aspose.OCR.Cloud.SDK.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The specific Task ID that result was made for
         /// </summary>
+        /// <value>The specific Task ID that result was made for</value>
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Results
+        /// List of results - Especially Text or PDF files
         /// </summary>
+        /// <value>List of results - Especially Text or PDF files</value>
         [DataMember(Name = "results", EmitDefaultValue = true)]
         public List<TTSResult> Results { get; private set; }
 

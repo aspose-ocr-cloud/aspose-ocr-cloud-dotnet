@@ -25,20 +25,20 @@ namespace Aspose.OCR.Cloud.SDK.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IRecognizeLabelApiSync : IApiAccessor
+    public interface IRecognizeAndParseInvoiceApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// CancelRecognizeLabel
+        /// CancelRecognizeAndParseInvoice
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void CancelRecognizeLabel(string id, int operationIndex = 0);
+        void CancelRecognizeAndParseInvoice(string id, int operationIndex = 0);
 
         /// <summary>
-        /// CancelRecognizeLabel
+        /// CancelRecognizeAndParseInvoice
         /// </summary>
         /// <remarks>
         /// 
@@ -47,18 +47,18 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CancelRecognizeLabelWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Object> CancelRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0);
         /// <summary>
-        /// GetRecognizeLabel
+        /// GetRecognizeAndParseInvoice
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
-        OCRResponse GetRecognizeLabel(string id, int operationIndex = 0);
+        OCRResponse GetRecognizeAndParseInvoice(string id, int operationIndex = 0);
 
         /// <summary>
-        /// GetRecognizeLabel
+        /// GetRecognizeAndParseInvoice
         /// </summary>
         /// <remarks>
         /// 
@@ -67,38 +67,38 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
-        ApiResponse<OCRResponse> GetRecognizeLabelWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<OCRResponse> GetRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0);
         /// <summary>
-        /// PostRecognizeLabel
+        /// PostRecognizeAndParseInvoice
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oCRRecognizeLabelBody"></param>
+        /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        string PostRecognizeLabel(OCRRecognizeLabelBody oCRRecognizeLabelBody, int operationIndex = 0);
+        string PostRecognizeAndParseInvoice(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0);
 
         /// <summary>
-        /// PostRecognizeLabel
+        /// PostRecognizeAndParseInvoice
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oCRRecognizeLabelBody"></param>
+        /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> PostRecognizeLabelWithHttpInfo(OCRRecognizeLabelBody oCRRecognizeLabelBody, int operationIndex = 0);
+        ApiResponse<string> PostRecognizeAndParseInvoiceWithHttpInfo(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IRecognizeLabelApiAsync : IApiAccessor
+    public interface IRecognizeAndParseInvoiceApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
-        /// CancelRecognizeLabel
+        /// CancelRecognizeAndParseInvoice
         /// </summary>
         /// <remarks>
         /// 
@@ -108,10 +108,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CancelRecognizeLabelAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task CancelRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// CancelRecognizeLabel
+        /// CancelRecognizeAndParseInvoice
         /// </summary>
         /// <remarks>
         /// 
@@ -121,9 +121,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CancelRecognizeLabelWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CancelRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// GetRecognizeLabel
+        /// GetRecognizeAndParseInvoice
         /// </summary>
         /// <remarks>
         /// 
@@ -133,10 +133,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
-        System.Threading.Tasks.Task<OCRResponse> GetRecognizeLabelAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OCRResponse> GetRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// GetRecognizeLabel
+        /// GetRecognizeAndParseInvoice
         /// </summary>
         /// <remarks>
         /// 
@@ -146,39 +146,39 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OCRResponse>> GetRecognizeLabelWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OCRResponse>> GetRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// PostRecognizeLabel
+        /// PostRecognizeAndParseInvoice
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oCRRecognizeLabelBody"></param>
+        /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> PostRecognizeLabelAsync(OCRRecognizeLabelBody oCRRecognizeLabelBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> PostRecognizeAndParseInvoiceAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// PostRecognizeLabel
+        /// PostRecognizeAndParseInvoice
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oCRRecognizeLabelBody"></param>
+        /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> PostRecognizeLabelWithHttpInfoAsync(OCRRecognizeLabelBody oCRRecognizeLabelBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> PostRecognizeAndParseInvoiceWithHttpInfoAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IRecognizeLabelApi : IRecognizeLabelApiSync, IRecognizeLabelApiAsync
+    public interface IRecognizeAndParseInvoiceApi : IRecognizeAndParseInvoiceApiSync, IRecognizeAndParseInvoiceApiAsync
     {
 
     }
@@ -186,7 +186,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class RecognizeLabelApi : IRecognizeLabelApi
+    public partial class RecognizeAndParseInvoiceApi : IRecognizeAndParseInvoiceApi
     {
         private Aspose.OCR.Cloud.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
@@ -195,7 +195,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// </summary>
         /// <param name="client_id">client ID</param>
         /// <param name="client_secret">client secret</param>
-        public RecognizeLabelApi(string client_id, string client_secret)
+        public RecognizeAndParseInvoiceApi(string client_id, string client_secret)
         {
             if (String.IsNullOrEmpty(client_id) || String.IsNullOrEmpty(client_secret)) 
                 throw new ArgumentNullException("Client_id or client_secret is empty.\n" +
@@ -218,12 +218,12 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RecognizeLabelApi"/> class
+        /// Initializes a new instance of the <see cref="RecognizeAndParseInvoiceApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public RecognizeLabelApi(Aspose.OCR.Cloud.SDK.Client.Configuration configuration)
+        public RecognizeAndParseInvoiceApi(Aspose.OCR.Cloud.SDK.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");            
             if (configuration.BasePath == null) configuration.BasePath = "https://api.aspose.cloud";
@@ -243,13 +243,13 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RecognizeLabelApi"/> class
+        /// Initializes a new instance of the <see cref="RecognizeAndParseInvoiceApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public RecognizeLabelApi(Aspose.OCR.Cloud.SDK.Client.ISynchronousClient client, Aspose.OCR.Cloud.SDK.Client.IAsynchronousClient asyncClient, Aspose.OCR.Cloud.SDK.Client.IReadableConfiguration configuration)
+        public RecognizeAndParseInvoiceApi(Aspose.OCR.Cloud.SDK.Client.ISynchronousClient client, Aspose.OCR.Cloud.SDK.Client.IAsynchronousClient asyncClient, Aspose.OCR.Cloud.SDK.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -303,30 +303,30 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         /// <summary>
-        /// CancelRecognizeLabel 
+        /// CancelRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void CancelRecognizeLabel(string id, int operationIndex = 0)
+        public void CancelRecognizeAndParseInvoice(string id, int operationIndex = 0)
         {
-            CancelRecognizeLabelWithHttpInfo(id);
+            CancelRecognizeAndParseInvoiceWithHttpInfo(id);
         }
 
         /// <summary>
-        /// CancelRecognizeLabel 
+        /// CancelRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> CancelRecognizeLabelWithHttpInfo(string id, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> CancelRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeLabelApi->CancelRecognizeLabel");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeAndParseInvoiceApi->CancelRecognizeAndParseInvoice");
             }
 
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
@@ -352,7 +352,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
             localVarRequestOptions.QueryParameters.Add(Aspose.OCR.Cloud.SDK.Client.ClientUtils.ParameterToMultiMap("", "id", id));
 
-            localVarRequestOptions.Operation = "RecognizeLabelApi.CancelRecognizeLabel";
+            localVarRequestOptions.Operation = "RecognizeAndParseInvoiceApi.CancelRecognizeAndParseInvoice";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -374,11 +374,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>(GetAdjustedPath("./v5.0/ocr/RecognizeLabel"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>(GetAdjustedPath("./v5.0/ocr/RecognizeAndParseInvoice"), localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CancelRecognizeLabel", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CancelRecognizeAndParseInvoice", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -389,32 +389,32 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         /// <summary>
-        /// CancelRecognizeLabel 
+        /// CancelRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CancelRecognizeLabelAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task CancelRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await CancelRecognizeLabelWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await CancelRecognizeAndParseInvoiceWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// CancelRecognizeLabel 
+        /// CancelRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object>> CancelRecognizeLabelWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object>> CancelRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeLabelApi->CancelRecognizeLabel");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeAndParseInvoiceApi->CancelRecognizeAndParseInvoice");
             }
 
 
@@ -441,7 +441,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
             localVarRequestOptions.QueryParameters.Add(Aspose.OCR.Cloud.SDK.Client.ClientUtils.ParameterToMultiMap("", "id", id));
 
-            localVarRequestOptions.Operation = "RecognizeLabelApi.CancelRecognizeLabel";
+            localVarRequestOptions.Operation = "RecognizeAndParseInvoiceApi.CancelRecognizeAndParseInvoice";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -463,11 +463,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>(GetAdjustedPath("./v5.0/ocr/RecognizeLabel"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>(GetAdjustedPath("./v5.0/ocr/RecognizeAndParseInvoice"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CancelRecognizeLabel", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CancelRecognizeAndParseInvoice", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -479,31 +479,31 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
         
         /// <summary>
-        /// GetRecognizeLabel 
+        /// GetRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
-        public OCRResponse GetRecognizeLabel(string id, int operationIndex = 0)
+        public OCRResponse GetRecognizeAndParseInvoice(string id, int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = GetRecognizeLabelWithHttpInfo(id, operationIndex);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = GetRecognizeAndParseInvoiceWithHttpInfo(id, operationIndex);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// GetRecognizeLabel 
+        /// GetRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> GetRecognizeLabelWithHttpInfo(string id, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> GetRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeLabelApi->GetRecognizeLabel");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeAndParseInvoiceApi->GetRecognizeAndParseInvoice");
             }
 
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
@@ -530,7 +530,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
             localVarRequestOptions.QueryParameters.Add(Aspose.OCR.Cloud.SDK.Client.ClientUtils.ParameterToMultiMap("", "id", id));
 
-            localVarRequestOptions.Operation = "RecognizeLabelApi.GetRecognizeLabel";
+            localVarRequestOptions.Operation = "RecognizeAndParseInvoiceApi.GetRecognizeAndParseInvoice";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -552,11 +552,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<OCRResponse>(GetAdjustedPath("./v5.0/ocr/RecognizeLabel"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<OCRResponse>(GetAdjustedPath("./v5.0/ocr/RecognizeAndParseInvoice"), localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetRecognizeLabel", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetRecognizeAndParseInvoice", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -567,33 +567,33 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         /// <summary>
-        /// GetRecognizeLabel 
+        /// GetRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
-        public async System.Threading.Tasks.Task<OCRResponse> GetRecognizeLabelAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OCRResponse> GetRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = await GetRecognizeLabelWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = await GetRecognizeAndParseInvoiceWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// GetRecognizeLabel 
+        /// GetRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse>> GetRecognizeLabelWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse>> GetRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeLabelApi->GetRecognizeLabel");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeAndParseInvoiceApi->GetRecognizeAndParseInvoice");
             }
 
 
@@ -621,7 +621,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
             localVarRequestOptions.QueryParameters.Add(Aspose.OCR.Cloud.SDK.Client.ClientUtils.ParameterToMultiMap("", "id", id));
 
-            localVarRequestOptions.Operation = "RecognizeLabelApi.GetRecognizeLabel";
+            localVarRequestOptions.Operation = "RecognizeAndParseInvoiceApi.GetRecognizeAndParseInvoice";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -643,11 +643,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<OCRResponse>(GetAdjustedPath("./v5.0/ocr/RecognizeLabel"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OCRResponse>(GetAdjustedPath("./v5.0/ocr/RecognizeAndParseInvoice"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetRecognizeLabel", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetRecognizeAndParseInvoice", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -659,31 +659,31 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
         
         /// <summary>
-        /// PostRecognizeLabel 
+        /// PostRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oCRRecognizeLabelBody"></param>
+        /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        public string PostRecognizeLabel(OCRRecognizeLabelBody oCRRecognizeLabelBody, int operationIndex = 0)
+        public string PostRecognizeAndParseInvoice(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostRecognizeLabelWithHttpInfo(oCRRecognizeLabelBody, operationIndex);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostRecognizeAndParseInvoiceWithHttpInfo(oCRRecognizeAndParseInvoiceBody, operationIndex);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// PostRecognizeLabel 
+        /// PostRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oCRRecognizeLabelBody"></param>
+        /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostRecognizeLabelWithHttpInfo(OCRRecognizeLabelBody oCRRecognizeLabelBody, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostRecognizeAndParseInvoiceWithHttpInfo(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0)
         {
-            // verify the required parameter 'oCRRecognizeLabelBody' is set
-            if (oCRRecognizeLabelBody == null)
+            // verify the required parameter 'oCRRecognizeAndParseInvoiceBody' is set
+            if (oCRRecognizeAndParseInvoiceBody == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'oCRRecognizeLabelBody' when calling RecognizeLabelApi->PostRecognizeLabel");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'oCRRecognizeAndParseInvoiceBody' when calling RecognizeAndParseInvoiceApi->PostRecognizeAndParseInvoice");
             }
 
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
@@ -709,9 +709,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = oCRRecognizeLabelBody;
+            localVarRequestOptions.Data = oCRRecognizeAndParseInvoiceBody;
 
-            localVarRequestOptions.Operation = "RecognizeLabelApi.PostRecognizeLabel";
+            localVarRequestOptions.Operation = "RecognizeAndParseInvoiceApi.PostRecognizeAndParseInvoice";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -733,11 +733,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5.0/ocr/RecognizeLabel"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5.0/ocr/RecognizeAndParseInvoice"), localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PostRecognizeLabel", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PostRecognizeAndParseInvoice", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -748,33 +748,33 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         /// <summary>
-        /// PostRecognizeLabel 
+        /// PostRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oCRRecognizeLabelBody"></param>
+        /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> PostRecognizeLabelAsync(OCRRecognizeLabelBody oCRRecognizeLabelBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> PostRecognizeAndParseInvoiceAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostRecognizeLabelWithHttpInfoAsync(oCRRecognizeLabelBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostRecognizeAndParseInvoiceWithHttpInfoAsync(oCRRecognizeAndParseInvoiceBody, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// PostRecognizeLabel 
+        /// PostRecognizeAndParseInvoice 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oCRRecognizeLabelBody"></param>
+        /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostRecognizeLabelWithHttpInfoAsync(OCRRecognizeLabelBody oCRRecognizeLabelBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostRecognizeAndParseInvoiceWithHttpInfoAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'oCRRecognizeLabelBody' is set
-            if (oCRRecognizeLabelBody == null)
+            // verify the required parameter 'oCRRecognizeAndParseInvoiceBody' is set
+            if (oCRRecognizeAndParseInvoiceBody == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'oCRRecognizeLabelBody' when calling RecognizeLabelApi->PostRecognizeLabel");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'oCRRecognizeAndParseInvoiceBody' when calling RecognizeAndParseInvoiceApi->PostRecognizeAndParseInvoice");
             }
 
 
@@ -801,9 +801,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = oCRRecognizeLabelBody;
+            localVarRequestOptions.Data = oCRRecognizeAndParseInvoiceBody;
 
-            localVarRequestOptions.Operation = "RecognizeLabelApi.PostRecognizeLabel";
+            localVarRequestOptions.Operation = "RecognizeAndParseInvoiceApi.PostRecognizeAndParseInvoice";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -825,11 +825,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/RecognizeLabel"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/RecognizeAndParseInvoice"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PostRecognizeLabel", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PostRecognizeAndParseInvoice", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

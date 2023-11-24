@@ -40,7 +40,7 @@
   Don’t worry about hardware, all the computational operations are performed at our powerful servers, that hosts our core, built on cutting edge fast neural networks.</Description>
     <Copyright>© Aspose 2002-2023. All Rights Reserved.</Copyright>
     <RootNamespace>Aspose.OCR.Cloud.SDK</RootNamespace>
-    <Version>23.6.0</Version>
+    <Version>23.11.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aspose.OCR.Cloud.SDK.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

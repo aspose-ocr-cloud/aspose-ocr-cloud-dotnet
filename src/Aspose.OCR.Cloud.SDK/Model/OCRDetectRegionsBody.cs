@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// OCRDetectRegionsBody
+    /// Combines Image data and OCR Recognition settings
     /// </summary>
     [DataContract(Name = "OCRDetectRegionsBody")]
     public partial class OCRDetectRegionsBody : IEquatable<OCRDetectRegionsBody>, IValidatableObject
@@ -39,7 +39,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OCRDetectRegionsBody" /> class.
         /// </summary>
-        /// <param name="image">image (required).</param>
+        /// <param name="image">Gets or Sets Image (required).</param>
         /// <param name="settings">settings (required).</param>
         public OCRDetectRegionsBody(byte[] image = default(byte[]), OCRSettingsDetectRegions settings = default(OCRSettingsDetectRegions))
         {
@@ -60,6 +60,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <summary>
         /// Gets or Sets Image
         /// </summary>
+        /// <value>Gets or Sets Image</value>
         [DataMember(Name = "image", IsRequired = true, EmitDefaultValue = true)]
         public byte[] Image { get; set; }
 

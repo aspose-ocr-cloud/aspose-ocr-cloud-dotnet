@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// TTSError
+    /// Error to return to SDK client
     /// </summary>
     [DataContract(Name = "TTSError")]
     public partial class TTSError : IEquatable<TTSError>, IValidatableObject
@@ -40,8 +40,9 @@ namespace Aspose.OCR.Cloud.SDK.Model
         }
 
         /// <summary>
-        /// Gets or Sets Messages
+        /// A list of various clear descriptions of the errors
         /// </summary>
+        /// <value>A list of various clear descriptions of the errors</value>
         [DataMember(Name = "messages", EmitDefaultValue = true)]
         public List<string> Messages { get; private set; }
 
@@ -54,8 +55,9 @@ namespace Aspose.OCR.Cloud.SDK.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Warnings
+        /// Warning messages - non critical errors: e.g. some data lost
         /// </summary>
+        /// <value>Warning messages - non critical errors: e.g. some data lost</value>
         [DataMember(Name = "warnings", EmitDefaultValue = true)]
         public List<string> Warnings { get; private set; }
 

@@ -23,6 +23,11 @@
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="xcopy /E /Y /I samples $(TargetDir)samples\" />
   </Target>
+  <ItemGroup>
+    <None Update="samples\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 
 </Project>

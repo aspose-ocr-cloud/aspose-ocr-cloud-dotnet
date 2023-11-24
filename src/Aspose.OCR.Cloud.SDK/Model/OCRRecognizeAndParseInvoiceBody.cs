@@ -26,35 +26,49 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// Represents information about response after TTS.
+    /// Combines Image data and OCR Recognition settings
     /// </summary>
-    [DataContract(Name = "TTSResult")]
-    public partial class TTSResult : IEquatable<TTSResult>, IValidatableObject
+    [DataContract(Name = "OCRRecognizeAndParseInvoiceBody")]
+    public partial class OCRRecognizeAndParseInvoiceBody : IEquatable<OCRRecognizeAndParseInvoiceBody>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TTSResult" /> class.
+        /// Initializes a new instance of the <see cref="OCRRecognizeAndParseInvoiceBody" /> class.
         /// </summary>
-        /// <param name="type">File data type (extension).</param>
-        /// <param name="data">File binary data.</param>
-        public TTSResult(string type = default(string), byte[] data = default(byte[]))
+        [JsonConstructorAttribute]
+        protected OCRRecognizeAndParseInvoiceBody() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OCRRecognizeAndParseInvoiceBody" /> class.
+        /// </summary>
+        /// <param name="image">Gets or Sets Image (required).</param>
+        /// <param name="settings">settings (required).</param>
+        public OCRRecognizeAndParseInvoiceBody(byte[] image = default(byte[]), OCRSettingsRecognizeAndParseInvoice settings = default(OCRSettingsRecognizeAndParseInvoice))
         {
-            this.Type = type;
-            this.Data = data;
+            // to ensure "image" is required (not null)
+            if (image == null)
+            {
+                throw new ArgumentNullException("image is a required property for OCRRecognizeAndParseInvoiceBody and cannot be null");
+            }
+            this.Image = image;
+            // to ensure "settings" is required (not null)
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings is a required property for OCRRecognizeAndParseInvoiceBody and cannot be null");
+            }
+            this.Settings = settings;
         }
 
         /// <summary>
-        /// File data type (extension)
+        /// Gets or Sets Image
         /// </summary>
-        /// <value>File data type (extension)</value>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
-        public string Type { get; set; }
+        /// <value>Gets or Sets Image</value>
+        [DataMember(Name = "image", IsRequired = true, EmitDefaultValue = true)]
+        public byte[] Image { get; set; }
 
         /// <summary>
-        /// File binary data
+        /// Gets or Sets Settings
         /// </summary>
-        /// <value>File binary data</value>
-        [DataMember(Name = "data", EmitDefaultValue = true)]
-        public byte[] Data { get; set; }
+        [DataMember(Name = "settings", IsRequired = true, EmitDefaultValue = true)]
+        public OCRSettingsRecognizeAndParseInvoice Settings { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -63,9 +77,9 @@ namespace Aspose.OCR.Cloud.SDK.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TTSResult {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class OCRRecognizeAndParseInvoiceBody {\n");
+            sb.Append("  Image: ").Append(Image).Append("\n");
+            sb.Append("  Settings: ").Append(Settings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,15 +100,15 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TTSResult);
+            return this.Equals(input as OCRRecognizeAndParseInvoiceBody);
         }
 
         /// <summary>
-        /// Returns true if TTSResult instances are equal
+        /// Returns true if OCRRecognizeAndParseInvoiceBody instances are equal
         /// </summary>
-        /// <param name="input">Instance of TTSResult to be compared</param>
+        /// <param name="input">Instance of OCRRecognizeAndParseInvoiceBody to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TTSResult input)
+        public bool Equals(OCRRecognizeAndParseInvoiceBody input)
         {
             if (input == null)
             {
@@ -102,14 +116,14 @@ namespace Aspose.OCR.Cloud.SDK.Model
             }
             return 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    this.Image == input.Image ||
+                    (this.Image != null &&
+                    this.Image.Equals(input.Image))
                 ) && 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.Settings == input.Settings ||
+                    (this.Settings != null &&
+                    this.Settings.Equals(input.Settings))
                 );
         }
 
@@ -122,13 +136,13 @@ namespace Aspose.OCR.Cloud.SDK.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Type != null)
+                if (this.Image != null)
                 {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Image.GetHashCode();
                 }
-                if (this.Data != null)
+                if (this.Settings != null)
                 {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Settings.GetHashCode();
                 }
                 return hashCode;
             }

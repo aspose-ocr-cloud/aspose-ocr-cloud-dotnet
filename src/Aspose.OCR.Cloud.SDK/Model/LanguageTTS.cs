@@ -26,8 +26,9 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// Defines LanguageTTS
+    /// Text-to-speech target language
     /// </summary>
+    /// <value>Text-to-speech target language</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum LanguageTTS
     {
