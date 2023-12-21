@@ -1,30 +1,23 @@
 ﻿using Aspose.OCR.Cloud.SDK.Api;
 using Aspose.OCR.Cloud.SDK.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ExampleDotNet60v50.APIExamples
 {
-    public static class RecognizeImageExample
+    public static class RecognizeImageTrialExample
     {
 
         /// <summary>
-        /// Creates RecognizeImage API and processes sample image with cloud API
+        /// Creates RecognizeImageTrial API and processes sample image with cloud API
         /// </summary>
-        /// <param name="clientId"></param>
-        /// <param name="clientSecret"></param>
-        public static void Run(string clientId, string clientSecret)
+        public static void Run()
         {
             try
             {
                 string imageFileName = "samples/lorem_ipsum.png";
+                Console.WriteLine($"Sending sample file({imageFileName}) to RecognizeImageTrialApi...\n");
 
-                Console.WriteLine($"Sending sample file({imageFileName}) to  RecognizeImageApi...\n");
-
-                RecognizeImageApi recognizeImageApi = new RecognizeImageApi(clientId, clientSecret);
+                RecognizeImageTrialApi api = new RecognizeImageTrialApi();
 
                 byte[] imageData = File.ReadAllBytes(imageFileName);
 
@@ -34,13 +27,15 @@ namespace ExampleDotNet60v50.APIExamples
                         dsrMode: DsrMode.NoDsrNoFilter,
                         makeContrastCorrection: false);
 
-                var taskId = recognizeImageApi.PostRecognizeImage(new OCRRecognizeImageBody(
+                var taskId = api.PostRecognizeImageTrial(new OCRRecognizeImageBody(
                     image: imageData,
                     settings: settings));
-                Console.WriteLine($"File successfully sent. Your credentials accepted. Your task ID is {taskId}");
+                Console.WriteLine($"File successfully sent. Your task ID is {taskId}");
+
+                UtilitiesApiExample.MonitorTaskStatus(taskId);
 
                 Console.WriteLine($"Requesting results for task {taskId} ...");
-                var result = recognizeImageApi.GetRecognizeImage(taskId);
+                OCRResponse result = api.GetRecognizeImageTrial(taskId);
                 Console.WriteLine($"Respose received with status {result.TaskStatus.Value} \n\n Your results:\n\n");
 
                 result.Results.ForEach(res => Console.WriteLine(Encoding.UTF8.GetString(res.Data)));

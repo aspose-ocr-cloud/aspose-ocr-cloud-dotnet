@@ -11,21 +11,22 @@ namespace NET_SDK_Test
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This is Aspose OCR Cloud SDK for .Net Standard 2.0 v23.11.0 example usage project");
+            Console.WriteLine("This is Aspose OCR Cloud SDK for .Net Standard 2.0 v23.12.0 example usage project");
 
-            string clientId = "Your client_id";
-            string clientSecret = "Your client_secret";
-            TextToSpeechTrialExample.TryConvertTextToSpeechTrialApi();
-            RecognizeImageExample.TryRecognizeImageApi(clientId, clientSecret);
-            TextToSpeechExample.TryTextToSpeechApi(clientId, clientSecret);
+            string clientId = "YOUR_CLIENT_ID";
+            string clientSecret = "YOUR_CLIENT_SECRET";
+            RecognizeImageExample.Run(clientId, clientSecret);
+            TextToSpeechExample.Run(clientId, clientSecret);
             BinarizeImageExample.Run(clientId, clientSecret);
             DewarpImageExample.Run(clientId, clientSecret);
             DeskewImageExample.Run(clientId, clientSecret);
             UpscaleImageExample.Run(clientId, clientSecret);
-            IdentifyFontExample.Run(clientId, clientSecret); 
+            IdentifyFontExample.Run(clientId, clientSecret);
             RecognizeLabelExample.Run(clientId, clientSecret);
             RecognizeAndParseInvoiceExample.Run(clientId, clientSecret);
-            UtilitiesApiExample.TryUtilitiesApi(clientId, clientSecret);
+            UtilitiesApiExample.Run(clientId, clientSecret);
+            TextToSpeechTrialExample.Run();
+            RecognizeImageTrialExample.Run();
 
             Console.WriteLine("\nPress any key to exit");
             Console.ReadKey();

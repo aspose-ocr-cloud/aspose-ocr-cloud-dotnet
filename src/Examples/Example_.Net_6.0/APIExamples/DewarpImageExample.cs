@@ -17,7 +17,7 @@ namespace ExampleDotNet60v50.APIExamples
             {
                 string imageFileName = "samples/dewarping.png";
 
-                Console.WriteLine($"Sending sample file({imageFileName}) to BinarizeImageApi...\n");
+                Console.WriteLine($"Sending sample file({imageFileName}) to DewarpImageApi...\n");
 
                 DewarpImageApi apiInstance = new DewarpImageApi(clientId, clientSecret);
                 var requestBody = new OCRDewarpImageBody(
@@ -28,6 +28,9 @@ namespace ExampleDotNet60v50.APIExamples
                 Console.WriteLine($"Respose received with status {response.TaskStatus.Value} \n\n" +
                     $" Your results will be saved to results\\{response.Id}.png:\n\n");
                 File.WriteAllBytes($"results/{taskId}.png", response.Results[0].Data);
+
+                Console.WriteLine("\nPress any key to continue");
+                Console.ReadKey();
             }
             catch (Exception ex)
             {

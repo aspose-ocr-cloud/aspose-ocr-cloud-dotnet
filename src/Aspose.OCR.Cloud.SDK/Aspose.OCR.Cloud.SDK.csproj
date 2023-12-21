@@ -40,7 +40,7 @@
   Don’t worry about hardware, all the computational operations are performed at our powerful servers, that hosts our core, built on cutting edge fast neural networks.</Description>
     <Copyright>© Aspose 2002-2023. All Rights Reserved.</Copyright>
     <RootNamespace>Aspose.OCR.Cloud.SDK</RootNamespace>
-    <Version>23.11.0</Version>
+    <Version>23.12.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aspose.OCR.Cloud.SDK.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -49,11 +49,11 @@
     <Nullable>annotations</Nullable>
     <Product>Aspose.OCR Cloud SDK for .Net</Product>
     <PackageProjectUrl>https://products.aspose.cloud/ocr/net/</PackageProjectUrl>
-    <PackageIcon>icon_aspose_ocr-for-net.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageTags>Aspose.OCR;Aspose.OCR-Cloud;Aspose.Total-Cloud;Cloud;REST;API;JPEG;PNG;GIF;BMP;TIFF;optical;character;recognition;OCR;optical-character-recognition;character-recognition;scanner;AI;engine;C#;CSharp;machine;learning;machine-learning;handwriting;recognize;scanned;scan;document;searchable;PDF;Text;Detection;Receipt;multi-platform;extract-text;text-extraction;HOCR;localization;localized-ocr;English-OCR;French-OCR;German-OCR;Deutsch-OCR;XML;JSON;Extract-Image-Text;Extract-Text;Extract-Localized-Text;Multi-Langual-OCR;Multilingual;WEBP;PBM;PGM;PPM;PXM;PNM;PFM;SR;RAS;TIF;EXR;HDR;PIC;.NET;C#;dotnet;CSharp</PackageTags>
     <Nullable>annotations</Nullable>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <PackageLicenseFile>LICENSE.TXT</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
@@ -79,7 +79,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\licenses\LICENSE.TXT">
+    <None Include="LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
@@ -95,7 +95,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\..\resources\icon_aspose_ocr-for-net.png">
+    <None Include="icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

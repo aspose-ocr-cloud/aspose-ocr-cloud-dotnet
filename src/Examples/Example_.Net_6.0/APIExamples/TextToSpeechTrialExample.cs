@@ -9,11 +9,13 @@ namespace ExampleDotNet60v50.APIExamples
         /// <summary>
         /// Creates TextToSpeech API and processes text with cloud API
         /// </summary>
-        public static void TryConvertTextToSpeechTrialApi()
+        public static void Run()
         {
             try
             {
                 string sampleText = "This is the sample text";
+
+                Console.WriteLine($"Sending sample text ({sampleText}) to ConvertTextToSpeechTrialApi...\n");
 
                 ConvertTextToSpeechTrialApi apiInstance = new ConvertTextToSpeechTrialApi();
 
@@ -24,7 +26,7 @@ namespace ExampleDotNet60v50.APIExamples
                             resultType: ResultTypeTTS.Wav));
 
                 var taskId = apiInstance.PostConvertTextToSpeechTrial(settings);
-                Console.WriteLine($"File successfully sent. Your credentials accepted. Your task ID is {taskId}");
+                Console.WriteLine($"Text sample successfully sent. Your credentials accepted. Your task ID is {taskId}");
 
                 Console.WriteLine($"Requesting results for task {taskId} ...");
                 var result = apiInstance.GetConvertTextToSpeechTrial(taskId);

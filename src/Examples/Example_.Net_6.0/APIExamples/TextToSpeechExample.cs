@@ -16,11 +16,13 @@ namespace ExampleDotNet60v50.APIExamples
         /// </summary>
         /// <param name="clientId"></param>
         /// <param name="clientSecret"></param>
-        public static void TryTextToSpeechApi(string clientId, string clientSecret)
+        public static void Run(string clientId, string clientSecret)
         {
             try
             {
                 string sampleText = "This is the sample text";
+
+                Console.WriteLine($"Sending sample text ({sampleText}) to ConvertTextToSpeechApi...\n");
 
                 ConvertTextToSpeechApi apiInstance = new ConvertTextToSpeechApi(clientId, clientSecret);
 
@@ -31,7 +33,7 @@ namespace ExampleDotNet60v50.APIExamples
                             resultType: ResultTypeTTS.Wav));
 
                 var taskId = apiInstance.PostConvertTextToSpeech(settings);
-                Console.WriteLine($"File successfully sent. Your credentials accepted. Your task ID is {taskId}");
+                Console.WriteLine($"Text sample successfully sent. Your credentials accepted. Your task ID is {taskId}");
 
                 Console.WriteLine($"Requesting results for task {taskId} ...");
                 var result = apiInstance.GetConvertTextToSpeech(taskId);

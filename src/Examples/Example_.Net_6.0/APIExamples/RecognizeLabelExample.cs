@@ -30,6 +30,9 @@ namespace ExampleDotNet60v50.APIExamples
                 Console.WriteLine($"Respose received with status {response.TaskStatus.Value} \n\n" +
                     $" Your results:\n\n");
                 response.Results.ForEach(res => Console.WriteLine(Encoding.UTF8.GetString(res.Data)));
+
+                Console.WriteLine("\nPress any key to continue");
+                Console.ReadKey();
             }
             catch (Exception ex)
             {

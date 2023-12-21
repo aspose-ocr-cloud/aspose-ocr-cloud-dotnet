@@ -26,11 +26,14 @@ namespace ExampleDotNet60v50.APIExamples
                         settings: new OCRSettingsRecognizeAndParseInvoice(resultType: ResultType.Text));
                 string taskId = apiInstance.PostRecognizeAndParseInvoice(requestBody);
                 Console.WriteLine($"File successfully sent. Your credentials accepted. Your task ID is {taskId}\nTaking a while before request result...");
-                Thread.Sleep(20000);
+                Thread.Sleep(10000);
                 var response = apiInstance.GetRecognizeAndParseInvoice(taskId);
                 Console.WriteLine($"Respose received with status {response.TaskStatus.Value} \n\n" +
                     $" Your results:\n\n");
                 response.Results.ForEach(res => Console.WriteLine(Encoding.UTF8.GetString(res.Data)));
+
+                Console.WriteLine("\nPress any key to continue");
+                Console.ReadKey();
             }
             catch (Exception ex)
             {

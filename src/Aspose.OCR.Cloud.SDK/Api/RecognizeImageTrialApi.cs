@@ -25,20 +25,20 @@ namespace Aspose.OCR.Cloud.SDK.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IConvertTextToSpeechTrialApiSync : IApiAccessor
+    public interface IRecognizeImageTrialApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// CancelConvertTextToSpeechTrial
+        /// CancelRecognizeImageTrial
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void CancelConvertTextToSpeechTrial(string id, int operationIndex = 0);
+        void CancelRecognizeImageTrial(string id, int operationIndex = 0);
 
         /// <summary>
-        /// CancelConvertTextToSpeechTrial
+        /// CancelRecognizeImageTrial
         /// </summary>
         /// <remarks>
         /// 
@@ -47,18 +47,18 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CancelConvertTextToSpeechTrialWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Object> CancelRecognizeImageTrialWithHttpInfo(string id, int operationIndex = 0);
         /// <summary>
-        /// GetConvertTextToSpeechTrial
+        /// GetRecognizeImageTrial
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TTSResponse</returns>
-        TTSResponse GetConvertTextToSpeechTrial(string id, int operationIndex = 0);
+        /// <returns>OCRResponse</returns>
+        OCRResponse GetRecognizeImageTrial(string id, int operationIndex = 0);
 
         /// <summary>
-        /// GetConvertTextToSpeechTrial
+        /// GetRecognizeImageTrial
         /// </summary>
         /// <remarks>
         /// 
@@ -66,39 +66,39 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TTSResponse</returns>
-        ApiResponse<TTSResponse> GetConvertTextToSpeechTrialWithHttpInfo(string id, int operationIndex = 0);
+        /// <returns>ApiResponse of OCRResponse</returns>
+        ApiResponse<OCRResponse> GetRecognizeImageTrialWithHttpInfo(string id, int operationIndex = 0);
         /// <summary>
-        /// PostConvertTextToSpeechTrial
+        /// PostRecognizeImageTrial
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tTSBody"></param>
+        /// <param name="oCRRecognizeImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        string PostConvertTextToSpeechTrial(TTSBody tTSBody, int operationIndex = 0);
+        string PostRecognizeImageTrial(OCRRecognizeImageBody oCRRecognizeImageBody, int operationIndex = 0);
 
         /// <summary>
-        /// PostConvertTextToSpeechTrial
+        /// PostRecognizeImageTrial
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tTSBody"></param>
+        /// <param name="oCRRecognizeImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> PostConvertTextToSpeechTrialWithHttpInfo(TTSBody tTSBody, int operationIndex = 0);
+        ApiResponse<string> PostRecognizeImageTrialWithHttpInfo(OCRRecognizeImageBody oCRRecognizeImageBody, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IConvertTextToSpeechTrialApiAsync : IApiAccessor
+    public interface IRecognizeImageTrialApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
-        /// CancelConvertTextToSpeechTrial
+        /// CancelRecognizeImageTrial
         /// </summary>
         /// <remarks>
         /// 
@@ -108,10 +108,10 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CancelConvertTextToSpeechTrialAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task CancelRecognizeImageTrialAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// CancelConvertTextToSpeechTrial
+        /// CancelRecognizeImageTrial
         /// </summary>
         /// <remarks>
         /// 
@@ -121,9 +121,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CancelConvertTextToSpeechTrialWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CancelRecognizeImageTrialWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// GetConvertTextToSpeechTrial
+        /// GetRecognizeImageTrial
         /// </summary>
         /// <remarks>
         /// 
@@ -132,11 +132,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TTSResponse</returns>
-        System.Threading.Tasks.Task<TTSResponse> GetConvertTextToSpeechTrialAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of OCRResponse</returns>
+        System.Threading.Tasks.Task<OCRResponse> GetRecognizeImageTrialAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// GetConvertTextToSpeechTrial
+        /// GetRecognizeImageTrial
         /// </summary>
         /// <remarks>
         /// 
@@ -145,40 +145,40 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TTSResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TTSResponse>> GetConvertTextToSpeechTrialWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (OCRResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<OCRResponse>> GetRecognizeImageTrialWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// PostConvertTextToSpeechTrial
+        /// PostRecognizeImageTrial
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tTSBody"></param>
+        /// <param name="oCRRecognizeImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> PostConvertTextToSpeechTrialAsync(TTSBody tTSBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> PostRecognizeImageTrialAsync(OCRRecognizeImageBody oCRRecognizeImageBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// PostConvertTextToSpeechTrial
+        /// PostRecognizeImageTrial
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tTSBody"></param>
+        /// <param name="oCRRecognizeImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> PostConvertTextToSpeechTrialWithHttpInfoAsync(TTSBody tTSBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> PostRecognizeImageTrialWithHttpInfoAsync(OCRRecognizeImageBody oCRRecognizeImageBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IConvertTextToSpeechTrialApi : IConvertTextToSpeechTrialApiSync, IConvertTextToSpeechTrialApiAsync
+    public interface IRecognizeImageTrialApi : IRecognizeImageTrialApiSync, IRecognizeImageTrialApiAsync
     {
 
     }
@@ -186,7 +186,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ConvertTextToSpeechTrialApi : IConvertTextToSpeechTrialApi
+    public partial class RecognizeImageTrialApi : IRecognizeImageTrialApi
     {
         private Aspose.OCR.Cloud.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
@@ -195,7 +195,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// </summary>
         /// <param name="client_id">client ID</param>
         /// <param name="client_secret">client secret</param>
-        public ConvertTextToSpeechTrialApi(string client_id= "", string client_secret = "")
+        public RecognizeImageTrialApi(string client_id= "", string client_secret = "")
 		{
 			this.Configuration = Aspose.OCR.Cloud.SDK.Client.Configuration.MergeConfigurations(
 				Aspose.OCR.Cloud.SDK.Client.GlobalConfiguration.Instance,
@@ -212,12 +212,12 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConvertTextToSpeechTrialApi"/> class
+        /// Initializes a new instance of the <see cref="RecognizeImageTrialApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ConvertTextToSpeechTrialApi(Aspose.OCR.Cloud.SDK.Client.Configuration configuration)		{
+        public RecognizeImageTrialApi(Aspose.OCR.Cloud.SDK.Client.Configuration configuration)		{
 			if (configuration == null) throw new ArgumentNullException("configuration");
 			if (configuration.BasePath == null) configuration.BasePath = "https://api.aspose.cloud";
 			
@@ -235,13 +235,13 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConvertTextToSpeechTrialApi"/> class
+        /// Initializes a new instance of the <see cref="RecognizeImageTrialApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public ConvertTextToSpeechTrialApi(Aspose.OCR.Cloud.SDK.Client.ISynchronousClient client, Aspose.OCR.Cloud.SDK.Client.IAsynchronousClient asyncClient, Aspose.OCR.Cloud.SDK.Client.IReadableConfiguration configuration)
+        public RecognizeImageTrialApi(Aspose.OCR.Cloud.SDK.Client.ISynchronousClient client, Aspose.OCR.Cloud.SDK.Client.IAsynchronousClient asyncClient, Aspose.OCR.Cloud.SDK.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -295,30 +295,30 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         /// <summary>
-        /// CancelConvertTextToSpeechTrial 
+        /// CancelRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void CancelConvertTextToSpeechTrial(string id, int operationIndex = 0)
+        public void CancelRecognizeImageTrial(string id, int operationIndex = 0)
         {
-            CancelConvertTextToSpeechTrialWithHttpInfo(id);
+            CancelRecognizeImageTrialWithHttpInfo(id);
         }
 
         /// <summary>
-        /// CancelConvertTextToSpeechTrial 
+        /// CancelRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> CancelConvertTextToSpeechTrialWithHttpInfo(string id, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> CancelRecognizeImageTrialWithHttpInfo(string id, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling ConvertTextToSpeechTrialApi->CancelConvertTextToSpeechTrial");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeImageTrialApi->CancelRecognizeImageTrial");
             }
 
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
@@ -344,7 +344,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
             localVarRequestOptions.QueryParameters.Add(Aspose.OCR.Cloud.SDK.Client.ClientUtils.ParameterToMultiMap("", "id", id));
 
-            localVarRequestOptions.Operation = "ConvertTextToSpeechTrialApi.CancelConvertTextToSpeechTrial";
+            localVarRequestOptions.Operation = "RecognizeImageTrialApi.CancelRecognizeImageTrial";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -366,11 +366,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>(GetAdjustedPath("./v5.0/ocr/ConvertTextToSpeechTrial"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>(GetAdjustedPath("./v5.0/ocr/RecognizeImageTrial"), localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CancelConvertTextToSpeechTrial", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CancelRecognizeImageTrial", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -381,32 +381,32 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         /// <summary>
-        /// CancelConvertTextToSpeechTrial 
+        /// CancelRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CancelConvertTextToSpeechTrialAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task CancelRecognizeImageTrialAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await CancelConvertTextToSpeechTrialWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await CancelRecognizeImageTrialWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// CancelConvertTextToSpeechTrial 
+        /// CancelRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object>> CancelConvertTextToSpeechTrialWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object>> CancelRecognizeImageTrialWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling ConvertTextToSpeechTrialApi->CancelConvertTextToSpeechTrial");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeImageTrialApi->CancelRecognizeImageTrial");
             }
 
 
@@ -433,7 +433,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
             localVarRequestOptions.QueryParameters.Add(Aspose.OCR.Cloud.SDK.Client.ClientUtils.ParameterToMultiMap("", "id", id));
 
-            localVarRequestOptions.Operation = "ConvertTextToSpeechTrialApi.CancelConvertTextToSpeechTrial";
+            localVarRequestOptions.Operation = "RecognizeImageTrialApi.CancelRecognizeImageTrial";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -455,11 +455,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>(GetAdjustedPath("./v5.0/ocr/ConvertTextToSpeechTrial"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>(GetAdjustedPath("./v5.0/ocr/RecognizeImageTrial"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("CancelConvertTextToSpeechTrial", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CancelRecognizeImageTrial", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -471,31 +471,31 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
         
         /// <summary>
-        /// GetConvertTextToSpeechTrial 
+        /// GetRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TTSResponse</returns>
-        public TTSResponse GetConvertTextToSpeechTrial(string id, int operationIndex = 0)
+        /// <returns>OCRResponse</returns>
+        public OCRResponse GetRecognizeImageTrial(string id, int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> localVarResponse = GetConvertTextToSpeechTrialWithHttpInfo(id, operationIndex);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = GetRecognizeImageTrialWithHttpInfo(id, operationIndex);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// GetConvertTextToSpeechTrial 
+        /// GetRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TTSResponse</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> GetConvertTextToSpeechTrialWithHttpInfo(string id, int operationIndex = 0)
+        /// <returns>ApiResponse of OCRResponse</returns>
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> GetRecognizeImageTrialWithHttpInfo(string id, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling ConvertTextToSpeechTrialApi->GetConvertTextToSpeechTrial");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeImageTrialApi->GetRecognizeImageTrial");
             }
 
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
@@ -522,7 +522,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
             localVarRequestOptions.QueryParameters.Add(Aspose.OCR.Cloud.SDK.Client.ClientUtils.ParameterToMultiMap("", "id", id));
 
-            localVarRequestOptions.Operation = "ConvertTextToSpeechTrialApi.GetConvertTextToSpeechTrial";
+            localVarRequestOptions.Operation = "RecognizeImageTrialApi.GetRecognizeImageTrial";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -544,11 +544,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<TTSResponse>(GetAdjustedPath("./v5.0/ocr/ConvertTextToSpeechTrial"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<OCRResponse>(GetAdjustedPath("./v5.0/ocr/RecognizeImageTrial"), localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetConvertTextToSpeechTrial", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetRecognizeImageTrial", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -559,33 +559,33 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         /// <summary>
-        /// GetConvertTextToSpeechTrial 
+        /// GetRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TTSResponse</returns>
-        public async System.Threading.Tasks.Task<TTSResponse> GetConvertTextToSpeechTrialAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of OCRResponse</returns>
+        public async System.Threading.Tasks.Task<OCRResponse> GetRecognizeImageTrialAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> localVarResponse = await GetConvertTextToSpeechTrialWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = await GetRecognizeImageTrialWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// GetConvertTextToSpeechTrial 
+        /// GetRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TTSResponse)</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse>> GetConvertTextToSpeechTrialWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (OCRResponse)</returns>
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse>> GetRecognizeImageTrialWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling ConvertTextToSpeechTrialApi->GetConvertTextToSpeechTrial");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'id' when calling RecognizeImageTrialApi->GetRecognizeImageTrial");
             }
 
 
@@ -613,7 +613,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
             localVarRequestOptions.QueryParameters.Add(Aspose.OCR.Cloud.SDK.Client.ClientUtils.ParameterToMultiMap("", "id", id));
 
-            localVarRequestOptions.Operation = "ConvertTextToSpeechTrialApi.GetConvertTextToSpeechTrial";
+            localVarRequestOptions.Operation = "RecognizeImageTrialApi.GetRecognizeImageTrial";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -635,11 +635,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TTSResponse>(GetAdjustedPath("./v5.0/ocr/ConvertTextToSpeechTrial"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OCRResponse>(GetAdjustedPath("./v5.0/ocr/RecognizeImageTrial"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetConvertTextToSpeechTrial", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetRecognizeImageTrial", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -651,31 +651,31 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
         
         /// <summary>
-        /// PostConvertTextToSpeechTrial 
+        /// PostRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tTSBody"></param>
+        /// <param name="oCRRecognizeImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        public string PostConvertTextToSpeechTrial(TTSBody tTSBody, int operationIndex = 0)
+        public string PostRecognizeImageTrial(OCRRecognizeImageBody oCRRecognizeImageBody, int operationIndex = 0)
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostConvertTextToSpeechTrialWithHttpInfo(tTSBody, operationIndex);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostRecognizeImageTrialWithHttpInfo(oCRRecognizeImageBody, operationIndex);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// PostConvertTextToSpeechTrial 
+        /// PostRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tTSBody"></param>
+        /// <param name="oCRRecognizeImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostConvertTextToSpeechTrialWithHttpInfo(TTSBody tTSBody, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostRecognizeImageTrialWithHttpInfo(OCRRecognizeImageBody oCRRecognizeImageBody, int operationIndex = 0)
         {
-            // verify the required parameter 'tTSBody' is set
-            if (tTSBody == null)
+            // verify the required parameter 'oCRRecognizeImageBody' is set
+            if (oCRRecognizeImageBody == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'tTSBody' when calling ConvertTextToSpeechTrialApi->PostConvertTextToSpeechTrial");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'oCRRecognizeImageBody' when calling RecognizeImageTrialApi->PostRecognizeImageTrial");
             }
 
             Aspose.OCR.Cloud.SDK.Client.RequestOptions localVarRequestOptions = new Aspose.OCR.Cloud.SDK.Client.RequestOptions();
@@ -701,9 +701,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = tTSBody;
+            localVarRequestOptions.Data = oCRRecognizeImageBody;
 
-            localVarRequestOptions.Operation = "ConvertTextToSpeechTrialApi.PostConvertTextToSpeechTrial";
+            localVarRequestOptions.Operation = "RecognizeImageTrialApi.PostRecognizeImageTrial";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -725,11 +725,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5.0/ocr/ConvertTextToSpeechTrial"), localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<string>(GetAdjustedPath("./v5.0/ocr/RecognizeImageTrial"), localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PostConvertTextToSpeechTrial", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PostRecognizeImageTrial", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -740,33 +740,33 @@ namespace Aspose.OCR.Cloud.SDK.Api
         }
 
         /// <summary>
-        /// PostConvertTextToSpeechTrial 
+        /// PostRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tTSBody"></param>
+        /// <param name="oCRRecognizeImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> PostConvertTextToSpeechTrialAsync(TTSBody tTSBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> PostRecognizeImageTrialAsync(OCRRecognizeImageBody oCRRecognizeImageBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostConvertTextToSpeechTrialWithHttpInfoAsync(tTSBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostRecognizeImageTrialWithHttpInfoAsync(oCRRecognizeImageBody, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// PostConvertTextToSpeechTrial 
+        /// PostRecognizeImageTrial 
         /// </summary>
         /// <exception cref="Aspose.OCR.Cloud.SDK.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tTSBody"></param>
+        /// <param name="oCRRecognizeImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostConvertTextToSpeechTrialWithHttpInfoAsync(TTSBody tTSBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostRecognizeImageTrialWithHttpInfoAsync(OCRRecognizeImageBody oCRRecognizeImageBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'tTSBody' is set
-            if (tTSBody == null)
+            // verify the required parameter 'oCRRecognizeImageBody' is set
+            if (oCRRecognizeImageBody == null)
             {
-                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'tTSBody' when calling ConvertTextToSpeechTrialApi->PostConvertTextToSpeechTrial");
+                throw new Aspose.OCR.Cloud.SDK.Client.ApiException(400, "Missing required parameter 'oCRRecognizeImageBody' when calling RecognizeImageTrialApi->PostRecognizeImageTrial");
             }
 
 
@@ -793,9 +793,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = tTSBody;
+            localVarRequestOptions.Data = oCRRecognizeImageBody;
 
-            localVarRequestOptions.Operation = "ConvertTextToSpeechTrialApi.PostConvertTextToSpeechTrial";
+            localVarRequestOptions.Operation = "RecognizeImageTrialApi.PostRecognizeImageTrial";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (JWT) required
@@ -817,11 +817,11 @@ namespace Aspose.OCR.Cloud.SDK.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/ConvertTextToSpeechTrial"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/RecognizeImageTrial"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("PostConvertTextToSpeechTrial", localVarResponse);
+                Exception _exception = this.ExceptionFactory("PostRecognizeImageTrial", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
