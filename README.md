@@ -1,6 +1,6 @@
 <img src="docs/Resources/heading.png">
 
-# Aspose.OCR Cloud .NET SDK 23.12.0
+# Aspose.OCR Cloud .NET SDK 24.6.0
 
 [![License](https://img.shields.io/github/license/aspose-ocr-cloud/aspose-ocr-cloud-dotnet)](LICENSE)
 [![Nuget](https://img.shields.io/nuget/v/Aspose.OCR-Cloud)](https://www.nuget.org/packages/Aspose.OCR-Cloud/)
@@ -61,37 +61,38 @@ Aspose.OCR Cloud follows industry standards and best practices to keep your data
   </a>
 </p>
 
-## What was changed in version 23.12.0
+## What was changed in version 24.6.0
 
-A summary of recent changes, enhancements and bug fixes in **Aspose.OCR Cloud SDK for .NET 23.12.0** release:
+A summary of recent changes, enhancements and bug fixes in **Aspose.OCR Cloud SDK for .NET 24.6.0** release:
 
 Key | Summary | Category
 --- | ------- | --------
-OCR&#8209;3737 | Added a free API for evaluating image recognition without [authorization](/ocr/authorization/).<br />Some restrictions apply. See below for details. | New feature
+n/a | Added a new result type that returns recognition result in JSON format. | New feature
 
 ### Public API changes and backwards compatibility
 
-This section lists all public API changes introduced in **Aspose.OCR Cloud SDK for .NET 23.12.0** that may affect the code of existing applications.
+This section lists all public API changes introduced in **Aspose.OCR Cloud SDK for .NET 24.6.0** that may affect the code of existing applications.
 
 #### Added public APIs:
 
-The following public APIs have been introduced in this release:
-
-##### Image recognition evaluation
-
-The following new classes have been added:
-
-Class | Description
------ | -----------
-`RecognizeImageTrialApi` | Image recognition API that works without authorization.
-
-**Important:** In recognition results, 10% of the words are substituted with asterisks (`*`). The sequence of masked words remains unchanged upon re-submitting the identical image for recognition.
-
-[Learn more...](https://docs.aspose.cloud/ocr/recognize-image/)
+_No changes._
 
 #### Updated public APIs:
 
-_No changes_
+The following public APIs have been updated in this release:
+
+##### JSON result type
+
+**Compatibility: fully backward compatible.**
+
+Added `JSON` result type to image recognition, PDF recognition, receipt recognition, and table recognition.
+
+When the recognition results are returned as JSON, the resulting file will contain the array of all content blocks found in the image and the recognized text found in each block:
+
+- The coordinates of the top left and bottom right corners of the content block.
+- The recognized text (plain text string).
+
+[Learn more...](https://docs.aspose.cloud/ocr/result-format/)
 
 #### Removed public APIs:
 
@@ -99,9 +100,9 @@ _No changes._
 
 ## Examples
 
-The examples below illustrate the changes introduced in version 23.12.0:
+The examples below illustrate the changes introduced in version 24.6.0:
 
-### Recognize image in free (evaluation) mode
+### Get image recognition results in JSON format
 
 ```csharp
 using Aspose.OCR.Cloud.SDK.Api;
@@ -116,31 +117,24 @@ namespace ExampleDotNet60v50.APIExamples
         {
             try
             {
+                // Initialize API
+                RecognizeLabelApi api = new RecognizeLabelApi(client_id: "client_id", client_secret: "client_secret");
+                // Provide an image and recognition settings
                 string imageFileName = "samples/lorem_ipsum.png";
-                Console.WriteLine($"Sending sample file({imageFileName}) to RecognizeImageTrialApi...\n");
-
-                RecognizeImageTrialApi api = new RecognizeImageTrialApi();
-
                 byte[] imageData = File.ReadAllBytes(imageFileName);
-
-                var settings = new OCRSettingsRecognizeImage(
-                        language: Language.English,
-                        resultType: ResultType.Text,
-                        dsrMode: DsrMode.NoDsrNoFilter,
-                        makeContrastCorrection: false);
-
-                var taskId = api.PostRecognizeImageTrial(new OCRRecognizeImageBody(
+                OCRRecognizeLabelBody body = new OCRRecognizeLabelBody(
                     image: imageData,
-                    settings: settings));
-                Console.WriteLine($"File successfully sent. Your task ID is {taskId}");
-
-                Console.WriteLine($"Requesting results for task {taskId} ...");
-                OCRResponse result = api.GetRecognizeImageTrial(taskId);
-                Console.WriteLine($"Response received with status {result.TaskStatus.Value} \n\n Your results:\n\n");
-
-                result.Results.ForEach(res => Console.WriteLine(Encoding.UTF8.GetString(res.Data)));
-                Console.WriteLine("\nPress any key to continue");
-                Console.ReadKey();
+                    settings: new OCRSettingsRecognizeLabel(
+                        language: Language.English,
+                        makeBinarization:false,
+                        resultType: ResultType.JSON
+                        )
+                    );
+                // Send image for recognition
+                string taskId = api.PostRecognizeLabel(body);
+                OCRResponse response = api.GetRecognizeLabel(taskId);
+                // Parse result
+                JObject jsonObject = JObject.Parse(Encoding.UTF8.GetString(response.Results[0].Data));
             }
             catch (Exception ex)
             {
@@ -152,7 +146,6 @@ namespace ExampleDotNet60v50.APIExamples
     }
 }
 ```
-
 
 ## Other Aspose.OCR Cloud SDKs
 

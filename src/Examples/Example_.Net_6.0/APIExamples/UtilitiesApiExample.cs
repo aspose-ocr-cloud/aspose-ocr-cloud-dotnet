@@ -41,12 +41,12 @@ namespace ExampleDotNet60v50.APIExamples
         /// Uses Utilities API to get task status until it become completed or failed
         /// </summary>
         /// <param name="waitTime"></param>
-        public static void MonitorTaskStatus(string taskid, float waitTime = 0.0f)
+        public static void MonitorTaskStatus(string taskid, float waitTime = 0.0f, string client_id = "", string client_secret = "")
         {
             int getTaskStatusRetriesCount = 0;
             int getTaskStatusMaxRetries = 20;
             OCRResponse getTaskStatusResponse = new OCRResponse();
-            UtilitiesApi api = new UtilitiesApi();
+            UtilitiesApi api = new UtilitiesApi(client_id, client_secret);
             while (getTaskStatusRetriesCount <= getTaskStatusMaxRetries
                 & getTaskStatusResponse.TaskStatus != OCRTaskStatus.Completed
                 & getTaskStatusResponse.TaskStatus != OCRTaskStatus.Error)

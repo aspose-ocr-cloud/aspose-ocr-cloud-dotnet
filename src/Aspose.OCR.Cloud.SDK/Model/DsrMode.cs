@@ -26,9 +26,9 @@ using OpenAPIDateConverter = Aspose.OCR.Cloud.SDK.Client.OpenAPIDateConverter;
 namespace Aspose.OCR.Cloud.SDK.Model
 {
     /// <summary>
-    /// Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR
+    /// Option that sets the text detection mode
     /// </summary>
-    /// <value>Option that sets the recognition result type or combination of some types: Text, Searchable PDF, HOCR</value>
+    /// <value>Option that sets the text detection mode</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum DsrMode
     {
@@ -72,7 +72,13 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// Enum PolygonalTextDetector for value: PolygonalTextDetector
         /// </summary>
         [EnumMember(Value = "PolygonalTextDetector")]
-        PolygonalTextDetector = 7
+        PolygonalTextDetector = 7,
+
+        /// <summary>
+        /// Enum LineDetector for value: LineDetector
+        /// </summary>
+        [EnumMember(Value = "LineDetector")]
+        LineDetector = 8
 
     }
 

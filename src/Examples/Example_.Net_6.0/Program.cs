@@ -11,10 +11,10 @@ namespace NET_SDK_Test
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This is Aspose OCR Cloud SDK for .Net Standard 2.0 v23.12.0 example usage project");
+            Console.WriteLine("This is Aspose OCR Cloud SDK for .Net Standard 2.0 v24.6.0 example usage project");
 
-            string clientId = "YOUR_CLIENT_ID";
-            string clientSecret = "YOUR_CLIENT_SECRET";
+            string clientId = "Your client_id";
+            string clientSecret = "Your client_secret";
             RecognizeImageExample.Run(clientId, clientSecret);
             TextToSpeechExample.Run(clientId, clientSecret);
             BinarizeImageExample.Run(clientId, clientSecret);

@@ -78,7 +78,13 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// Enum ImagePNG for value: ImagePNG
         /// </summary>
         [EnumMember(Value = "ImagePNG")]
-        ImagePNG = 8
+        ImagePNG = 8,
+
+        /// <summary>
+        /// Enum JSON for value: JSON
+        /// </summary>
+        [EnumMember(Value = "JSON")]
+        JSON = 9
 
     }
 
