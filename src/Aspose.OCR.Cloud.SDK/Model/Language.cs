@@ -321,10 +321,610 @@ namespace Aspose.OCR.Cloud.SDK.Model
         Belorussian = 48,
 
         /// <summary>
-        /// Enum HWTEng for value: HWT_eng
+        /// Enum Malay for value: Malay
         /// </summary>
-        [EnumMember(Value = "HWT_eng")]
-        HWTEng = 49
+        [EnumMember(Value = "Malay")]
+        Malay = 49,
+
+        /// <summary>
+        /// Enum Hausa for value: Hausa
+        /// </summary>
+        [EnumMember(Value = "Hausa")]
+        Hausa = 50,
+
+        /// <summary>
+        /// Enum Sundanese for value: Sundanese
+        /// </summary>
+        [EnumMember(Value = "Sundanese")]
+        Sundanese = 51,
+
+        /// <summary>
+        /// Enum Swahili for value: Swahili
+        /// </summary>
+        [EnumMember(Value = "Swahili")]
+        Swahili = 52,
+
+        /// <summary>
+        /// Enum Tagalog for value: Tagalog
+        /// </summary>
+        [EnumMember(Value = "Tagalog")]
+        Tagalog = 53,
+
+        /// <summary>
+        /// Enum Yoruba for value: Yoruba
+        /// </summary>
+        [EnumMember(Value = "Yoruba")]
+        Yoruba = 54,
+
+        /// <summary>
+        /// Enum Oromo for value: Oromo
+        /// </summary>
+        [EnumMember(Value = "Oromo")]
+        Oromo = 55,
+
+        /// <summary>
+        /// Enum Cebuano for value: Cebuano
+        /// </summary>
+        [EnumMember(Value = "Cebuano")]
+        Cebuano = 56,
+
+        /// <summary>
+        /// Enum Dutch for value: Dutch
+        /// </summary>
+        [EnumMember(Value = "Dutch")]
+        Dutch = 57,
+
+        /// <summary>
+        /// Enum Kurdish for value: Kurdish
+        /// </summary>
+        [EnumMember(Value = "Kurdish")]
+        Kurdish = 58,
+
+        /// <summary>
+        /// Enum SerboCroatian for value: Serbo_Croatian
+        /// </summary>
+        [EnumMember(Value = "Serbo_Croatian")]
+        SerboCroatian = 59,
+
+        /// <summary>
+        /// Enum Malagasy for value: Malagasy
+        /// </summary>
+        [EnumMember(Value = "Malagasy")]
+        Malagasy = 60,
+
+        /// <summary>
+        /// Enum Zhuang for value: Zhuang
+        /// </summary>
+        [EnumMember(Value = "Zhuang")]
+        Zhuang = 61,
+
+        /// <summary>
+        /// Enum Turkmen for value: Turkmen
+        /// </summary>
+        [EnumMember(Value = "Turkmen")]
+        Turkmen = 62,
+
+        /// <summary>
+        /// Enum Somali for value: Somali
+        /// </summary>
+        [EnumMember(Value = "Somali")]
+        Somali = 63,
+
+        /// <summary>
+        /// Enum Hungarian for value: Hungarian
+        /// </summary>
+        [EnumMember(Value = "Hungarian")]
+        Hungarian = 64,
+
+        /// <summary>
+        /// Enum Chichewa for value: Chichewa
+        /// </summary>
+        [EnumMember(Value = "Chichewa")]
+        Chichewa = 65,
+
+        /// <summary>
+        /// Enum Rwanda for value: Rwanda
+        /// </summary>
+        [EnumMember(Value = "Rwanda")]
+        Rwanda = 66,
+
+        /// <summary>
+        /// Enum MinBei for value: Min_Bei
+        /// </summary>
+        [EnumMember(Value = "Min_Bei")]
+        MinBei = 67,
+
+        /// <summary>
+        /// Enum Zulu for value: Zulu
+        /// </summary>
+        [EnumMember(Value = "Zulu")]
+        Zulu = 68,
+
+        /// <summary>
+        /// Enum Ilocano for value: Ilocano
+        /// </summary>
+        [EnumMember(Value = "Ilocano")]
+        Ilocano = 69,
+
+        /// <summary>
+        /// Enum MinDong for value: Min_Dong
+        /// </summary>
+        [EnumMember(Value = "Min_Dong")]
+        MinDong = 70,
+
+        /// <summary>
+        /// Enum Quechua for value: Quechua
+        /// </summary>
+        [EnumMember(Value = "Quechua")]
+        Quechua = 71,
+
+        /// <summary>
+        /// Enum Hiligaynon for value: Hiligaynon
+        /// </summary>
+        [EnumMember(Value = "Hiligaynon")]
+        Hiligaynon = 72,
+
+        /// <summary>
+        /// Enum Hmong for value: Hmong
+        /// </summary>
+        [EnumMember(Value = "Hmong")]
+        Hmong = 73,
+
+        /// <summary>
+        /// Enum Shona for value: Shona
+        /// </summary>
+        [EnumMember(Value = "Shona")]
+        Shona = 74,
+
+        /// <summary>
+        /// Enum Xhosa for value: Xhosa
+        /// </summary>
+        [EnumMember(Value = "Xhosa")]
+        Xhosa = 75,
+
+        /// <summary>
+        /// Enum Betawi for value: Betawi
+        /// </summary>
+        [EnumMember(Value = "Betawi")]
+        Betawi = 76,
+
+        /// <summary>
+        /// Enum Catalan for value: Catalan
+        /// </summary>
+        [EnumMember(Value = "Catalan")]
+        Catalan = 77,
+
+        /// <summary>
+        /// Enum Afrikaans for value: Afrikaans
+        /// </summary>
+        [EnumMember(Value = "Afrikaans")]
+        Afrikaans = 78,
+
+        /// <summary>
+        /// Enum Minangkabau for value: Minangkabau
+        /// </summary>
+        [EnumMember(Value = "Minangkabau")]
+        Minangkabau = 79,
+
+        /// <summary>
+        /// Enum SothoSouthern for value: Sotho_Southern
+        /// </summary>
+        [EnumMember(Value = "Sotho_Southern")]
+        SothoSouthern = 80,
+
+        /// <summary>
+        /// Enum Bikol for value: Bikol
+        /// </summary>
+        [EnumMember(Value = "Bikol")]
+        Bikol = 81,
+
+        /// <summary>
+        /// Enum Makua for value: Makua
+        /// </summary>
+        [EnumMember(Value = "Makua")]
+        Makua = 82,
+
+        /// <summary>
+        /// Enum Kanuri for value: Kanuri
+        /// </summary>
+        [EnumMember(Value = "Kanuri")]
+        Kanuri = 83,
+
+        /// <summary>
+        /// Enum Tswana for value: Tswana
+        /// </summary>
+        [EnumMember(Value = "Tswana")]
+        Tswana = 84,
+
+        /// <summary>
+        /// Enum Kikongo for value: Kikongo
+        /// </summary>
+        [EnumMember(Value = "Kikongo")]
+        Kikongo = 85,
+
+        /// <summary>
+        /// Enum Luo for value: Luo
+        /// </summary>
+        [EnumMember(Value = "Luo")]
+        Luo = 86,
+
+        /// <summary>
+        /// Enum Sukuma for value: Sukuma
+        /// </summary>
+        [EnumMember(Value = "Sukuma")]
+        Sukuma = 87,
+
+        /// <summary>
+        /// Enum Tsonga for value: Tsonga
+        /// </summary>
+        [EnumMember(Value = "Tsonga")]
+        Tsonga = 88,
+
+        /// <summary>
+        /// Enum Bosnian for value: Bosnian
+        /// </summary>
+        [EnumMember(Value = "Bosnian")]
+        Bosnian = 89,
+
+        /// <summary>
+        /// Enum Bemba for value: Bemba
+        /// </summary>
+        [EnumMember(Value = "Bemba")]
+        Bemba = 90,
+
+        /// <summary>
+        /// Enum Nandi for value: Nandi
+        /// </summary>
+        [EnumMember(Value = "Nandi")]
+        Nandi = 91,
+
+        /// <summary>
+        /// Enum Palembang for value: Palembang
+        /// </summary>
+        [EnumMember(Value = "Palembang")]
+        Palembang = 92,
+
+        /// <summary>
+        /// Enum Umbundu for value: Umbundu
+        /// </summary>
+        [EnumMember(Value = "Umbundu")]
+        Umbundu = 93,
+
+        /// <summary>
+        /// Enum SothoNorthern for value: Sotho_Northern
+        /// </summary>
+        [EnumMember(Value = "Sotho_Northern")]
+        SothoNorthern = 94,
+
+        /// <summary>
+        /// Enum WarayWaray for value: Waray_Waray
+        /// </summary>
+        [EnumMember(Value = "Waray_Waray")]
+        WarayWaray = 95,
+
+        /// <summary>
+        /// Enum Lamani for value: Lamani
+        /// </summary>
+        [EnumMember(Value = "Lamani")]
+        Lamani = 96,
+
+        /// <summary>
+        /// Enum LowGerman for value: Low_German
+        /// </summary>
+        [EnumMember(Value = "Low_German")]
+        LowGerman = 97,
+
+        /// <summary>
+        /// Enum Gilaki for value: Gilaki
+        /// </summary>
+        [EnumMember(Value = "Gilaki")]
+        Gilaki = 98,
+
+        /// <summary>
+        /// Enum Musi for value: Musi
+        /// </summary>
+        [EnumMember(Value = "Musi")]
+        Musi = 99,
+
+        /// <summary>
+        /// Enum HWTENG for value: HWT_ENG
+        /// </summary>
+        [EnumMember(Value = "HWT_ENG")]
+        HWTENG = 100,
+
+        /// <summary>
+        /// Enum PuXian for value: Pu_Xian
+        /// </summary>
+        [EnumMember(Value = "Pu_Xian")]
+        PuXian = 101,
+
+        /// <summary>
+        /// Enum Kapampangan for value: Kapampangan
+        /// </summary>
+        [EnumMember(Value = "Kapampangan")]
+        Kapampangan = 102,
+
+        /// <summary>
+        /// Enum Bouyei for value: Bouyei
+        /// </summary>
+        [EnumMember(Value = "Bouyei")]
+        Bouyei = 103,
+
+        /// <summary>
+        /// Enum Galician for value: Galician
+        /// </summary>
+        [EnumMember(Value = "Galician")]
+        Galician = 104,
+
+        /// <summary>
+        /// Enum Ndebele for value: Ndebele
+        /// </summary>
+        [EnumMember(Value = "Ndebele")]
+        Ndebele = 105,
+
+        /// <summary>
+        /// Enum Yao for value: Yao
+        /// </summary>
+        [EnumMember(Value = "Yao")]
+        Yao = 106,
+
+        /// <summary>
+        /// Enum Sasak for value: Sasak
+        /// </summary>
+        [EnumMember(Value = "Sasak")]
+        Sasak = 107,
+
+        /// <summary>
+        /// Enum Swati for value: Swati
+        /// </summary>
+        [EnumMember(Value = "Swati")]
+        Swati = 108,
+
+        /// <summary>
+        /// Enum Gusii for value: Gusii
+        /// </summary>
+        [EnumMember(Value = "Gusii")]
+        Gusii = 109,
+
+        /// <summary>
+        /// Enum Meru for value: Meru
+        /// </summary>
+        [EnumMember(Value = "Meru")]
+        Meru = 110,
+
+        /// <summary>
+        /// Enum Wolaytta for value: Wolaytta
+        /// </summary>
+        [EnumMember(Value = "Wolaytta")]
+        Wolaytta = 111,
+
+        /// <summary>
+        /// Enum Dong for value: Dong
+        /// </summary>
+        [EnumMember(Value = "Dong")]
+        Dong = 112,
+
+        /// <summary>
+        /// Enum Pangasinan for value: Pangasinan
+        /// </summary>
+        [EnumMember(Value = "Pangasinan")]
+        Pangasinan = 113,
+
+        /// <summary>
+        /// Enum Dimli for value: Dimli
+        /// </summary>
+        [EnumMember(Value = "Dimli")]
+        Dimli = 114,
+
+        /// <summary>
+        /// Enum Makassar for value: Makassar
+        /// </summary>
+        [EnumMember(Value = "Makassar")]
+        Makassar = 115,
+
+        /// <summary>
+        /// Enum Tumbuka for value: Tumbuka
+        /// </summary>
+        [EnumMember(Value = "Tumbuka")]
+        Tumbuka = 116,
+
+        /// <summary>
+        /// Enum SererSine for value: Serer_Sine
+        /// </summary>
+        [EnumMember(Value = "Serer_Sine")]
+        SererSine = 117,
+
+        /// <summary>
+        /// Enum Occitan for value: Occitan
+        /// </summary>
+        [EnumMember(Value = "Occitan")]
+        Occitan = 118,
+
+        /// <summary>
+        /// Enum Tonga for value: Tonga
+        /// </summary>
+        [EnumMember(Value = "Tonga")]
+        Tonga = 119,
+
+        /// <summary>
+        /// Enum Muong for value: Muong
+        /// </summary>
+        [EnumMember(Value = "Muong")]
+        Muong = 120,
+
+        /// <summary>
+        /// Enum Kiche for value: Kiche
+        /// </summary>
+        [EnumMember(Value = "Kiche")]
+        Kiche = 121,
+
+        /// <summary>
+        /// Enum Luguru for value: Luguru
+        /// </summary>
+        [EnumMember(Value = "Luguru")]
+        Luguru = 122,
+
+        /// <summary>
+        /// Enum Wu for value: Wu
+        /// </summary>
+        [EnumMember(Value = "Wu")]
+        Wu = 123,
+
+        /// <summary>
+        /// Enum Cantonese for value: Cantonese
+        /// </summary>
+        [EnumMember(Value = "Cantonese")]
+        Cantonese = 124,
+
+        /// <summary>
+        /// Enum MinNan for value: Min_Nan
+        /// </summary>
+        [EnumMember(Value = "Min_Nan")]
+        MinNan = 125,
+
+        /// <summary>
+        /// Enum Xiang for value: Xiang
+        /// </summary>
+        [EnumMember(Value = "Xiang")]
+        Xiang = 126,
+
+        /// <summary>
+        /// Enum Hakka for value: Hakka
+        /// </summary>
+        [EnumMember(Value = "Hakka")]
+        Hakka = 127,
+
+        /// <summary>
+        /// Enum Gan for value: Gan
+        /// </summary>
+        [EnumMember(Value = "Gan")]
+        Gan = 128,
+
+        /// <summary>
+        /// Enum Chechen for value: Chechen
+        /// </summary>
+        [EnumMember(Value = "Chechen")]
+        Chechen = 129,
+
+        /// <summary>
+        /// Enum Kabardian for value: Kabardian
+        /// </summary>
+        [EnumMember(Value = "Kabardian")]
+        Kabardian = 130,
+
+        /// <summary>
+        /// Enum Marathi for value: Marathi
+        /// </summary>
+        [EnumMember(Value = "Marathi")]
+        Marathi = 131,
+
+        /// <summary>
+        /// Enum Bhojpuri for value: Bhojpuri
+        /// </summary>
+        [EnumMember(Value = "Bhojpuri")]
+        Bhojpuri = 132,
+
+        /// <summary>
+        /// Enum Maithili for value: Maithili
+        /// </summary>
+        [EnumMember(Value = "Maithili")]
+        Maithili = 133,
+
+        /// <summary>
+        /// Enum Awadhi for value: Awadhi
+        /// </summary>
+        [EnumMember(Value = "Awadhi")]
+        Awadhi = 134,
+
+        /// <summary>
+        /// Enum Nepali for value: Nepali
+        /// </summary>
+        [EnumMember(Value = "Nepali")]
+        Nepali = 135,
+
+        /// <summary>
+        /// Enum Marwari for value: Marwari
+        /// </summary>
+        [EnumMember(Value = "Marwari")]
+        Marwari = 136,
+
+        /// <summary>
+        /// Enum Magahi for value: Magahi
+        /// </summary>
+        [EnumMember(Value = "Magahi")]
+        Magahi = 137,
+
+        /// <summary>
+        /// Enum Haryanvi for value: Haryanvi
+        /// </summary>
+        [EnumMember(Value = "Haryanvi")]
+        Haryanvi = 138,
+
+        /// <summary>
+        /// Enum Chattisgarhi for value: Chattisgarhi
+        /// </summary>
+        [EnumMember(Value = "Chattisgarhi")]
+        Chattisgarhi = 139,
+
+        /// <summary>
+        /// Enum Dhundari for value: Dhundari
+        /// </summary>
+        [EnumMember(Value = "Dhundari")]
+        Dhundari = 140,
+
+        /// <summary>
+        /// Enum Konkani for value: Konkani
+        /// </summary>
+        [EnumMember(Value = "Konkani")]
+        Konkani = 141,
+
+        /// <summary>
+        /// Enum Kanauji for value: Kanauji
+        /// </summary>
+        [EnumMember(Value = "Kanauji")]
+        Kanauji = 142,
+
+        /// <summary>
+        /// Enum Mewati for value: Mewati
+        /// </summary>
+        [EnumMember(Value = "Mewati")]
+        Mewati = 143,
+
+        /// <summary>
+        /// Enum Rajbanshi for value: Rajbanshi
+        /// </summary>
+        [EnumMember(Value = "Rajbanshi")]
+        Rajbanshi = 144,
+
+        /// <summary>
+        /// Enum Garhwali for value: Garhwali
+        /// </summary>
+        [EnumMember(Value = "Garhwali")]
+        Garhwali = 145,
+
+        /// <summary>
+        /// Enum Kumauni for value: Kumauni
+        /// </summary>
+        [EnumMember(Value = "Kumauni")]
+        Kumauni = 146,
+
+        /// <summary>
+        /// Enum Wagdi for value: Wagdi
+        /// </summary>
+        [EnumMember(Value = "Wagdi")]
+        Wagdi = 147,
+
+        /// <summary>
+        /// Enum Malvi for value: Malvi
+        /// </summary>
+        [EnumMember(Value = "Malvi")]
+        Malvi = 148,
+
+        /// <summary>
+        /// Enum Mewari for value: Mewari
+        /// </summary>
+        [EnumMember(Value = "Mewari")]
+        Mewari = 149
 
     }
 

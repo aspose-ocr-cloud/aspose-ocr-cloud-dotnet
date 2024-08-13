@@ -205,7 +205,7 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
             var requestBody = new OCRRecognizeImageBody(
                     image: File.ReadAllBytes("samples/latin.png"),
                     settings: new OCRSettingsRecognizeImage(
-                        language: Language.HWTEng,
+                        language: Language.English,
                         makeBinarization: true,
                         makeSkewCorrect: true,
                         dsrMode: DsrMode.NoDsrNoFilter
@@ -214,6 +214,7 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
             timer.Start();
             string taskId = apiInstance.PostRecognizeImage(requestBody);
             Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
+            Thread.Sleep(4000);
             var response = apiInstance.GetRecognizeImage(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
@@ -391,29 +392,6 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
             File.WriteAllText($"results/{taskId}.txt", Encoding.UTF8.GetString(response.Results[0].Data));
         }
-
-
-        //[Test]
-        //public void PublicRecognizeAndParseInvoiceApiTest()
-        //{
-        //    var apiInstance = new RecognizeAndParseInvoiceApi(clientId, clientSecret);
-
-        //    var requestBody = new OCRRecognizeAndParseInvoiceBody(
-        //            image: File.ReadAllBytes("samples/invoice_english_01.jpg"),
-        //            settings: new OCRSettingsRecognizeAndParseInvoice(
-        //                resultType: ResultType.Text,
-        //                makeBinarization: false
-        //            ));
-        //    timer.Reset();
-        //    timer.Start();
-        //    string taskId = apiInstance.PostRecognizeAndParseInvoice(requestBody);
-        //    Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
-        //    Thread.Sleep(10000);
-        //    var response = apiInstance.GetRecognizeAndParseInvoice(taskId);
-        //    Assert.IsNotNull(response);
-        //    Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);
-        //    File.WriteAllText($"results/{taskId}.json", Encoding.UTF8.GetString(response.Results[0].Data));
-        //}
     }
 }
 
