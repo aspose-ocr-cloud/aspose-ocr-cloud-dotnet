@@ -32,8 +32,6 @@ namespace ExampleDotNet60v50.APIExamples
                     settings: settings));
                 Console.WriteLine($"File successfully sent. Your task ID is {taskId}");
 
-                UtilitiesApiExample.MonitorTaskStatus(taskId);
-
                 Console.WriteLine($"Requesting results for task {taskId} ...");
                 OCRResponse result = api.GetRecognizeImageTrial(taskId);
                 Console.WriteLine($"Respose received with status {result.TaskStatus.Value} \n\n Your results:\n\n");

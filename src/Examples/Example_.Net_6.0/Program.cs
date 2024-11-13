@@ -11,7 +11,7 @@ namespace NET_SDK_Test
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This is Aspose OCR Cloud SDK for .Net Standard 2.0 v24.6.0 example usage project");
+            Console.WriteLine("This is Aspose OCR Cloud SDK for .Net Standard 2.0 v24.11.0 example usage project");
 
             string clientId = "Your client_id";
             string clientSecret = "Your client_secret";

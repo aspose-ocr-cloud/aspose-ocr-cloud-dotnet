@@ -214,7 +214,7 @@ namespace Aspose.OCR.Cloud.SDK.Test.Api
             timer.Start();
             string taskId = apiInstance.PostRecognizeImage(requestBody);
             Console.WriteLine($"Task ID: {taskId}\n Send in {timer.Elapsed} ");
-            Thread.Sleep(4000);
+            Thread.Sleep(10000);
             var response = apiInstance.GetRecognizeImage(taskId);
             Assert.IsNotNull(response);
             Assert.That(response.ResponseStatusCode == ResponseStatusCode.Ok);

@@ -924,7 +924,37 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// Enum Mewari for value: Mewari
         /// </summary>
         [EnumMember(Value = "Mewari")]
-        Mewari = 149
+        Mewari = 149,
+
+        /// <summary>
+        /// Enum Uyghur for value: Uyghur
+        /// </summary>
+        [EnumMember(Value = "Uyghur")]
+        Uyghur = 150,
+
+        /// <summary>
+        /// Enum Telugu for value: Telugu
+        /// </summary>
+        [EnumMember(Value = "Telugu")]
+        Telugu = 151,
+
+        /// <summary>
+        /// Enum Kannada for value: Kannada
+        /// </summary>
+        [EnumMember(Value = "Kannada")]
+        Kannada = 152,
+
+        /// <summary>
+        /// Enum Tamil for value: Tamil
+        /// </summary>
+        [EnumMember(Value = "Tamil")]
+        Tamil = 153,
+
+        /// <summary>
+        /// Enum Devanagari for value: Devanagari
+        /// </summary>
+        [EnumMember(Value = "Devanagari")]
+        Devanagari = 154
 
     }
 
