@@ -37,7 +37,6 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// </summary>
         [EnumMember(Value = "Wav")]
         Wav = 1
-
     }
 
 }

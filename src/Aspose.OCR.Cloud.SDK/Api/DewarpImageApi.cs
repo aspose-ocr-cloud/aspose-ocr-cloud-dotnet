@@ -35,7 +35,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void CancelDewarpImage(string id, int operationIndex = 0);
+        void CancelDewarpImage(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
 
         /// <summary>
         /// CancelDewarpImage
@@ -47,7 +47,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CancelDewarpImageWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Object> CancelDewarpImageWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
         /// <summary>
         /// GetDewarpImage
         /// </summary>
@@ -55,7 +55,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
-        OCRResponse GetDewarpImage(string id, int operationIndex = 0);
+        OCRResponse GetDewarpImage(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
 
         /// <summary>
         /// GetDewarpImage
@@ -67,7 +67,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
-        ApiResponse<OCRResponse> GetDewarpImageWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<OCRResponse> GetDewarpImageWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
         /// <summary>
         /// PostDewarpImage
         /// </summary>
@@ -75,7 +75,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="oCRDewarpImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        string PostDewarpImage(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0);
+        string PostDewarpImage(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
 
         /// <summary>
         /// PostDewarpImage
@@ -87,7 +87,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="oCRDewarpImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> PostDewarpImageWithHttpInfo(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0);
+        ApiResponse<string> PostDewarpImageWithHttpInfo(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
         #endregion Synchronous Operations
     }
 
@@ -108,7 +108,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CancelDewarpImageAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task CancelDewarpImageAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// CancelDewarpImage
@@ -121,7 +121,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CancelDewarpImageWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CancelDewarpImageWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// GetDewarpImage
         /// </summary>
@@ -133,7 +133,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
-        System.Threading.Tasks.Task<OCRResponse> GetDewarpImageAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OCRResponse> GetDewarpImageAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// GetDewarpImage
@@ -146,7 +146,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OCRResponse>> GetDewarpImageWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OCRResponse>> GetDewarpImageWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// PostDewarpImage
         /// </summary>
@@ -158,7 +158,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> PostDewarpImageAsync(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> PostDewarpImageAsync(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// PostDewarpImage
@@ -171,7 +171,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> PostDewarpImageWithHttpInfoAsync(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> PostDewarpImageWithHttpInfoAsync(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -309,7 +309,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void CancelDewarpImage(string id, int operationIndex = 0)
+        public void CancelDewarpImage(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
             CancelDewarpImageWithHttpInfo(id);
         }
@@ -321,7 +321,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> CancelDewarpImageWithHttpInfo(string id, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> CancelDewarpImageWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -396,9 +396,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CancelDewarpImageAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task CancelDewarpImageAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await CancelDewarpImageWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await CancelDewarpImageWithHttpInfoAsync(id, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -409,7 +409,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object>> CancelDewarpImageWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object>> CancelDewarpImageWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -461,7 +461,6 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
-
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>(GetAdjustedPath("./v5.0/ocr/DewarpImage"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
@@ -485,9 +484,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
-        public OCRResponse GetDewarpImage(string id, int operationIndex = 0)
+        public OCRResponse GetDewarpImage(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = GetDewarpImageWithHttpInfo(id, operationIndex);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = GetDewarpImageWithHttpInfo(id, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful);
             return localVarResponse.Data;
         }
 
@@ -498,7 +497,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> GetDewarpImageWithHttpInfo(string id, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> GetDewarpImageWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -574,9 +573,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
-        public async System.Threading.Tasks.Task<OCRResponse> GetDewarpImageAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OCRResponse> GetDewarpImageAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = await GetDewarpImageWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = await GetDewarpImageWithHttpInfoAsync(id, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -588,7 +587,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse>> GetDewarpImageWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse>> GetDewarpImageWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -641,7 +640,6 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
-
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<OCRResponse>(GetAdjustedPath("./v5.0/ocr/DewarpImage"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
@@ -665,9 +663,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="oCRDewarpImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        public string PostDewarpImage(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0)
+        public string PostDewarpImage(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostDewarpImageWithHttpInfo(oCRDewarpImageBody, operationIndex);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostDewarpImageWithHttpInfo(oCRDewarpImageBody, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful);
             return localVarResponse.Data;
         }
 
@@ -678,7 +676,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="oCRDewarpImageBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostDewarpImageWithHttpInfo(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostDewarpImageWithHttpInfo(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
             // verify the required parameter 'oCRDewarpImageBody' is set
             if (oCRDewarpImageBody == null)
@@ -755,9 +753,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> PostDewarpImageAsync(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> PostDewarpImageAsync(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostDewarpImageWithHttpInfoAsync(oCRDewarpImageBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostDewarpImageWithHttpInfoAsync(oCRDewarpImageBody, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -769,7 +767,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostDewarpImageWithHttpInfoAsync(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostDewarpImageWithHttpInfoAsync(OCRDewarpImageBody oCRDewarpImageBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'oCRDewarpImageBody' is set
             if (oCRDewarpImageBody == null)
@@ -822,7 +820,6 @@ namespace Aspose.OCR.Cloud.SDK.Api
                     localVarRequestOptions.OAuth = true;
                 }
             }
-
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/DewarpImage"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

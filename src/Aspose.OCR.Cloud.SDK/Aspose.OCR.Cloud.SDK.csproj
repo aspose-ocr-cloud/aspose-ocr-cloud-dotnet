@@ -40,7 +40,7 @@
   Don’t worry about hardware, all the computational operations are performed at our powerful servers, that hosts our core, built on cutting edge fast neural networks.</Description>
     <Copyright>© Aspose 2002-2024. All Rights Reserved.</Copyright>
     <RootNamespace>Aspose.OCR.Cloud.SDK</RootNamespace>
-    <Version>24.11.0</Version>
+    <Version>24.11.2</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aspose.OCR.Cloud.SDK.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -49,20 +49,20 @@
     <Nullable>annotations</Nullable>
     <Product>Aspose.OCR Cloud SDK for .Net</Product>
     <PackageProjectUrl>https://products.aspose.cloud/ocr/net/</PackageProjectUrl>
-    <PackageIcon>icon.png</PackageIcon>
+    <PackageIcon>icon_aspose_ocr-for-net.png</PackageIcon>
     <PackageTags>Aspose.OCR;Aspose.OCR-Cloud;Aspose.Total-Cloud;Cloud;REST;API;JPEG;PNG;GIF;BMP;TIFF;optical;character;recognition;OCR;optical-character-recognition;character-recognition;scanner;AI;engine;C#;CSharp;machine;learning;machine-learning;handwriting;recognize;scanned;scan;document;searchable;PDF;Text;Detection;Receipt;multi-platform;extract-text;text-extraction;HOCR;localization;localized-ocr;English-OCR;French-OCR;German-OCR;Deutsch-OCR;XML;JSON;Extract-Image-Text;Extract-Text;Extract-Localized-Text;Multi-Langual-OCR;Multilingual;WEBP;PBM;PGM;PPM;PXM;PNM;PFM;SR;RAS;TIF;EXR;HDR;PIC;.NET;C#;dotnet;CSharp</PackageTags>
     <Nullable>annotations</Nullable>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE.TXT</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="2.0.0" />
+    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="RestSharp" Version="108.0.3" />
-    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="RestSharp" Version="112.0.0" />
+    <PackageReference Include="Polly" Version="8.1.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
@@ -79,7 +79,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="LICENSE">
+    <None Include="..\..\licenses\LICENSE.TXT">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
@@ -92,6 +92,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\resources\icon_aspose_ocr-for-net.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

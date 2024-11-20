@@ -61,7 +61,6 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// </summary>
         [EnumMember(Value = "NotExist")]
         NotExist = 5
-
     }
 
 }

@@ -85,7 +85,6 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// </summary>
         [EnumMember(Value = "JSON")]
         JSON = 9
-
     }
 
 }

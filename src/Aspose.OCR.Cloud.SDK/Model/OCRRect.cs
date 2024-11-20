@@ -29,7 +29,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
     /// Represents a rectangle: Left-Top (X1-Y1) to Right-Bottom (X2-Y2)
     /// </summary>
     [DataContract(Name = "OCRRect")]
-    public partial class OCRRect : IEquatable<OCRRect>, IValidatableObject
+    public partial class OCRRect : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OCRRect" /> class.
@@ -100,68 +100,11 @@ namespace Aspose.OCR.Cloud.SDK.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OCRRect);
-        }
-
-        /// <summary>
-        /// Returns true if OCRRect instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OCRRect to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OCRRect input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.TopLeftX == input.TopLeftX ||
-                    this.TopLeftX.Equals(input.TopLeftX)
-                ) && 
-                (
-                    this.TopLeftY == input.TopLeftY ||
-                    this.TopLeftY.Equals(input.TopLeftY)
-                ) && 
-                (
-                    this.BottomRightX == input.BottomRightX ||
-                    this.BottomRightX.Equals(input.BottomRightX)
-                ) && 
-                (
-                    this.BottomRightY == input.BottomRightY ||
-                    this.BottomRightY.Equals(input.BottomRightY)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.TopLeftX.GetHashCode();
-                hashCode = (hashCode * 59) + this.TopLeftY.GetHashCode();
-                hashCode = (hashCode * 59) + this.BottomRightX.GetHashCode();
-                hashCode = (hashCode * 59) + this.BottomRightY.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

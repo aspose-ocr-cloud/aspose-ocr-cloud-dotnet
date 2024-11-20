@@ -29,7 +29,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
     /// Represents information about strict regions to recognize text
     /// </summary>
     [DataContract(Name = "OCRRegion")]
-    public partial class OCRRegion : IEquatable<OCRRegion>, IValidatableObject
+    public partial class OCRRegion : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OCRRegion" /> class.
@@ -79,62 +79,11 @@ namespace Aspose.OCR.Cloud.SDK.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OCRRegion);
-        }
-
-        /// <summary>
-        /// Returns true if OCRRegion instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OCRRegion to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OCRRegion input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Rect == input.Rect ||
-                    (this.Rect != null &&
-                    this.Rect.Equals(input.Rect))
-                ) && 
-                (
-                    this.Order == input.Order ||
-                    this.Order.Equals(input.Order)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Rect != null)
-                {
-                    hashCode = (hashCode * 59) + this.Rect.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Order.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -79,7 +79,6 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// </summary>
         [EnumMember(Value = "LineDetector")]
         LineDetector = 8
-
     }
 
 }

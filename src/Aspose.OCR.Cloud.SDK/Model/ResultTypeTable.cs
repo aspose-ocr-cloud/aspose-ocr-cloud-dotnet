@@ -55,7 +55,6 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// </summary>
         [EnumMember(Value = "CsvAndExcel")]
         CsvAndExcel = 4
-
     }
 
 }

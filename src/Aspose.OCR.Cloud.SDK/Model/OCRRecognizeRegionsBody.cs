@@ -29,7 +29,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
     /// Combines Image data and OCR Recognition settings
     /// </summary>
     [DataContract(Name = "OCRRecognizeRegionsBody")]
-    public partial class OCRRecognizeRegionsBody : IEquatable<OCRRecognizeRegionsBody>, IValidatableObject
+    public partial class OCRRecognizeRegionsBody : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OCRRecognizeRegionsBody" /> class.
@@ -94,66 +94,11 @@ namespace Aspose.OCR.Cloud.SDK.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OCRRecognizeRegionsBody);
-        }
-
-        /// <summary>
-        /// Returns true if OCRRecognizeRegionsBody instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OCRRecognizeRegionsBody to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OCRRecognizeRegionsBody input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Settings == input.Settings ||
-                    (this.Settings != null &&
-                    this.Settings.Equals(input.Settings))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Image != null)
-                {
-                    hashCode = (hashCode * 59) + this.Image.GetHashCode();
-                }
-                if (this.Settings != null)
-                {
-                    hashCode = (hashCode * 59) + this.Settings.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

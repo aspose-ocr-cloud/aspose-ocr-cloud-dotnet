@@ -35,7 +35,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void CancelRecognizeAndParseInvoice(string id, int operationIndex = 0);
+        void CancelRecognizeAndParseInvoice(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
 
         /// <summary>
         /// CancelRecognizeAndParseInvoice
@@ -47,7 +47,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CancelRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Object> CancelRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
         /// <summary>
         /// GetRecognizeAndParseInvoice
         /// </summary>
@@ -55,7 +55,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
-        OCRResponse GetRecognizeAndParseInvoice(string id, int operationIndex = 0);
+        OCRResponse GetRecognizeAndParseInvoice(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
 
         /// <summary>
         /// GetRecognizeAndParseInvoice
@@ -67,7 +67,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
-        ApiResponse<OCRResponse> GetRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<OCRResponse> GetRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
         /// <summary>
         /// PostRecognizeAndParseInvoice
         /// </summary>
@@ -75,7 +75,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        string PostRecognizeAndParseInvoice(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0);
+        string PostRecognizeAndParseInvoice(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
 
         /// <summary>
         /// PostRecognizeAndParseInvoice
@@ -87,7 +87,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> PostRecognizeAndParseInvoiceWithHttpInfo(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0);
+        ApiResponse<string> PostRecognizeAndParseInvoiceWithHttpInfo(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
         #endregion Synchronous Operations
     }
 
@@ -108,7 +108,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CancelRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task CancelRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// CancelRecognizeAndParseInvoice
@@ -121,7 +121,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CancelRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CancelRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// GetRecognizeAndParseInvoice
         /// </summary>
@@ -133,7 +133,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
-        System.Threading.Tasks.Task<OCRResponse> GetRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OCRResponse> GetRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// GetRecognizeAndParseInvoice
@@ -146,7 +146,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OCRResponse>> GetRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OCRResponse>> GetRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// PostRecognizeAndParseInvoice
         /// </summary>
@@ -158,7 +158,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> PostRecognizeAndParseInvoiceAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> PostRecognizeAndParseInvoiceAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// PostRecognizeAndParseInvoice
@@ -171,7 +171,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> PostRecognizeAndParseInvoiceWithHttpInfoAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> PostRecognizeAndParseInvoiceWithHttpInfoAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -309,7 +309,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void CancelRecognizeAndParseInvoice(string id, int operationIndex = 0)
+        public void CancelRecognizeAndParseInvoice(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
             CancelRecognizeAndParseInvoiceWithHttpInfo(id);
         }
@@ -321,7 +321,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> CancelRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> CancelRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -396,9 +396,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CancelRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task CancelRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await CancelRecognizeAndParseInvoiceWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await CancelRecognizeAndParseInvoiceWithHttpInfoAsync(id, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -409,7 +409,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object>> CancelRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object>> CancelRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -461,7 +461,6 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
-
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>(GetAdjustedPath("./v5.0/ocr/RecognizeAndParseInvoice"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
@@ -485,9 +484,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OCRResponse</returns>
-        public OCRResponse GetRecognizeAndParseInvoice(string id, int operationIndex = 0)
+        public OCRResponse GetRecognizeAndParseInvoice(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = GetRecognizeAndParseInvoiceWithHttpInfo(id, operationIndex);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = GetRecognizeAndParseInvoiceWithHttpInfo(id, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful);
             return localVarResponse.Data;
         }
 
@@ -498,7 +497,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="id">Task id to select the result</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OCRResponse</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> GetRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> GetRecognizeAndParseInvoiceWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -574,9 +573,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OCRResponse</returns>
-        public async System.Threading.Tasks.Task<OCRResponse> GetRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OCRResponse> GetRecognizeAndParseInvoiceAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = await GetRecognizeAndParseInvoiceWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse> localVarResponse = await GetRecognizeAndParseInvoiceWithHttpInfoAsync(id, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -588,7 +587,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OCRResponse)</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse>> GetRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<OCRResponse>> GetRecognizeAndParseInvoiceWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -641,7 +640,6 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
-
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<OCRResponse>(GetAdjustedPath("./v5.0/ocr/RecognizeAndParseInvoice"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
@@ -665,9 +663,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        public string PostRecognizeAndParseInvoice(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0)
+        public string PostRecognizeAndParseInvoice(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostRecognizeAndParseInvoiceWithHttpInfo(oCRRecognizeAndParseInvoiceBody, operationIndex);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostRecognizeAndParseInvoiceWithHttpInfo(oCRRecognizeAndParseInvoiceBody, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful);
             return localVarResponse.Data;
         }
 
@@ -678,7 +676,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="oCRRecognizeAndParseInvoiceBody"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostRecognizeAndParseInvoiceWithHttpInfo(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostRecognizeAndParseInvoiceWithHttpInfo(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
             // verify the required parameter 'oCRRecognizeAndParseInvoiceBody' is set
             if (oCRRecognizeAndParseInvoiceBody == null)
@@ -755,9 +753,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> PostRecognizeAndParseInvoiceAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> PostRecognizeAndParseInvoiceAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostRecognizeAndParseInvoiceWithHttpInfoAsync(oCRRecognizeAndParseInvoiceBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostRecognizeAndParseInvoiceWithHttpInfoAsync(oCRRecognizeAndParseInvoiceBody, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -769,7 +767,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostRecognizeAndParseInvoiceWithHttpInfoAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostRecognizeAndParseInvoiceWithHttpInfoAsync(OCRRecognizeAndParseInvoiceBody oCRRecognizeAndParseInvoiceBody, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'oCRRecognizeAndParseInvoiceBody' is set
             if (oCRRecognizeAndParseInvoiceBody == null)
@@ -822,7 +820,6 @@ namespace Aspose.OCR.Cloud.SDK.Api
                     localVarRequestOptions.OAuth = true;
                 }
             }
-
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/RecognizeAndParseInvoice"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

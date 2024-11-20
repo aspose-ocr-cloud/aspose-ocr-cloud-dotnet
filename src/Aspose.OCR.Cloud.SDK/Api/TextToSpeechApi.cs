@@ -36,7 +36,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TTSResponse</returns>
         [Obsolete]
-        TTSResponse GetTextToSpeechResult(string id, int operationIndex = 0);
+        TTSResponse GetTextToSpeechResult(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
 
         /// <summary>
         /// GetTextToSpeechResult
@@ -49,7 +49,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TTSResponse</returns>
         [Obsolete]
-        ApiResponse<TTSResponse> GetTextToSpeechResultWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<TTSResponse> GetTextToSpeechResultWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
         /// <summary>
         /// GetTextToSpeechResultFile
         /// </summary>
@@ -58,7 +58,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         [Obsolete]
-        Object GetTextToSpeechResultFile(string id, int operationIndex = 0);
+        Object GetTextToSpeechResultFile(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
 
         /// <summary>
         /// GetTextToSpeechResultFile
@@ -71,7 +71,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         [Obsolete]
-        ApiResponse<Object> GetTextToSpeechResultFileWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Object> GetTextToSpeechResultFileWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
         /// <summary>
         /// PostTextToSpeech
         /// </summary>
@@ -80,7 +80,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         [Obsolete]
-        string PostTextToSpeech(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0);
+        string PostTextToSpeech(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
 
         /// <summary>
         /// PostTextToSpeech
@@ -93,7 +93,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         [Obsolete]
-        ApiResponse<string> PostTextToSpeechWithHttpInfo(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0);
+        ApiResponse<string> PostTextToSpeechWithHttpInfo(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "");
         #endregion Synchronous Operations
     }
 
@@ -115,7 +115,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TTSResponse</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<TTSResponse> GetTextToSpeechResultAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TTSResponse> GetTextToSpeechResultAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// GetTextToSpeechResult
@@ -129,7 +129,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TTSResponse)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<TTSResponse>> GetTextToSpeechResultWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TTSResponse>> GetTextToSpeechResultWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// GetTextToSpeechResultFile
         /// </summary>
@@ -142,7 +142,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<Object> GetTextToSpeechResultFileAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> GetTextToSpeechResultFileAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// GetTextToSpeechResultFile
@@ -156,7 +156,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetTextToSpeechResultFileWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetTextToSpeechResultFileWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// PostTextToSpeech
         /// </summary>
@@ -169,7 +169,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<string> PostTextToSpeechAsync(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> PostTextToSpeechAsync(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// PostTextToSpeech
@@ -183,7 +183,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<string>> PostTextToSpeechWithHttpInfoAsync(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> PostTextToSpeechWithHttpInfoAsync(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -322,9 +322,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TTSResponse</returns>
         [Obsolete]
-        public TTSResponse GetTextToSpeechResult(string id, int operationIndex = 0)
+        public TTSResponse GetTextToSpeechResult(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> localVarResponse = GetTextToSpeechResultWithHttpInfo(id, operationIndex);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> localVarResponse = GetTextToSpeechResultWithHttpInfo(id, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful);
             return localVarResponse.Data;
         }
 
@@ -336,7 +336,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TTSResponse</returns>
         [Obsolete]
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> GetTextToSpeechResultWithHttpInfo(string id, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> GetTextToSpeechResultWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -413,9 +413,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TTSResponse</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TTSResponse> GetTextToSpeechResultAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TTSResponse> GetTextToSpeechResultAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> localVarResponse = await GetTextToSpeechResultWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse> localVarResponse = await GetTextToSpeechResultWithHttpInfoAsync(id, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -428,7 +428,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TTSResponse)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse>> GetTextToSpeechResultWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<TTSResponse>> GetTextToSpeechResultWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -481,7 +481,6 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
-
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<TTSResponse>(GetAdjustedPath("./v5.0/ocr/TextToSpeech/GetTextToSpeechResult"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
@@ -506,9 +505,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         [Obsolete]
-        public Object GetTextToSpeechResultFile(string id, int operationIndex = 0)
+        public Object GetTextToSpeechResultFile(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> localVarResponse = GetTextToSpeechResultFileWithHttpInfo(id, operationIndex);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> localVarResponse = GetTextToSpeechResultFileWithHttpInfo(id, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful);
             return localVarResponse.Data;
         }
 
@@ -520,7 +519,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         [Obsolete]
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> GetTextToSpeechResultFileWithHttpInfo(string id, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> GetTextToSpeechResultFileWithHttpInfo(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -597,9 +596,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<Object> GetTextToSpeechResultFileAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> GetTextToSpeechResultFileAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> localVarResponse = await GetTextToSpeechResultFileWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object> localVarResponse = await GetTextToSpeechResultFileWithHttpInfoAsync(id, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -612,7 +611,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object>> GetTextToSpeechResultFileWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<Object>> GetTextToSpeechResultFileWithHttpInfoAsync(string id, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -665,7 +664,6 @@ namespace Aspose.OCR.Cloud.SDK.Api
                 }
             }
 
-
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>(GetAdjustedPath("./v5.0/ocr/TextToSpeech/GetTextToSpeechResultFile"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
@@ -690,9 +688,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         [Obsolete]
-        public string PostTextToSpeech(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0)
+        public string PostTextToSpeech(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostTextToSpeechWithHttpInfo(tTSBodyDeprecated, operationIndex);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = PostTextToSpeechWithHttpInfo(tTSBodyDeprecated, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful);
             return localVarResponse.Data;
         }
 
@@ -704,7 +702,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         [Obsolete]
-        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostTextToSpeechWithHttpInfo(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0)
+        public Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> PostTextToSpeechWithHttpInfo(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "")
         {
             // verify the required parameter 'tTSBodyDeprecated' is set
             if (tTSBodyDeprecated == null)
@@ -782,9 +780,9 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<string> PostTextToSpeechAsync(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> PostTextToSpeechAsync(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostTextToSpeechWithHttpInfoAsync(tTSBodyDeprecated, operationIndex, cancellationToken).ConfigureAwait(false);
+            Aspose.OCR.Cloud.SDK.Client.ApiResponse<string> localVarResponse = await PostTextToSpeechWithHttpInfoAsync(tTSBodyDeprecated, operationIndex, webUserEmail, webUserSessionId, stripeUserId, stripeUserSubscriptionType, stripeBillingSuccessful, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -797,7 +795,7 @@ namespace Aspose.OCR.Cloud.SDK.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostTextToSpeechWithHttpInfoAsync(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Aspose.OCR.Cloud.SDK.Client.ApiResponse<string>> PostTextToSpeechWithHttpInfoAsync(TTSBodyDeprecated tTSBodyDeprecated, int operationIndex = 0, string webUserEmail = "", string webUserSessionId = "", string stripeUserId = "", string stripeUserSubscriptionType = "", string stripeBillingSuccessful = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'tTSBodyDeprecated' is set
             if (tTSBodyDeprecated == null)
@@ -850,7 +848,6 @@ namespace Aspose.OCR.Cloud.SDK.Api
                     localVarRequestOptions.OAuth = true;
                 }
             }
-
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<string>(GetAdjustedPath("./v5.0/ocr/TextToSpeech/PostTextToSpeech"), localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

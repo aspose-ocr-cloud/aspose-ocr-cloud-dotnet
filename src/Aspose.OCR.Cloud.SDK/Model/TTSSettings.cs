@@ -29,7 +29,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
     /// TTS setting
     /// </summary>
     [DataContract(Name = "TTSSettings")]
-    public partial class TTSSettings : IEquatable<TTSSettings>, IValidatableObject
+    public partial class TTSSettings : IValidatableObject
     {
 
         /// <summary>
@@ -83,58 +83,11 @@ namespace Aspose.OCR.Cloud.SDK.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as TTSSettings);
-        }
-
-        /// <summary>
-        /// Returns true if TTSSettings instances are equal
-        /// </summary>
-        /// <param name="input">Instance of TTSSettings to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(TTSSettings input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Language == input.Language ||
-                    this.Language.Equals(input.Language)
-                ) && 
-                (
-                    this.ResultType == input.ResultType ||
-                    this.ResultType.Equals(input.ResultType)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Language.GetHashCode();
-                hashCode = (hashCode * 59) + this.ResultType.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -19,15 +19,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Aspose.OCR.Cloud.SDK\Aspose.OCR.Cloud.SDK.csproj" />
   </ItemGroup>
-
+  
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="xcopy /E /Y /I samples $(TargetDir)samples\" />
+    <PropertyGroup>
+      <IsWindows Condition="'$(OS)' == 'Windows_NT'">true</IsWindows>
+    </PropertyGroup>
+      <Exec Condition="'$(IsWindows)' == 'true'" Command="pwsh -Command Copy-Item -Path samples -Destination $(TargetDir) -Recurse -Force" />
+      <Exec Condition="'$(IsWindows)' != 'true'" Command="pwsh -Command Copy-Item -Path samples -Destination $(TargetDir) -Recurse -Force" />
   </Target>
-  <ItemGroup>
-    <None Update="samples\**\*.*">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-
 </Project>

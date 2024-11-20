@@ -24,6 +24,7 @@ namespace Aspose.OCR.Cloud.SDK.Client.Auth
         readonly string _tokenUrl;
         readonly string _clientId;
         readonly string _clientSecret;
+        readonly string _scope;
         readonly string _grantType;
         readonly JsonSerializerSettings _serializerSettings;
         readonly IReadableConfiguration _configuration;
@@ -35,6 +36,7 @@ namespace Aspose.OCR.Cloud.SDK.Client.Auth
             string tokenUrl,
             string clientId,
             string clientSecret,
+            string scope,
             OAuthFlow? flow,
             JsonSerializerSettings serializerSettings,
             IReadableConfiguration configuration) : base("")
@@ -42,6 +44,7 @@ namespace Aspose.OCR.Cloud.SDK.Client.Auth
             _tokenUrl = tokenUrl;
             _clientId = clientId;
             _clientSecret = clientSecret;
+            _scope = scope;
             _serializerSettings = serializerSettings;
             _configuration = configuration;
 
@@ -71,7 +74,7 @@ namespace Aspose.OCR.Cloud.SDK.Client.Auth
         /// <returns>An authentication parameter.</returns>
         protected override async ValueTask<Parameter> GetAuthenticationParameter(string accessToken)
         {
-            var token = string.IsNullOrEmpty(Token) ? await GetToken() : Token;
+            var token = string.IsNullOrEmpty(Token) ? await GetToken().ConfigureAwait(false) : Token;
             return new HeaderParameter(KnownHeaders.Authorization, token);
         }
 
@@ -81,23 +84,30 @@ namespace Aspose.OCR.Cloud.SDK.Client.Auth
         /// <returns>An authentication token.</returns>
         async Task<string> GetToken()
         {
-            var client = new RestClient(_tokenUrl)
-                .UseSerializer(() => new CustomJsonCodec(_serializerSettings, _configuration));
+            var client = new RestClient(_tokenUrl,
+                configureSerialization: serializerConfig => serializerConfig.UseSerializer(() => new CustomJsonCodec(_serializerSettings, _configuration)));
 
             var request = new RestRequest()
                 .AddParameter("grant_type", _grantType)
                 .AddParameter("client_id", _clientId)
                 .AddParameter("client_secret", _clientSecret);
 
-            
-            try
+            if (!string.IsNullOrEmpty(_scope))
             {
-                var response = await client.PostAsync<TokenResponse>(request);
-                return $"{response.TokenType} {response.AccessToken}";
+                request.AddParameter("scope", _scope);
             }
-            catch (Exception ex)
+
+            var response = await client.PostAsync<TokenResponse>(request).ConfigureAwait(false);
+            
+            // RFC6749 - token_type is case insensitive.
+            // RFC6750 - In Authorization header Bearer should be capitalized.
+            // Fix the capitalization irrespective of token_type casing.
+            switch (response.TokenType?.ToLower())
             {
-                throw new UnauthorizedAccessException("Authentification failure. Incorrect credentials.");
+                case "bearer":
+                    return $"Bearer {response.AccessToken}";
+                default:
+                    return $"{response.TokenType} {response.AccessToken}";
             }
         }
     }

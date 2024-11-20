@@ -29,7 +29,7 @@ namespace Aspose.OCR.Cloud.SDK.Model
     /// OCR Process setting for Scanned multiple PDF document recognition
     /// </summary>
     [DataContract(Name = "OCRSettingsRecognizePdf")]
-    public partial class OCRSettingsRecognizePdf : IEquatable<OCRSettingsRecognizePdf>, IValidatableObject
+    public partial class OCRSettingsRecognizePdf : IValidatableObject
     {
 
         /// <summary>
@@ -176,113 +176,11 @@ namespace Aspose.OCR.Cloud.SDK.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OCRSettingsRecognizePdf);
-        }
-
-        /// <summary>
-        /// Returns true if OCRSettingsRecognizePdf instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OCRSettingsRecognizePdf to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OCRSettingsRecognizePdf input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Language == input.Language ||
-                    this.Language.Equals(input.Language)
-                ) && 
-                (
-                    this.MakeSkewCorrect == input.MakeSkewCorrect ||
-                    this.MakeSkewCorrect.Equals(input.MakeSkewCorrect)
-                ) && 
-                (
-                    this.MakeSpellCheck == input.MakeSpellCheck ||
-                    this.MakeSpellCheck.Equals(input.MakeSpellCheck)
-                ) && 
-                (
-                    this.MakeContrastCorrection == input.MakeContrastCorrection ||
-                    this.MakeContrastCorrection.Equals(input.MakeContrastCorrection)
-                ) && 
-                (
-                    this.DsrMode == input.DsrMode ||
-                    this.DsrMode.Equals(input.DsrMode)
-                ) && 
-                (
-                    this.DsrConfidence == input.DsrConfidence ||
-                    this.DsrConfidence.Equals(input.DsrConfidence)
-                ) && 
-                (
-                    this.ResultType == input.ResultType ||
-                    this.ResultType.Equals(input.ResultType)
-                ) && 
-                (
-                    this.Rotate == input.Rotate ||
-                    this.Rotate.Equals(input.Rotate)
-                ) && 
-                (
-                    this.MakeBinarization == input.MakeBinarization ||
-                    this.MakeBinarization.Equals(input.MakeBinarization)
-                ) && 
-                (
-                    this.MakeUpsampling == input.MakeUpsampling ||
-                    this.MakeUpsampling.Equals(input.MakeUpsampling)
-                ) && 
-                (
-                    this.ResultTypeTable == input.ResultTypeTable ||
-                    this.ResultTypeTable.Equals(input.ResultTypeTable)
-                ) && 
-                (
-                    this.Regions == input.Regions ||
-                    this.Regions != null &&
-                    input.Regions != null &&
-                    this.Regions.SequenceEqual(input.Regions)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Language.GetHashCode();
-                hashCode = (hashCode * 59) + this.MakeSkewCorrect.GetHashCode();
-                hashCode = (hashCode * 59) + this.MakeSpellCheck.GetHashCode();
-                hashCode = (hashCode * 59) + this.MakeContrastCorrection.GetHashCode();
-                hashCode = (hashCode * 59) + this.DsrMode.GetHashCode();
-                hashCode = (hashCode * 59) + this.DsrConfidence.GetHashCode();
-                hashCode = (hashCode * 59) + this.ResultType.GetHashCode();
-                hashCode = (hashCode * 59) + this.Rotate.GetHashCode();
-                hashCode = (hashCode * 59) + this.MakeBinarization.GetHashCode();
-                hashCode = (hashCode * 59) + this.MakeUpsampling.GetHashCode();
-                hashCode = (hashCode * 59) + this.ResultTypeTable.GetHashCode();
-                if (this.Regions != null)
-                {
-                    hashCode = (hashCode * 59) + this.Regions.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

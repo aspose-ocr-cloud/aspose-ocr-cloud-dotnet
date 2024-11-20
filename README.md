@@ -1,6 +1,6 @@
 <img src="docs/Resources/heading.png">
 
-# Aspose.OCR Cloud .NET SDK 24.11.0
+# Aspose.OCR Cloud .NET SDK 24.11.2
 
 [![License](https://img.shields.io/github/license/aspose-ocr-cloud/aspose-ocr-cloud-dotnet)](LICENSE)
 [![Nuget](https://img.shields.io/nuget/v/Aspose.OCR-Cloud)](https://www.nuget.org/packages/Aspose.OCR-Cloud/)
@@ -61,9 +61,9 @@ Aspose.OCR Cloud follows industry standards and best practices to keep your data
   </a>
 </p>
 
-## What was changed in version 24.11.0
+## What was changed in version 24.11.2
 
-A summary of recent changes, enhancements and bug fixes in **Aspose.OCR Cloud SDK for .NET 24.11.0** release:
+A summary of recent changes, enhancements and bug fixes in **Aspose.OCR Cloud SDK for .NET 24.11.2** release:
 
 Key | Summary | Category
 --- | ------- | --------
@@ -82,11 +82,11 @@ REST API changes: https://releases.aspose.cloud/ocr/release-notes/2024/aspose-oc
 
 ### Public API changes and backwards compatibility
 
-This section lists all public API changes introduced in **Aspose.OCR Cloud SDK for .NET 24.11.0** that may affect the code of existing applications.
+This section lists all public API changes introduced in **Aspose.OCR Cloud SDK for .NET 24.11.2** that may affect the code of existing applications.
 
 #### Added public APIs:
 
-The following public APIs have been added in **Aspose.OCR Cloud SDK for .NET 24.11.0** release:
+The following public APIs have been added in **Aspose.OCR Cloud SDK for .NET 24.11.2** release:
 
 #### New recognition languages
 
@@ -100,9 +100,9 @@ Kannada    | `Language.Kannada`
 Tamil      | `Language.Tamil`
 Devanagari-based languages | `Language.Devanagari`
 
-{{% alert color="primary" %}}
+
 All of the OCR languages mentioned above also support the recognition of mixed texts, including those with Latin characters.
-{{% /alert %}}
+
 
 #### Updated public APIs:
 
@@ -114,7 +114,7 @@ _No changes._
 
 ## Changes to application logic
 
-This section lists all improvements introduced in **Aspose.OCR Cloud SDK for .NET 24.11.0** that do not affect the public APIs and thus do not require changes to your application code.
+This section lists all improvements introduced in **Aspose.OCR Cloud SDK for .NET 24.11.2** that do not affect the public APIs and thus do not require changes to your application code.
 
 ### Mixed language support
 
@@ -128,7 +128,7 @@ Aspose.OCR Cloud now supports the recognition of texts which include both native
 
 ## Examples
 
-The examples below illustrate the changes introduced in version 24.11.0:
+The examples below illustrate the changes introduced in version 24.11.2:
 
 ### Recognize Tamil language
 

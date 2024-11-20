@@ -955,7 +955,6 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// </summary>
         [EnumMember(Value = "Devanagari")]
         Devanagari = 154
-
     }
 
 }

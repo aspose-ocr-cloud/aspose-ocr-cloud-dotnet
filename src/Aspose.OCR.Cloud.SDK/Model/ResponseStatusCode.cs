@@ -73,7 +73,6 @@ namespace Aspose.OCR.Cloud.SDK.Model
         /// </summary>
         [EnumMember(Value = "Error")]
         Error = 7
-
     }
 
 }
